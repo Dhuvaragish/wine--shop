@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories & Terroirs | Admin Cellar Portal | Wine &amp; Craft</title>
+  <meta name="description" content="Wine &amp; Craft - Fine Wines, Rare Whiskies &amp; Artisanal Spirits">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logos/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/admin-dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="admin-wrapper">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="../index.html">
+          <img src="../assets/images/logos/logo-dark.svg" alt="Wine & Craft" style="height: 38px;">
+        </a>
+      </div>
+      <nav class="admin-nav">
+        <div class="admin-nav-heading">Main Overview</div>
+        <a href="dashboard.html" class="admin-nav-link ">
+          <i class="fa-solid fa-gauge"></i>
+          <span>Dashboard Overview</span>
+        </a>
+      <div class="admin-nav-heading">Cellar Catalog</div>
+        <a href="products.html" class="admin-nav-link ">
+          <i class="fa-solid fa-wine-bottle"></i>
+          <span>Bottle Inventory</span>
+        </a>
+      
+        <a href="add-product.html" class="admin-nav-link ">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add New Vintage</span>
+        </a>
+      
+        <a href="categories.html" class="admin-nav-link active">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Categories & Terroirs</span>
+        </a>
+      
+        <a href="inventory.html" class="admin-nav-link ">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <span>Stock & Barrel Ledger</span>
+        </a>
+      <div class="admin-nav-heading">Sales & CRM</div>
+        <a href="orders.html" class="admin-nav-link ">
+          <i class="fa-solid fa-receipt"></i>
+          <span>Cellar Orders</span>
+        </a>
+      
+        <a href="customers.html" class="admin-nav-link ">
+          <i class="fa-solid fa-users"></i>
+          <span>Connoisseur CRM</span>
+        </a>
+      
+        <a href="coupons.html" class="admin-nav-link ">
+          <i class="fa-solid fa-tag"></i>
+          <span>Promo Vouchers</span>
+        </a>
+      
+        <a href="reports.html" class="admin-nav-link ">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Revenue Analytics</span>
+        </a>
+      <div class="admin-nav-heading">Events & Services</div>
+        <a href="events.html" class="admin-nav-link ">
+          <i class="fa-solid fa-ticket"></i>
+          <span>Tasting Sessions</span>
+        </a>
+      
+        <a href="gifts.html" class="admin-nav-link ">
+          <i class="fa-solid fa-gift"></i>
+          <span>Corporate Gifting</span>
+        </a>
+      
+        <a href="reviews.html" class="admin-nav-link ">
+          <i class="fa-solid fa-star"></i>
+          <span>Review Moderation</span>
+        </a>
+      
+        <a href="enquiries.html" class="admin-nav-link ">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Private Inquiries</span>
+        </a>
+      <div class="admin-nav-heading">Configuration</div>
+        <a href="settings.html" class="admin-nav-link ">
+          <i class="fa-solid fa-gear"></i>
+          <span>Store Settings</span>
+        </a>
+      
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+          <a href="../index.html" class="admin-nav-link" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>View Public Store</span>
+          </a>
+          <a href="../pages/login.html" class="admin-nav-link" style="color: #E57373;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sign Out</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button id="adminSidebarToggle" class="nav-action-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+          <div style="position: relative; width: 280px;">
+            <input type="text" id="adminTableSearch" class="form-control" placeholder="Search orders, vintages..." style="padding-left: 2.2rem; font-size: 0.85rem;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-light); font-size: 0.8rem;"></i>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1.25rem;">
+          <button class="nav-action-btn rtl-toggle-btn" title="Toggle RTL/LTR"><i class="fa-solid fa-globe"></i></button>
+          <button class="nav-action-btn theme-toggle-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+          <div style="display: flex; align-items: center; gap: 0.75rem; border-left: 1px solid var(--border-color); padding-left: 1rem;">
+            <img src="../assets/images/users/admin-avatar.jpg" alt="Genevieve" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);" onerror="this.onerror=null; this.src='../assets/images/users/default-avatar.svg';">
+            <div>
+              <div style="font-size: 0.85rem; font-weight: 700; line-height: 1.2;">Geneviève Laurent</div>
+              <div style="font-size: 0.75rem; color: var(--accent-gold-dark);">Head Sommelier &amp; Admin</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <h1 style="font-size: 1.8rem; margin: 0;">Categories & Terroirs</h1>
+        </div>
+        
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <h3 class="admin-card-title">Terroir Categories &amp; Spirit Types</h3>
+      <button class="btn btn-gold btn-sm" onclick="alert('Add category modal');"><i class="fa-solid fa-plus"></i> New Category</button>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Category Name</th>
+            <th>Slug</th>
+            <th>Subcategories</th>
+            <th>Bottle Count</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fine Wines</strong></td>
+            <td>wine</td>
+            <td>Bordeaux, Burgundy, Napa Valley, Tuscany, Champagne</td>
+            <td>245 Bottles</td>
+            <td><button class="btn btn-outline btn-sm">Edit</button></td>
+          </tr>
+          <tr>
+            <td><strong>Rare Whiskies</strong></td>
+            <td>whisky</td>
+            <td>Single Malt Scotch, Japanese Rare, Kentucky Bourbon</td>
+            <td>180 Bottles</td>
+            <td><button class="btn btn-outline btn-sm">Edit</button></td>
+          </tr>
+          <tr>
+            <td><strong>Craft Spirits</strong></td>
+            <td>spirits</td>
+            <td>Botanical Gin, Ancestral Agave, XO Cognac, Single Cask Rum</td>
+            <td>115 Bottles</td>
+            <td><button class="btn btn-outline btn-sm">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/js/wishlist.js"></script>
+  <script src="../assets/js/admin-dashboard.js"></script>
+</body>
+</html>

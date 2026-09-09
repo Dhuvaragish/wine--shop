@@ -1,0 +1,65 @@
+[
+  {
+    "id": "evt-001",
+    "title": "Bordeaux 2015 Vintage Retrospective Masterclass",
+    "category": "masterclass",
+    "date": "2026-10-18",
+    "time": "18:30 - 21:30",
+    "location": "The Grand Cellar Vault, Mayfair & Live Stream",
+    "sommelier": "Antoine de Saint-Germain, Master Sommelier",
+    "seats_total": 24,
+    "seats_remaining": 6,
+    "price": 320,
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
+    "description": "An exclusive vertical tasting of 6 First Growth and Super Second Bordeaux from the legendary 2015 vintage, paired with artisanal charcuterie and French cheeses.",
+    "flight": [
+      "Château Margaux 2015",
+      "Château Mouton Rothschild 2015",
+      "Château Palmer 2015",
+      "Château Lynch-Bages 2015",
+      "Château Pontet-Canet 2015",
+      "Château d Yquem 2015"
+    ]
+  },
+  {
+    "id": "evt-002",
+    "title": "Islay Peat & Sherry Cask Odyssey",
+    "category": "whisky_tasting",
+    "date": "2026-11-05",
+    "time": "19:00 - 22:00",
+    "location": "The Speakeasy Tasting Room",
+    "sommelier": "Callum MacLeod, Keeper of the Quaich",
+    "seats_total": 20,
+    "seats_remaining": 4,
+    "price": 245,
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80",
+    "description": "Delve into extreme phenol levels, maritime brine, and lush Oloroso sherry finishes across 6 single cask, un-chillfiltered single malts.",
+    "flight": [
+      "Lagavulin 16 Year Distillers Edition",
+      "Laphroaig 25 Year Cask Strength",
+      "Ardbeg Traigh Bhan 19 Year",
+      "Bowmore 18 Year Oloroso Cask",
+      "Port Charlotte MRC:01",
+      "Octomore 14.3 Super Peated"
+    ]
+  },
+  {
+    "id": "evt-003",
+    "title": "Botanical Alchemy: Distilling & Gin Blending Workshop",
+    "category": "workshop",
+    "date": "2026-11-22",
+    "time": "14:00 - 17:30",
+    "location": "Craft Laboratory & Copper Still Room",
+    "sommelier": "Elena Fischer, Master Herbalist & Distiller",
+    "seats_total": 16,
+    "seats_remaining": 8,
+    "price": 185,
+    "image": "https://images.unsplash.com/photo-1607622750671-6cd9a99eabd1?auto=format&fit=crop&w=800&q=80",
+    "description": "Hands-on distillation experience where guests formulate their custom botanical blend using mini copper alembics and bottle a personalized 500ml craft gin.",
+    "flight": [
+      "Raw botanical distillate sampling (Juniper, Angelica, Cardamom, Citrus)",
+      "Single botanical macerations review",
+      "Finished bespoke 500ml custom gin with personalized wax seal"
+    ]
+  }
+]

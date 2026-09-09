@@ -1,0 +1,91 @@
+/* ==========================================================================
+   RTL Styles - Wine & Craft (Right-to-Left Arabic / Hebrew Layout)
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .home-dropdown {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .home-dropdown .dropdown-item:hover {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .home-dropdown .dropdown-item.active {
+  border-left: none;
+  border-right: 3px solid var(--accent-gold);
+}
+
+[dir="rtl"] .badge-counter {
+  right: auto;
+  left: 2px;
+}
+
+[dir="rtl"] .nav-login-btn {
+  margin-left: 0;
+  margin-right: 0.35rem;
+}
+
+[dir="rtl"] .nav-login-btn:hover i {
+  transform: translateX(-2px);
+}
+
+[dir="rtl"] .product-badges {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .product-wishlist-btn {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .table {
+  text-align: right;
+}
+
+[dir="rtl"] .cart-drawer {
+  right: auto;
+  left: -420px;
+  transition: left var(--transition-smooth);
+}
+
+[dir="rtl"] .cart-drawer.active {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .toast-container {
+  right: auto;
+  left: 2rem;
+}
+
+[dir="rtl"] .toast {
+  border-left: 1px solid var(--border-color);
+  border-right: 4px solid var(--primary);
+  animation-name: slideInLeft;
+}
+
+[dir="rtl"] .toast.toast-success { border-right-color: var(--status-success); }
+[dir="rtl"] .toast.toast-error { border-right-color: var(--status-danger); }
+[dir="rtl"] .toast.toast-gold { border-right-color: var(--accent-gold); }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-chevron-right {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-chevron-left {
+  transform: rotate(180deg);
+}

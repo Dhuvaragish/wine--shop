@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Admin Dashboard Styles - Cellar & Store Operations
+   ========================================================================== */
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+}
+
+.admin-sidebar {
+  width: 260px;
+  background-color: #121114;
+  color: #B5AEA4;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar-header {
+  height: 80px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-nav {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.admin-nav-heading {
+  font-family: var(--font-display);
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6E685F;
+  margin: 1.25rem 0.75rem 0.5rem 0.75rem;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  color: #A39B8F;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.admin-nav-link:hover,
+.admin-nav-link.active {
+  background-color: rgba(197, 160, 89, 0.15);
+  color: #F7E7CE;
+}
+
+.admin-nav-link.active {
+  border-right: 3px solid var(--accent-gold);
+}
+
+[dir="rtl"] .admin-nav-link.active {
+  border-right: none;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.admin-nav-link i {
+  width: 18px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.admin-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.admin-topbar {
+  height: 80px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.admin-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 1.75rem;
+}
+
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.admin-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.chart-box {
+  height: 300px;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .admin-sidebar {
+    position: fixed;
+    left: -260px;
+    height: 100vh;
+    z-index: 1050;
+    transition: left var(--transition-smooth);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .admin-sidebar.active {
+    left: 0;
+  }
+
+  [dir="rtl"] .admin-sidebar {
+    left: auto;
+    right: -260px;
+  }
+
+  [dir="rtl"] .admin-sidebar.active {
+    right: 0;
+  }
+
+  .admin-topbar {
+    padding: 0 1.25rem;
+  }
+
+  .admin-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-topbar {
+    padding: 0 1rem;
+    height: 70px;
+  }
+
+  .admin-content {
+    padding: 1rem;
+  }
+
+  .admin-card {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .admin-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .admin-topbar-search {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-card {
+    padding: 1rem 0.75rem;
+  }
+}

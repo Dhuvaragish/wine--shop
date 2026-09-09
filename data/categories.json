@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cat-wine",
+    "name": "Fine Wines",
+    "slug": "wine",
+    "description": "Premier crus, biodynamic estates, and rare cellar vintages from legendary terroirs.",
+    "item_count": 245,
+    "icon": "wine-glass",
+    "subcategories": [
+      {
+        "id": "sub-bordeaux",
+        "name": "Bordeaux Grand Cru",
+        "count": 68
+      },
+      {
+        "id": "sub-burgundy",
+        "name": "Burgundy & Côte de Nuits",
+        "count": 54
+      },
+      {
+        "id": "sub-napa",
+        "name": "Napa Valley Cabernet",
+        "count": 42
+      },
+      {
+        "id": "sub-tuscany",
+        "name": "Tuscan Brunello & Super Tuscans",
+        "count": 38
+      },
+      {
+        "id": "sub-champagne",
+        "name": "Prestige Champagne",
+        "count": 43
+      }
+    ]
+  },
+  {
+    "id": "cat-whisky",
+    "name": "Rare Whiskies",
+    "slug": "whisky",
+    "description": "Single cask selections, peated Islay single malts, and collectible Japanese releases.",
+    "item_count": 180,
+    "icon": "whiskey-glass",
+    "subcategories": [
+      {
+        "id": "sub-scotch",
+        "name": "Single Malt Scotch",
+        "count": 86
+      },
+      {
+        "id": "sub-japanese",
+        "name": "Japanese Rare Whiskies",
+        "count": 32
+      },
+      {
+        "id": "sub-bourbon",
+        "name": "Kentucky Small Batch Bourbon",
+        "count": 38
+      },
+      {
+        "id": "sub-world",
+        "name": "World & Taiwanese Whiskies",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "id": "cat-spirits",
+    "name": "Craft Spirits",
+    "slug": "spirits",
+    "description": "Small-batch artisanal botanicals, ancestral mezcals, and centenary cognacs.",
+    "item_count": 115,
+    "icon": "cocktail",
+    "subcategories": [
+      {
+        "id": "sub-gin",
+        "name": "Botanical Craft Gin",
+        "count": 35
+      },
+      {
+        "id": "sub-agave",
+        "name": "Ancestral Agave & Mezcal",
+        "count": 28
+      },
+      {
+        "id": "sub-cognac",
+        "name": "Single Estate Cognac & Armagnac",
+        "count": 22
+      },
+      {
+        "id": "sub-rum",
+        "name": "Aged Single Cask Rum",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "id": "cat-gifts",
+    "name": "Bespoke Gifting",
+    "slug": "gifting",
+    "description": "Handcrafted wooden cellar crates, personalized bottle laser engraving, and sommelier curation.",
+    "item_count": 42,
+    "icon": "gift",
+    "subcategories": [
+      {
+        "id": "sub-corporate",
+        "name": "Corporate Connoisseur Crates",
+        "count": 18
+      },
+      {
+        "id": "sub-engraving",
+        "name": "Personalized Laser Engraving",
+        "count": 12
+      },
+      {
+        "id": "sub-vouchers",
+        "name": "Cellar Vault Gift Cards",
+        "count": 12
+      }
+    ]
+  }
+]

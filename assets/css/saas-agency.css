@@ -1,0 +1,599 @@
+/* ==========================================================================
+   Wine & Craft Digital - CellarOS SaaS Platform & Creative Agency Styles
+   ========================================================================== */
+
+/* --- Tech Hero Section --- */
+.saas-hero {
+  position: relative;
+  padding: 6.5rem 0 5rem 0;
+  background: radial-gradient(circle at 50% 10%, rgba(114, 47, 55, 0.40) 0%, rgba(15, 15, 18, 0.65) 55%, rgba(15, 15, 18, 0.88) 100%),
+              url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+[data-theme="light"] .saas-hero {
+  background: radial-gradient(circle at 50% 10%, rgba(114, 47, 55, 0.20) 0%, rgba(253, 251, 247, 0.65) 55%, rgba(253, 251, 247, 0.88) 100%),
+              url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+  color: var(--text-main);
+}
+
+.saas-hero-content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.saas-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.saas-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2E7D32;
+  box-shadow: 0 0 8px #4CAF50;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #4CAF50; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.saas-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.75));
+}
+
+[data-theme="dark"] .saas-hero-title,
+.saas-hero .saas-hero-title {
+  background: linear-gradient(135deg, #FFFFFF 30%, #E0C78E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .saas-hero-title {
+  background: linear-gradient(135deg, #1C1917 40%, #722F37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.8));
+}
+
+.saas-hero-desc {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+  color: #F5EFEB;
+  margin-bottom: 2.25rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="light"] .saas-hero-desc {
+  color: #2D2723;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+.saas-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* --- Key Metric Stat Chips --- */
+.saas-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.saas-stat-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 1.25rem 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+[data-theme="light"] .saas-stat-chip {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.saas-stat-chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+}
+
+.saas-stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.saas-stat-label {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Interactive SaaS Dashboard Preview Mockup --- */
+.dashboard-preview-section {
+  padding: 4rem 0 5rem 0;
+  position: relative;
+}
+
+.dashboard-window {
+  background: #15151B;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+[data-theme="light"] .dashboard-window {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(28, 25, 23, 0.12);
+}
+
+.dashboard-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+[data-theme="light"] .dashboard-header-bar {
+  background: #F7F3EB;
+  border-bottom-color: var(--border-color);
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.window-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.window-dot-red { background-color: #FF5F56; }
+.window-dot-yellow { background-color: #FFBD2E; }
+.window-dot-green { background-color: #27C93F; }
+
+.dashboard-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dashboard-tab-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-tab-btn.active {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.dashboard-body {
+  padding: 2rem;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeInPane 0.3s ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeInPane {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.telemetry-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+[data-theme="light"] .telemetry-card {
+  background: var(--bg-subtle);
+  border-color: var(--border-color);
+}
+
+.telemetry-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+/* --- SaaS Feature Cards --- */
+.feature-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  transition: all var(--transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-gold);
+}
+
+.feature-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--accent-gold-subtle);
+  color: var(--accent-gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Agency Portfolio & Services --- */
+.agency-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  transition: all var(--transition-base);
+}
+
+.agency-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-gold);
+}
+
+.agency-card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.agency-card:hover .agency-card-img {
+  transform: scale(1.04);
+}
+
+.agency-card-body {
+  padding: 1.75rem;
+}
+
+.agency-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+
+/* --- Pricing Section --- */
+.billing-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 3rem;
+}
+
+.billing-opt {
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.billing-opt.active {
+  background-color: var(--accent-gold);
+  color: #0F0F12;
+  box-shadow: var(--shadow-xs);
+}
+
+.pricing-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card.featured {
+  border-color: var(--accent-gold);
+  box-shadow: 0 12px 40px rgba(197, 160, 89, 0.2);
+  transform: scale(1.03);
+}
+
+.pricing-ribbon {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #D4AF37, #AA7C11);
+  color: #0F0F12;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 1.25rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.pricing-amount span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 2.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1 1 auto;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.pricing-features li i {
+  color: var(--status-success);
+  font-size: 0.85rem;
+}
+
+/* --- Consultation Modal --- */
+.consultation-modal {
+  max-width: 540px;
+}
+
+/* ==========================================================================
+   CellarOS & Creative Agency Responsive Breakpoints
+   ========================================================================== */
+
+/* --- Tablets & Medium Screens (<= 992px) --- */
+@media (max-width: 992px) {
+  .saas-hero {
+    padding: 5rem 0 4rem 0;
+  }
+
+  .saas-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .dashboard-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .dashboard-tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+
+  .dashboard-tab-btn {
+    flex-shrink: 0;
+  }
+
+  .dashboard-body {
+    padding: 1.25rem;
+  }
+}
+
+/* --- Phablets & Mobile Landscape (<= 768px) --- */
+@media (max-width: 768px) {
+  .saas-hero {
+    padding: 4rem 0 3rem 0;
+  }
+
+  .saas-hero-title {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    margin-bottom: 1rem;
+  }
+
+  .saas-hero-desc {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .saas-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.75rem;
+  }
+
+  .saas-hero-actions .btn {
+    width: 100%;
+  }
+
+  .saas-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .saas-stat-chip {
+    padding: 1rem 0.75rem;
+  }
+
+  .saas-stat-number {
+    font-size: 1.6rem;
+  }
+
+  .telemetry-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .agency-card-img {
+    height: 200px;
+  }
+
+  .agency-card-body {
+    padding: 1.25rem;
+  }
+
+  .pricing-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .pricing-amount {
+    font-size: 2.5rem;
+  }
+}
+
+/* --- Mobile Portrait & Compact Phones (<= 480px) --- */
+@media (max-width: 480px) {
+  .saas-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .billing-switch {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .billing-opt {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .window-dots {
+    display: none;
+  }
+
+  .dashboard-body {
+    padding: 1rem 0.75rem;
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A0E17"/>
+      <stop offset="100%" stop-color="#2D080E"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#F3E5AB"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#avatarGrad)" stroke="url(#goldGrad)" stroke-width="3"/>
+  <!-- User Silhouette / Sommelier icon -->
+  <circle cx="60" cy="46" r="20" fill="url(#goldGrad)" opacity="0.9"/>
+  <path d="M 28 98 C 28 78, 42 72, 60 72 C 78 72, 92 78, 92 98 Z" fill="url(#goldGrad)" opacity="0.9"/>
+  <!-- Decorative Wine Goblet Crest in Chest -->
+  <path d="M 57 80 L 63 80 L 61 87 L 64 87 L 64 88 L 56 88 L 56 87 L 59 87 Z" fill="#2D080E"/>
+</svg>

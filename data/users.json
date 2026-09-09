@@ -1,0 +1,70 @@
+[
+  {
+    "id": "usr-101",
+    "name": "Lord Arthur Pendelton",
+    "email": "connoisseur@winecraft.com",
+    "role": "customer",
+    "tier": "Grand Cru Collector",
+    "cellar_points": 14850,
+    "age_verified": true,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "addresses": [
+      {
+        "id": "addr-1",
+        "label": "Mayfair Townhouse Cellar",
+        "street": "42 Grosvenor Square",
+        "city": "London",
+        "postcode": "W1K 2HP",
+        "country": "United Kingdom",
+        "is_default": true
+      },
+      {
+        "id": "addr-2",
+        "label": "Cotswolds Country Estate",
+        "street": "Manor Farm Lane",
+        "city": "Bourton-on-the-Water",
+        "postcode": "GL54 2AA",
+        "country": "United Kingdom",
+        "is_default": false
+      }
+    ],
+    "orders": [
+      {
+        "id": "ORD-88219",
+        "date": "2026-08-28",
+        "total": 1780,
+        "status": "Delivered",
+        "items": [
+          {
+            "name": "Château Margaux Premier Grand Cru Classé 2015",
+            "qty": 2,
+            "price": 890
+          }
+        ],
+        "tracking": "DHL-CLIMATE-9982412"
+      },
+      {
+        "id": "ORD-88104",
+        "date": "2026-07-14",
+        "total": 899,
+        "status": "Delivered",
+        "items": [
+          {
+            "name": "Yamazaki 18 Year Japanese Single Malt",
+            "qty": 1,
+            "price": 899
+          }
+        ],
+        "tracking": "DHL-CLIMATE-8812903"
+      }
+    ]
+  },
+  {
+    "id": "adm-001",
+    "name": "Cellar Master Geneviève Laurent",
+    "email": "admin@winecraft.com",
+    "role": "admin",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80",
+    "department": "Head Sommelier & Operations"
+  }
+]

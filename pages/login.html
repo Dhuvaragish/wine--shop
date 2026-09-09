@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Connoisseur Sign In | Wine &amp; Craft</title>
+  <meta name="description" content="Wine &amp; Craft - Fine Wines, Rare Whiskies &amp; Artisanal Spirits - Connoisseur Portal Sign In">
+  
+  <!-- Mobile App Meta (iOS & Android) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Wine &amp; Craft">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#FAF8F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F0F12" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logos/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/logos/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+
+  <style>
+    /* Scoped Mobile-First Auth Layout */
+    .auth-wrapper {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.08) 0%, transparent 70%), var(--bg-body);
+      padding-top: env(safe-area-inset-top, 0);
+      padding-bottom: env(safe-area-inset-bottom, 0);
+      padding-left: env(safe-area-inset-left, 0);
+      padding-right: env(safe-area-inset-right, 0);
+      transition: background-color var(--transition-normal);
+      box-sizing: border-box;
+    }
+
+    .auth-topbar {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 1.75rem) clamp(1.25rem, 4vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    .auth-card {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 5vw, 2.75rem);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-lg);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-sizing: border-box;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-normal);
+    }
+
+    /* Native Mobile SSO Buttons (iOS & Android) */
+    .sso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-sso {
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .btn-sso:hover, .btn-sso:active {
+      background-color: var(--bg-subtle);
+      border-color: var(--accent-gold);
+      transform: translateY(-1px);
+    }
+
+    .btn-apple {
+      background-color: #000000;
+      color: #FFFFFF;
+      border-color: #000000;
+    }
+    [data-theme="dark"] .btn-apple {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+    }
+    .btn-apple:hover, .btn-apple:active {
+      opacity: 0.92;
+    }
+
+    .btn-passkey {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.12), rgba(114, 47, 55, 0.08));
+      border: 1px dashed var(--accent-gold);
+      color: var(--text-main);
+    }
+    .btn-passkey:hover {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.2), rgba(114, 47, 55, 0.15));
+      border-style: solid;
+    }
+
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 1.25rem 0 1.5rem 0;
+      color: var(--text-light);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .auth-divider span {
+      padding: 0 0.85rem;
+    }
+
+    /* iOS-Friendly Inputs (16px strictly prevents iOS Safari viewport auto-zoom) */
+    .ios-input {
+      font-size: 16px !important;
+      height: 48px;
+      border-radius: var(--radius-sm);
+    }
+
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0.35rem 0.65rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .quick-pill:hover, .quick-pill:active {
+      border-color: var(--accent-gold);
+      color: var(--primary);
+      background-color: var(--accent-gold-subtle);
+    }
+
+    .auth-footer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 1.5rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+      .auth-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: var(--radius-md);
+      }
+      .sso-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-wrapper">
+    
+    <!-- Minimalist Auth Top Bar: Brand Logo + Dark / Bright Mode Toggle ONLY -->
+    <header class="auth-topbar">
+      <a href="../index.html" class="brand-logo" aria-label="Wine & Craft Home" title="Return to Cellar Home">
+        <img src="../assets/images/logos/logo.svg" alt="Wine & Craft Logo" id="siteLogo" style="height: clamp(38px, 6vw, 44px); width: auto;">
+      </a>
+
+      <!-- Dark Mode & Bright Mode Toggle Button -->
+      <button class="nav-action-btn theme-toggle-btn" type="button" title="Switch Theme (Dark / Bright Mode)" aria-label="Toggle Dark / Bright Mode" style="width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); cursor: pointer; transition: all var(--transition-fast); box-shadow: var(--shadow-xs);">
+        <i class="fa-solid fa-moon" style="font-size: 1.1rem;"></i>
+      </button>
+    </header>
+
+    <!-- Main Auth Card: Supports iOS, Android & Desktop -->
+    <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: clamp(1rem, 3vw, 2rem) 1.25rem;">
+      <div class="auth-card">
+        
+        <!-- Header Icon & Title -->
+        <div style="text-align: center; margin-bottom: 1.75rem;">
+          <div style="width: 58px; height: 58px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 0.85rem; box-shadow: var(--shadow-xs);">
+            <i class="fa-solid fa-wine-bottle"></i>
+          </div>
+          <h1 style="font-size: clamp(1.6rem, 4vw, 1.95rem); margin-bottom: 0.35rem; font-family: var(--font-display); letter-spacing: 0.02em;">Connoisseur Portal</h1>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0 auto; max-width: 340px; line-height: 1.5;">
+            Sign in to access your private cellar allocations, bonded vault deposits, and event passes.
+          </p>
+        </div>
+
+        <!-- iOS & Android Direct Official SSO Links -->
+        <div class="sso-grid">
+          <!-- Direct Link: Apple ID -->
+          <a href="https://appleid.apple.com" target="_blank" rel="noopener noreferrer" class="btn-sso btn-apple" id="appleSignInBtn" aria-label="Direct Link to Apple ID" title="Direct Link to Apple ID">
+            <i class="fa-brands fa-apple" style="font-size: 1.15rem;"></i>
+            <span>Apple ID</span>
+          </a>
+
+          <!-- Direct Link: Google -->
+          <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer" class="btn-sso" id="googleSignInBtn" aria-label="Direct Link to Google Account" title="Direct Link to Google Account">
+            <i class="fa-brands fa-google" style="color: #4285F4; font-size: 1rem;"></i>
+            <span>Google</span>
+          </a>
+
+          <!-- Direct Link: Face ID / Touch ID Passkey -->
+          <a href="https://passkeys.io" target="_blank" rel="noopener noreferrer" class="btn-sso btn-passkey" id="passkeySignInBtn" aria-label="Direct Link to Passkey Biometrics" title="Direct Link to Passkey Biometrics">
+            <i class="fa-solid fa-fingerprint" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
+            <span>Face ID / Touch ID Passkey</span>
+          </a>
+        </div>
+
+        <div class="auth-divider">
+          <span>or sign in with email</span>
+        </div>
+
+        <!-- Email & Password Form (iOS & Android Keyboard & Autofill Optimized) -->
+        <form id="loginForm" autocomplete="on">
+          
+          <div class="form-group" style="margin-bottom: 1.15rem;">
+            <label class="form-label" for="loginEmail" style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.35rem;">Email Address</label>
+            <input 
+              type="email" 
+              id="loginEmail" 
+              name="email"
+              required 
+              class="form-control ios-input" 
+              value="connoisseur@winecraft.com" 
+              placeholder="connoisseur@winecraft.com"
+              inputmode="email"
+              autocomplete="username email"
+              autocapitalize="none"
+              autocorrect="off"
+              spellcheck="false">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.15rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <label class="form-label" for="loginPassword" style="margin-bottom: 0; font-size: 0.875rem; font-weight: 600;">Password</label>
+              <a href="#" onclick="event.preventDefault(); window.showToast('Password reset link sent to your registered email.', 'gold');" style="font-size: 0.8rem; color: var(--accent-gold-dark); text-decoration: none; font-weight: 500;">Forgot Password?</a>
+            </div>
+            <div style="position: relative;">
+              <input 
+                type="password" 
+                id="loginPassword" 
+                name="password"
+                required 
+                class="form-control ios-input" 
+                value="VaultSecret2026!" 
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                autocapitalize="none"
+                autocorrect="off"
+                spellcheck="false"
+                style="padding-right: 48px;">
+              <button 
+                type="button" 
+                class="password-toggle" 
+                aria-label="Toggle password visibility"
+                style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: none; border: none; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; font-size: 1rem;">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Touch-friendly Checkbox -->
+          <div class="form-group" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <label class="form-check" style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; user-select: none; margin-bottom: 0; min-height: 44px;">
+              <input type="checkbox" checked class="form-check-input" style="width: 19px; height: 19px; cursor: pointer; accent-color: var(--accent-gold);">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Remember this vault device</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-block btn-lg" style="height: 50px; font-size: 1rem; font-weight: 700; letter-spacing: 0.03em;">
+            <i class="fa-solid fa-arrow-right-to-bracket" style="margin-right: 8px;"></i> Access Cellar Account
+          </button>
+
+          <!-- 1-Tap Quick Fill Demo Pills for Mobile Testing -->
+          <div style="background-color: var(--bg-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-top: 1.25rem; border: 1px solid var(--border-light); text-align: center;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Quick Test Credentials (Tap to fill):</div>
+            <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+              <a href="../user/dashboard.html" class="quick-pill" style="text-decoration: none;" title="Direct Instant Access to Connoisseur Portal">
+                <i class="fa-solid fa-bolt" style="color: var(--accent-gold);"></i> Direct Connoisseur Access
+              </a>
+              <a href="../admin/dashboard.html" class="quick-pill" style="text-decoration: none;" title="Direct Instant Access to Cellar Master Admin">
+                <i class="fa-solid fa-shield" style="color: var(--primary);"></i> Direct Admin Access
+              </a>
+              <button type="button" class="quick-pill" onclick="document.getElementById('loginEmail').value='connoisseur@winecraft.com'; document.getElementById('loginPassword').value='VaultSecret2026!'; window.showToast('Loaded Connoisseur credentials', 'gold');">
+                <i class="fa-solid fa-user"></i> Autofill Form
+              </button>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
+            Don't have an allocation account? <a href="register.html" style="font-weight: 600; color: var(--primary); text-decoration: none;">Apply for Membership</a>
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+    <!-- Minimal Auth Footer -->
+    <footer class="auth-footer">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem;">
+        <span style="color: var(--status-success); display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-shield-halved"></i> 256-Bit SSL Encrypted
+        </span>
+        <span style="color: var(--text-light);">•</span>
+        <span>Biometric Passkey Ready</span>
+        <span style="color: var(--text-light);">•</span>
+        <a href="../index.html" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Cellar
+        </a>
+      </div>
+      <div>
+        &copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="toast-container"></div>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    // Store session on direct access link click
+    const directLinks = [
+      { id: 'appleSignInBtn', msg: 'Direct Access via Apple ID' },
+      { id: 'googleSignInBtn', msg: 'Direct Access via Google' },
+      { id: 'passkeySignInBtn', msg: 'Direct Access via Biometric Passkey' }
+    ];
+    directLinks.forEach(item => {
+      const el = document.getElementById(item.id);
+      if (el) {
+        el.addEventListener('click', () => {
+          localStorage.setItem('winecraft_user_logged_in', 'true');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

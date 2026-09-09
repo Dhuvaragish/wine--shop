@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cellar Checkout & Age Verification | Wine &amp; Craft</title>
+  <meta name="description" content="Wine &amp; Craft - Fine Wines, Rare Whiskies &amp; Artisanal Spirits">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logos/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="brand-logo" aria-label="Wine & Craft Home">
+          <img src="../assets/images/logos/logo.svg" alt="Wine & Craft Logo" id="siteLogo">
+        </a>
+
+        <ul class="nav-menu">
+                    <li class="nav-item-dropdown">
+            <a href="../index.html" class="nav-link">
+              Home <i class="fa-solid fa-chevron-down nav-chevron"></i>
+            </a>
+            <div class="home-dropdown">
+              <a href="../index.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <i class="fa-solid fa-wine-bottle"></i>
+                </div>
+                <div class="dropdown-item-info">
+                  <span class="dropdown-item-title">Home 1: Cellar &amp; Store</span>
+                  <span class="dropdown-item-desc">Luxury vintages, rare whiskies &amp; retail store</span>
+                </div>
+              </a>
+              <a href="../index-2.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <i class="fa-solid fa-cloud-bolt"></i>
+                </div>
+                <div class="dropdown-item-info">
+                  <span class="dropdown-item-title">Home 2: SaaS &amp; Agency</span>
+                  <span class="dropdown-item-desc">CellarOS platform &amp; digital growth studio</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="../pages/products.html" class="nav-link">Cellar Vault</a></li>
+          <li><a href="../pages/tasting-events.html" class="nav-link">Tastings &amp; Events</a></li>
+          <li><a href="../pages/gifting.html" class="nav-link ">Bespoke Gifting</a></li>
+          <li><a href="../pages/contact.html" class="nav-link ">Cellar Lounge &amp; Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="nav-action-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Direction"><i class="fa-solid fa-globe"></i></button>
+          <button class="nav-action-btn theme-toggle-btn" title="Toggle Theme" aria-label="Theme"><i class="fa-solid fa-moon"></i></button>
+          <a href="../user/dashboard.html" class="nav-action-btn" title="Connoisseur Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
+          <a href="../user/wishlist.html" class="nav-action-btn" title="Wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-counter wishlist-badge" style="display:none;">0</span></a>
+          <button class="nav-action-btn cart-toggle-btn" title="Cellar Cart" aria-label="Cart"><i class="fa-solid fa-wine-glass"></i><span class="badge-counter cart-badge" style="display:none;">0</span></button>
+          <a href="../pages/login.html" class="nav-login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span></a>
+          <button class="hamburger-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div style="background-color: var(--bg-subtle); padding: 2.5rem 0; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0;">Secure Cellar Checkout</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <form id="checkoutForm">
+        <div class="checkout-layout">
+          
+          <div>
+            <!-- Age Verification Declaration -->
+            <div style="background-color: var(--accent-gold-subtle); border: 1px solid var(--accent-gold); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 2rem;">
+              <label class="form-check" style="align-items: flex-start;">
+                <input type="checkbox" id="ageComplianceCheckbox" required class="form-check-input" style="margin-top: 3px;">
+                <span style="font-size: 0.875rem; color: var(--text-main);">
+                  <strong>Legal Age Affirmation (Required):</strong> I affirm that I am at least 21 years of age (or the legal drinking age in my jurisdiction) and agree that an adult signature with government-issued photo ID will be required upon courier delivery.
+                </span>
+              </label>
+            </div>
+
+            <!-- 1. Shipping Information -->
+            <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem; font-family: var(--font-serif);">1. Delivery &amp; Cellar Destination</h3>
+              <div class="form-grid-2col">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" required class="form-control" value="Arthur">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" required class="form-control" value="Pendelton">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Street Address</label>
+                <input type="text" required class="form-control" value="42 Grosvenor Square">
+              </div>
+              <div class="form-grid-3col">
+                <div class="form-group">
+                  <label class="form-label">City</label>
+                  <input type="text" required class="form-control" value="London">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Postcode</label>
+                  <input type="text" required class="form-control" value="W1K 2HP">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Country</label>
+                  <input type="text" required class="form-control" value="United Kingdom">
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Payment Method -->
+            <div class="card" style="padding: 2rem;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem; font-family: var(--font-serif);">2. Payment Method</h3>
+              <div class="form-group">
+                <label class="form-label">Cardholder Name</label>
+                <input type="text" required class="form-control" value="Lord Arthur Pendelton">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Card Number</label>
+                <input type="text" required class="form-control" placeholder="•••• •••• •••• 4821" value="4242 •••• •••• 8821">
+              </div>
+              <div class="form-grid-2col">
+                <div class="form-group">
+                  <label class="form-label">Expiry (MM/YY)</label>
+                  <input type="text" required class="form-control" value="11/28">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Security CVC</label>
+                  <input type="text" required class="form-control" value="891">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Order Review Column -->
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem; font-family: var(--font-serif); border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">Order Review</h3>
+            
+            <div id="checkoutOrderItems" style="margin-bottom: 1.5rem; max-height: 240px; overflow-y: auto;"></div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Subtotal:</span>
+                <strong id="checkoutSubtotal">$0.00</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Climate Shipping:</span>
+                <strong id="checkoutShipping">Complimentary</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Estimated Tax (8%):</span>
+                <strong id="checkoutTax">$0.00</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 1.25rem; font-family: var(--font-serif); border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                <span>Total Due:</span>
+                <strong id="checkoutTotal" style="color: var(--primary);">$0.00</strong>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block btn-lg">Place Cellar Order</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Confirmation Modal -->
+  <div id="orderConfirmationModal" class="modal-overlay">
+    <div class="modal-dialog" style="text-align: center; padding: 2.5rem 2rem;">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #E8F5E9; color: #2E7D32; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto;">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; font-family: var(--font-display);">Allocation Confirmed!</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Your order <strong id="modalOrderId">ORD-88219</strong> for <strong id="modalOrderTotal">$0.00</strong> has been placed in our climate vaults for packaging.
+      </p>
+      <a href="../user/orders.html" class="btn btn-gold btn-block">Track in Connoisseur Portal</a>
+    </div>
+  </div>
+
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/logos/logo.svg" alt="Wine & Craft" style="height: 44px; margin-bottom: 1rem;">
+          <p>Purveyors of rare vintage wines, single cask Scottish and Japanese whiskies, and small-batch artisanal spirits. Committed to authentic provenance and master sommelier curation.</p>
+                    <div class="footer-social-links">
+            <a href="https://www.instagram.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/wine-and-craft" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Cellar Vault</h4>
+          <ul class="footer-links">
+            <li><a href="../pages/products.html?category=wine">Bordeaux Grand Crus</a></li>
+            <li><a href="../pages/products.html?category=wine">Burgundy Pinot Noir</a></li>
+            <li><a href="../pages/products.html?category=whisky">Single Malt Scotch</a></li>
+            <li><a href="../pages/products.html?category=whisky">Japanese Whiskies</a></li>
+            <li><a href="../pages/products.html?category=spirits">Botanical Gins &amp; Agave</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Connoisseur Club</h4>
+          <ul class="footer-links">
+            <li><a href="../pages/tasting-events.html">Masterclass Tastings</a></li>
+            <li><a href="../pages/gifting.html">Corporate Gifting</a></li>
+            <li><a href="../user/dashboard.html">Connoisseur Portal</a></li>
+            <li><a href="../user/orders.html">Order History</a></li>
+            <li><a href="../admin/dashboard.html">Cellar Administration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Boutique Cellar</h4>
+          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color: var(--accent-gold); margin-right: 6px;"></i><a href="https://www.google.com/maps/search/?api=1&query=42+Grosvenor+Square%2C+Mayfair%2C+London+W1K+2HP%2C+United+Kingdom" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" title="Open in Google Maps" class="address-map-link">42 Grosvenor Square, Mayfair, London W1K 2HP</a>
+          </p>
+          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 0.75rem;">
+            <i class="fa-regular fa-clock" style="color: var(--accent-gold); margin-right: 6px;"></i>
+            Tue - Sat: 11:00 - 22:00
+          </p>
+          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-envelope" style="color: var(--accent-gold); margin-right: 6px;"></i>
+            <a href="mailto:sommelier@winecraft.com" style="color: inherit; text-decoration: none;" class="footer-contact-link">sommelier@winecraft.com</a>
+          </p>
+          <span class="badge badge-gold">Cellar Tours by Appointment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="../pages/contact.html" style="color: #7A7266;">Terms of Provenance</a>
+        <a href="../pages/contact.html" style="color: #7A7266;">Privacy &amp; Cellar Policy</a>
+        <a href="../pages/404.html" style="color: #7A7266;">Cellar Sitemap</a>
+      </div>
+    </div>
+
+    <div class="age-compliance-statement">
+      <div class="container">
+        WARNING: Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. You must be 21+ to purchase. Please drink responsibly.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.2rem; margin: 0; font-family: var(--font-serif);">
+        <i class="fa-solid fa-wine-glass" style="color: var(--accent-gold); margin-right: 8px;"></i>
+        Your Cellar Cart
+      </h3>
+      <button id="cartDrawerClose" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted);">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div id="cartDrawerItems" class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Cellar Subtotal:</span>
+        <span id="cartDrawerSubtotal" style="color: var(--primary);">$0.00</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="../pages/cart.html" class="btn btn-outline btn-block">Review Cart</a>
+        <a href="../pages/checkout.html" class="btn btn-gold btn-block">Checkout</a>
+      </div>
+    </div>
+  </div>
+  <div id="cartDrawerBackdrop" class="modal-overlay"></div>
+  <div class="toast-container"></div>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/js/wishlist.js"></script>
+  <script src="../assets/js/checkout.js"></script>
+</body>
+</html>

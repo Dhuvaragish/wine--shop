@@ -1,0 +1,477 @@
+/* ==========================================================================
+   Wine & Craft - Comprehensive Cross-Device Responsive Framework
+   Supports: 320px Mobile S, 375px/414px Mobile M/L, 768px/820px Tablets,
+             1024px/1280px Laptops, and 1440px+ Ultra-wide Displays
+   ========================================================================== */
+
+/* --- 1. Universal Responsive Utilities & Layout Helpers --- */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.table-responsive > table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Page Layout Grids (Fluid Desktop -> Tablet/Mobile Stacking) */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.product-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.event-details-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-grid-3col {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Mobile Filter Toggle Accordion Button */
+.mobile-filter-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+}
+
+.mobile-filter-toggle:hover,
+.mobile-filter-toggle.active {
+  border-color: var(--accent-gold);
+  color: var(--primary);
+  background-color: var(--bg-subtle);
+}
+
+.mobile-filter-toggle i.fa-chevron-down {
+  transition: transform var(--transition-base);
+  font-size: 0.85rem;
+}
+
+.mobile-filter-toggle.active i.fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Mobile Menu Backdrop Overlay */
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 18, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.mobile-menu-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- 2. Large Desktops & 4K Displays (>= 1400px) --- */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+/* --- 3. Laptops & Small Desktops (<= 1200px) --- */
+@media (max-width: 1200px) {
+  .cart-layout {
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+  }
+
+  .contact-layout {
+    gap: 2.5rem;
+  }
+
+  .product-details-layout,
+  .event-details-layout {
+    gap: 2.5rem;
+  }
+}
+
+/* --- 4. Tablets & Navigation Drawer Breakpoint (<= 1024px) --- */
+@media (max-width: 1024px) {
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 320px;
+    max-width: 85vw;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-surface);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+    border-right: 1px solid var(--border-color);
+    transition: left var(--transition-smooth);
+    z-index: 999;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .nav-menu .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-item-dropdown {
+    width: 100%;
+  }
+
+  .home-dropdown {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+    margin: 0.4rem 0;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  [dir="rtl"] .nav-menu {
+    left: auto;
+    right: -100%;
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+    transition: right var(--transition-smooth);
+  }
+
+  [dir="rtl"] .nav-menu.active {
+    right: 0;
+  }
+
+  .hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --- 5. Tablets & Collapsible Sidebar Breakpoint (<= 992px) --- */
+@media (max-width: 992px) {
+  /* Layout collapses to single column */
+  .catalog-layout,
+  .cart-layout,
+  .checkout-layout,
+  .contact-layout,
+  .product-details-layout,
+  .event-details-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Mobile Filter Accordion in Catalog */
+  .mobile-filter-toggle {
+    display: flex;
+  }
+
+  .catalog-sidebar {
+    display: none;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInCatalogFilter 0.3s ease;
+  }
+
+  .catalog-sidebar.active {
+    display: block;
+  }
+
+  @keyframes fadeInCatalogFilter {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Form Grids Stacking */
+  .form-grid-4col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* User & Admin Layout Stacking */
+  .user-layout {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .user-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .user-menu-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  /* Admin Sidebar Stacking */
+  .admin-sidebar {
+    position: fixed;
+    left: -260px;
+    height: 100vh;
+    z-index: 1050;
+    transition: left var(--transition-smooth);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .admin-sidebar.active {
+    left: 0;
+  }
+
+  [dir="rtl"] .admin-sidebar {
+    left: auto;
+    right: -260px;
+    transition: right var(--transition-smooth);
+  }
+
+  [dir="rtl"] .admin-sidebar.active {
+    right: 0;
+  }
+}
+
+/* --- 6. Mobile Landscape & Phablets (<= 768px) --- */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .page-banner {
+    padding: 3.25rem 0;
+  }
+
+  .hero-section-enhanced {
+    padding: 4.5rem 0 3.5rem 0;
+  }
+
+  .form-grid-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  /* Ticket Pass Stacking */
+  .ticket-pass {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .ticket-qr {
+    align-self: center;
+  }
+}
+
+/* --- 7. Mobile Portrait & Handheld Phones (<= 576px) --- */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .form-grid-2col,
+  .form-grid-4col {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-login-btn span {
+    display: none;
+  }
+
+  .nav-login-btn {
+    padding: 0 0.75rem;
+    height: 38px;
+    margin-left: 0.15rem;
+  }
+
+  .nav-actions {
+    gap: 0.35rem;
+  }
+
+  .nav-action-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  /* Touch Targets Guarantee (>= 44px) */
+  .btn {
+    min-height: 44px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .page-item .page-link {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  /* Checkout summary and cart adjustments */
+  .cart-table th,
+  .cart-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .order-summary-box {
+    padding: 1.25rem;
+  }
+}
+
+/* --- 8. Compact Mobile Screens (<= 420px down to 320px) --- */
+@media (max-width: 420px) {
+  .brand-logo img {
+    height: 34px;
+  }
+
+  .navbar {
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    gap: 0.2rem;
+  }
+
+  .nav-action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .nav-login-btn {
+    height: 36px;
+    padding: 0 0.6rem;
+  }
+
+  .hamburger-btn {
+    padding: 0.3rem;
+    font-size: 1.25rem;
+  }
+
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+    padding: 1.25rem;
+  }
+}
