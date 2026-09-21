@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   
@@ -11,228 +11,1263 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <!-- Mobile App Meta (iOS & Android) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Wine &amp; Craft">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#FAF8F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F0F12" media="(prefers-color-scheme: dark)">
+
+  <style>
+    /* ==========================================================================
+       Luxury Split-Screen Layout - Wine & Craft Connoisseur Registration
+       ========================================================================== */
+    :root {
+      --showcase-width: 46%;
+      --form-width: 54%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    .auth-split-wrapper {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      width: 100%;
+      position: relative;
+      background-color: var(--bg-body);
+      box-sizing: border-box;
+    }
+
+    /* ----------------------------------------------------
+       1. Left Showcase Panel (Cinematic Brand Atmosphere)
+       ---------------------------------------------------- */
+    .auth-showcase-panel {
+      flex: 0 0 var(--showcase-width);
+      width: var(--showcase-width);
+      position: relative;
+      background-image: 
+        linear-gradient(180deg, rgba(12, 10, 14, 0.55) 0%, rgba(10, 8, 12, 0.92) 100%),
+        radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.28) 0%, transparent 65%),
+        url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(2.5rem, 5vw, 4.5rem);
+      color: #FFFFFF;
+      overflow: hidden;
+      box-sizing: border-box;
+      border-right: 1px solid rgba(197, 160, 89, 0.25);
+    }
+
+    .auth-showcase-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(114, 47, 55, 0.45) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .auth-showcase-panel > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .showcase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .showcase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      background: rgba(197, 160, 89, 0.15);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      color: var(--accent-gold-light);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .showcase-badge i {
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+    }
+
+    .showcase-established {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .showcase-content {
+      margin: auto 0;
+      padding: 1rem 0 2rem 0;
+    }
+
+    .showcase-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+      line-height: 1.15;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .showcase-title span {
+      background: linear-gradient(135deg, #FFFFFF 20%, #E8D3A2 60%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .showcase-description {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 520px;
+      margin-bottom: 2.25rem;
+    }
+
+    /* Pillars / Privileges */
+    .showcase-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(25, 20, 26, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1.15rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all var(--transition-fast);
+    }
+
+    .pillar-item:hover {
+      background: rgba(25, 20, 26, 0.8);
+      border-color: rgba(197, 160, 89, 0.4);
+      transform: translateX(4px);
+    }
+
+    .pillar-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.25), rgba(114, 47, 55, 0.35));
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+
+    .pillar-text h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin: 0 0 0.2rem 0;
+      letter-spacing: 0.01em;
+    }
+
+    .pillar-text p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Sommelier Quote Card */
+    .showcase-quote {
+      background: rgba(15, 12, 17, 0.75);
+      border-left: 3px solid var(--accent-gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.1rem 1.35rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin-top: 0.5rem;
+    }
+
+    .showcase-quote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.96rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0 0 0.5rem 0;
+    }
+
+    .showcase-quote-author {
+      font-size: 0.76rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Telemetry stats */
+    .showcase-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.68);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.25rem;
+    }
+
+    /* ----------------------------------------------------
+       2. Right Application Portal Panel
+       ---------------------------------------------------- */
+    .auth-portal-panel {
+      flex: 0 0 var(--form-width);
+      width: var(--form-width);
+      min-height: 100vh;
+      min-height: 100dvh;
+      background-color: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+      box-sizing: border-box;
+      padding: clamp(1.75rem, 3.5vw, 3rem) clamp(1.5rem, 5vw, 4.5rem);
+      transition: background-color var(--transition-normal);
+      position: relative;
+    }
+
+    /* Portal Topbar: Logo + Controls */
+    .portal-topbar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      box-sizing: border-box;
+    }
+
+    .portal-brand {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .portal-brand img {
+      height: 42px;
+      width: auto;
+      display: block;
+      transition: opacity var(--transition-fast);
+    }
+
+    .portal-topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .nav-btn-action {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      background: var(--bg-body);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-xs);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-btn-action:hover {
+      border-color: var(--accent-gold);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn-return-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-return-link:hover {
+      color: var(--primary);
+      background-color: var(--bg-subtle);
+      border-color: var(--border-light);
+    }
+
+    /* Form Container */
+    .portal-content-box {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .portal-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .portal-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    [data-theme="dark"] .portal-header-badge {
+      color: var(--accent-gold);
+    }
+
+    .portal-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3vw, 2.35rem);
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.01em;
+    }
+
+    .portal-subtitle {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* SSO Buttons */
+    .portal-sso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .portal-sso-btn {
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .portal-sso-btn:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--accent-gold);
+      transform: translateY(-1px);
+    }
+
+    .portal-sso-apple {
+      background-color: #000000;
+      color: #FFFFFF;
+      border-color: #000000;
+    }
+
+    [data-theme="dark"] .portal-sso-apple {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+    }
+
+    .portal-sso-passkey {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.08), rgba(114, 47, 55, 0.06));
+      border: 1px dashed var(--accent-gold);
+      color: var(--text-main);
+    }
+
+    .portal-sso-passkey:hover {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.16), rgba(114, 47, 55, 0.12));
+      border-style: solid;
+    }
+
+    /* Divider */
+    .portal-divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 1.5rem 0;
+      color: var(--text-light);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .portal-divider::before,
+    .portal-divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .portal-divider span {
+      padding: 0 0.85rem;
+    }
+
+    /* 2-Column Form Fields */
+    .form-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    /* Form Fields with Icon Prefixes */
+    .auth-field-group {
+      margin-bottom: 1.15rem;
+    }
+
+    .auth-field-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .auth-field-label {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .auth-input-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .auth-input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 0.95rem;
+      pointer-events: none;
+      transition: color var(--transition-fast);
+      z-index: 2;
+    }
+
+    .auth-input-wrapper:focus-within .auth-input-icon {
+      color: var(--accent-gold);
+    }
+
+    .auth-input {
+      width: 100%;
+      height: 50px;
+      padding-left: 2.85rem;
+      padding-right: 1.25rem;
+      font-size: 16px !important; /* Eliminates iOS Safari viewport auto-zoom */
+      background-color: var(--bg-body);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      box-sizing: border-box;
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .auth-input:focus {
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px var(--accent-gold-subtle);
+      background-color: var(--bg-surface);
+    }
+
+    .auth-input.is-invalid {
+      border-color: var(--status-danger) !important;
+      box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15) !important;
+    }
+
+    .auth-input.is-valid {
+      border-color: var(--status-success) !important;
+    }
+
+    .auth-input-password {
+      padding-right: 3rem;
+    }
+
+    .auth-input.form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C5A059' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 1.25rem) center;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: color var(--transition-fast);
+      z-index: 2;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .password-toggle:hover {
+      color: var(--text-main);
+    }
+
+    /* Error Message Box */
+    .form-feedback-error {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--status-danger);
+      font-size: 0.82rem;
+      margin-top: 0.45rem;
+      padding: 0.45rem 0.75rem;
+      background-color: rgba(220, 53, 69, 0.08);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--status-danger);
+    }
+
+    /* Age Checkbox Row */
+    .remember-row {
+      display: flex;
+      align-items: flex-start;
+      margin: 1.25rem 0 1.5rem 0;
+    }
+
+    .remember-label {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .remember-checkbox {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      accent-color: var(--accent-gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Submit Button */
+    .btn-submit-portal {
+      width: 100%;
+      height: 52px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    /* Quick Test Demo Box */
+    .portal-quick-card {
+      background-color: var(--bg-body);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .quick-title {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .quick-pills-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0.35rem 0.75rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .quick-pill:hover {
+      border-color: var(--accent-gold);
+      color: var(--primary);
+      background-color: var(--accent-gold-subtle);
+      transform: translateY(-1px);
+    }
+
+    /* Login Prompt */
+    .portal-login-prompt {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .portal-login-prompt a {
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .portal-login-prompt a:hover {
+      color: var(--accent-gold-dark);
+      text-decoration: underline;
+    }
+
+    [data-theme="dark"] .portal-login-prompt a {
+      color: var(--accent-gold-light);
+    }
+
+    /* Portal Footer */
+    .portal-footer {
+      width: 100%;
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .portal-footer-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .security-badge {
+      color: var(--status-success);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       3. RTL (Right-to-Left) Styles for Split Screen
+       ========================================================================== */
+    [dir="rtl"] .auth-split-wrapper {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .auth-showcase-panel {
+      border-right: none;
+      border-left: 1px solid rgba(197, 160, 89, 0.25);
+    }
+
+    [dir="rtl"] .pillar-item:hover {
+      transform: translateX(-4px);
+    }
+
+    [dir="rtl"] .showcase-quote {
+      border-left: none;
+      border-right: 3px solid var(--accent-gold);
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    }
+
+    [dir="rtl"] .auth-input-icon {
+      left: auto;
+      right: 1rem;
+    }
+
+    [dir="rtl"] .auth-input {
+      padding-left: 1.25rem;
+      padding-right: 2.85rem;
+      text-align: right;
+    }
+
+    [dir="rtl"] .auth-input.form-select {
+      background-position: 1.25rem center;
+    }
+
+    [dir="rtl"] .auth-input-password {
+      padding-left: 3rem;
+      padding-right: 2.85rem;
+    }
+
+    [dir="rtl"] .password-toggle {
+      right: auto !important;
+      left: 4px !important;
+    }
+
+    [dir="rtl"] .form-feedback-error {
+      border-left: none;
+      border-right: 3px solid var(--status-danger);
+      text-align: right;
+    }
+
+    [dir="rtl"] .portal-topbar-actions {
+      flex-direction: row;
+    }
+
+    [dir="rtl"] .btn-return-link i {
+      transform: rotate(180deg);
+    }
+
+    [dir="rtl"] .btn-submit-portal i {
+      transform: rotate(180deg);
+    }
+
+    /* ==========================================================================
+       4. Responsive Media Queries (Tablets & Mobile <= 992px)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .auth-split-wrapper {
+        flex-direction: column !important;
+      }
+
+      .auth-showcase-panel {
+        flex: none;
+        width: 100%;
+        padding: 2.25rem 1.5rem;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+      }
+
+      .showcase-header {
+        margin-bottom: 1rem;
+      }
+
+      .showcase-content {
+        padding: 0.5rem 0 1rem 0;
+      }
+
+      .showcase-title {
+        font-size: 1.85rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .showcase-description {
+        font-size: 0.92rem;
+        margin-bottom: 0;
+      }
+
+      .showcase-pillars,
+      .showcase-quote,
+      .showcase-footer {
+        display: none; /* Keep mobile clean and focused on rapid application */
+      }
+
+      .auth-portal-panel {
+        flex: 1;
+        width: 100%;
+        min-height: auto;
+        padding: 2rem 1.25rem 2.5rem;
+      }
+
+      .portal-topbar {
+        margin-bottom: 1.5rem;
+      }
+
+      .portal-sso-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .form-grid-2col {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-showcase-panel {
+        padding: 1.5rem 1rem;
+      }
+
+      .auth-portal-panel {
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .portal-title {
+        font-size: 1.55rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header Navigation -->
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <a href="../index.html" class="brand-logo" aria-label="Wine & Craft Home">
+  <div class="auth-split-wrapper">
+    
+    <!-- ================================================================
+         1. LEFT SHOWCASE PANEL: Connoisseur Membership Privileges
+         ================================================================ -->
+    <aside class="auth-showcase-panel" aria-label="Wine & Craft Connoisseur Membership">
+      
+      <!-- Top Crest & Established Tag -->
+      <div class="showcase-header">
+        <div class="showcase-badge">
+          <i class="fa-solid fa-crown"></i>
+          <span>Connoisseur Membership</span>
+        </div>
+        <span class="showcase-established">Maison Fondée 1988</span>
+      </div>
+
+      <!-- Center Showcase Narrative -->
+      <div class="showcase-content">
+        <h1 class="showcase-title">
+          Step into an Elite Fellowship of <span>Wine Patrons</span>
+        </h1>
+        <p class="showcase-description">
+          A membership with Wine &amp; Craft unlocks climate-perfect bonded storage, guaranteed allocation rights for rare en primeur releases, and confidential master sommelier advisory.
+        </p>
+
+        <!-- 3 Luxury Privileges -->
+        <div class="showcase-pillars">
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <i class="fa-solid fa-temperature-arrow-down"></i>
+            </div>
+            <div class="pillar-text">
+              <h4>Bonded Vault Storage</h4>
+              <p>Constant 12.5°C &amp; 70% humidity control with cryptographic provenance verification for every bottle.</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="pillar-text">
+              <h4>Guaranteed Vintage Allocations</h4>
+              <p>Priority access to Bordeaux En Primeur, Burgundy Grand Crus, and allocated single-cask Japanese malts.</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div class="pillar-text">
+              <h4>Private Sommelier Consultations</h4>
+              <p>Tailored portfolio appraisals, optimum drinkability horizons, and private tasting masterclass invitations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sommelier Quote -->
+        <div class="showcase-quote">
+          <p>"A membership with Wine &amp; Craft opens cellar doors that remain forever sealed to the general public."</p>
+          <div class="showcase-quote-author">— Antoine de Montmorency, Master Sommelier</div>
+        </div>
+      </div>
+
+      <!-- Showcase Footer Stats -->
+      <div class="showcase-footer">
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Verified Provenance</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">48hr</div>
+          <div class="stat-label">Bonded Dispatch</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">21+</div>
+          <div class="stat-label">Strictly Age-Verified</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ================================================================
+         2. RIGHT APPLICATION PORTAL PANEL
+         ================================================================ -->
+    <main class="auth-portal-panel" id="mainRegisterPortal">
+      
+      <!-- Topbar: Logo, Return Link, RTL/LTR Direction, Dark/Light Mode -->
+      <header class="portal-topbar">
+        <a href="../index.html" class="portal-brand" aria-label="Wine & Craft Home" title="Return to Cellar Home">
           <img src="../assets/images/logos/logo.svg" alt="Wine & Craft Logo" id="siteLogo">
         </a>
 
-        <ul class="nav-menu">
-                    <li class="nav-item-dropdown">
-            <a href="../index.html" class="nav-link">
-              Home <i class="fa-solid fa-chevron-down nav-chevron"></i>
-            </a>
-            <div class="home-dropdown">
-              <a href="../index.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <i class="fa-solid fa-wine-bottle"></i>
-                </div>
-                <div class="dropdown-item-info">
-                  <span class="dropdown-item-title">Home 1: Cellar &amp; Store</span>
-                  <span class="dropdown-item-desc">Luxury vintages, rare whiskies &amp; retail store</span>
-                </div>
-              </a>
-              <a href="../index-2.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <i class="fa-solid fa-cloud-bolt"></i>
-                </div>
-                <div class="dropdown-item-info">
-                  <span class="dropdown-item-title">Home 2: SaaS &amp; Agency</span>
-                  <span class="dropdown-item-desc">CellarOS platform &amp; digital growth studio</span>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li><a href="../pages/products.html" class="nav-link">Cellar Vault</a></li>
-          <li><a href="../pages/tasting-events.html" class="nav-link">Tastings &amp; Events</a></li>
-          <li><a href="../pages/gifting.html" class="nav-link ">Bespoke Gifting</a></li>
-          <li><a href="../pages/contact.html" class="nav-link ">Cellar Lounge &amp; Contact</a></li>
-        </ul>
+        <div class="portal-topbar-actions">
+          <a href="../index.html" class="btn-return-link" title="Back to Main Cellar">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Return to Cellar</span>
+          </a>
 
-        <div class="nav-actions">
-          <button class="nav-action-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Direction"><i class="fa-solid fa-globe"></i></button>
-          <button class="nav-action-btn theme-toggle-btn" title="Toggle Theme" aria-label="Theme"><i class="fa-solid fa-moon"></i></button>
-          <a href="../user/dashboard.html" class="nav-action-btn" title="Connoisseur Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
-          <a href="../user/wishlist.html" class="nav-action-btn" title="Wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-counter wishlist-badge" style="display:none;">0</span></a>
-          <button class="nav-action-btn cart-toggle-btn" title="Cellar Cart" aria-label="Cart"><i class="fa-solid fa-wine-glass"></i><span class="badge-counter cart-badge" style="display:none;">0</span></button>
-          <a href="../pages/login.html" class="nav-login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span></a>
-          <button class="hamburger-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+          <!-- Direction (RTL / LTR) Toggle -->
+          <button class="nav-btn-action rtl-toggle-btn" type="button" title="Switch Direction (RTL / LTR)" aria-label="Toggle Direction">
+            <i class="fa-solid fa-right-left"></i>
+          </button>
+
+          <!-- Theme (Light / Dark Mode) Toggle -->
+          <button class="nav-btn-action theme-toggle-btn" type="button" title="Switch Theme (Dark / Light Mode)" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
         </div>
-      </nav>
-    </div>
-  </header>
+      </header>
 
-  <section class="section" style="min-height: 80vh; display: flex; align-items: center;">
-    <div class="container" style="max-width: 600px;">
-      <div class="card" style="padding: 2.5rem; box-shadow: var(--shadow-md);">
-        <div style="text-align: center; margin-bottom: 2rem;">
-          <span class="section-subtitle">Private Allocation Registry</span>
-          <h2 style="font-size: 1.8rem; margin-bottom: 0.25rem; font-family: var(--font-display);">Join Wine &amp; Craft</h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Exclusive vintage invitations, private sommelier consultations, and vault storage.</p>
+      <!-- Portal Form Card Box -->
+      <div class="portal-content-box">
+        
+        <div class="portal-header">
+          <div class="portal-header-badge">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <span>Private Allocation Registry</span>
+          </div>
+          <h2 class="portal-title">Apply for Membership</h2>
+          <p class="portal-subtitle">
+            Submit your credentials to establish your private cellar portfolio, allocation rights, and concierge storage.
+          </p>
         </div>
 
-        <form id="registerForm">
+        <!-- Direct Social & Biometric Registration Links -->
+        <div class="portal-sso-grid">
+          <a href="https://appleid.apple.com" target="_blank" rel="noopener noreferrer" class="portal-sso-btn portal-sso-apple" id="appleRegisterBtn" aria-label="Register with Apple ID" title="Direct Register with Apple ID">
+            <i class="fa-brands fa-apple" style="font-size: 1.15rem;"></i>
+            <span>Apple ID</span>
+          </a>
+
+          <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer" class="portal-sso-btn" id="googleRegisterBtn" aria-label="Register with Google" title="Direct Register with Google Account">
+            <i class="fa-brands fa-google" style="color: #4285F4; font-size: 1rem;"></i>
+            <span>Google</span>
+          </a>
+
+          <a href="https://passkeys.io" target="_blank" rel="noopener noreferrer" class="portal-sso-btn portal-sso-passkey" id="passkeyRegisterBtn" aria-label="Register with Passkey" title="Direct Register with Biometric Passkey">
+            <i class="fa-solid fa-fingerprint" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
+            <span>Biometric Passkey</span>
+          </a>
+        </div>
+
+        <div class="portal-divider">
+          <span>or apply with personal credentials</span>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="registerForm" autocomplete="on" novalidate>
+          
+          <!-- First & Last Name 2-Column Grid -->
           <div class="form-grid-2col">
-            <div class="form-group">
-              <label class="form-label">First Name</label>
-              <input type="text" required class="form-control" placeholder="Arthur">
+            <div class="auth-field-group">
+              <div class="auth-field-header">
+                <label class="auth-field-label" for="registerFirstName">First Name</label>
+              </div>
+              <div class="auth-input-wrapper">
+                <i class="fa-regular fa-user auth-input-icon"></i>
+                <input 
+                  type="text" 
+                  id="registerFirstName" 
+                  name="first_name"
+                  required 
+                  class="auth-input form-control" 
+                  placeholder="Arthur"
+                  autocomplete="given-name">
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label">Last Name</label>
-              <input type="text" required class="form-control" placeholder="Pendelton">
+
+            <div class="auth-field-group">
+              <div class="auth-field-header">
+                <label class="auth-field-label" for="registerLastName">Last Name</label>
+              </div>
+              <div class="auth-input-wrapper">
+                <i class="fa-regular fa-user auth-input-icon"></i>
+                <input 
+                  type="text" 
+                  id="registerLastName" 
+                  name="last_name"
+                  required 
+                  class="auth-input form-control" 
+                  placeholder="Pendelton"
+                  autocomplete="family-name">
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" required class="form-control" placeholder="connoisseur@winecraft.com">
+          <!-- Email Field -->
+          <div class="auth-field-group">
+            <div class="auth-field-header">
+              <label class="auth-field-label" for="registerEmail">Email Address</label>
+            </div>
+            <div class="auth-input-wrapper">
+              <i class="fa-regular fa-envelope auth-input-icon"></i>
+              <input 
+                type="email" 
+                id="registerEmail" 
+                name="email"
+                required 
+                class="auth-input form-control" 
+                placeholder="e.g. yourname@gmail.com"
+                inputmode="email"
+                autocomplete="username email"
+                autocapitalize="none"
+                autocorrect="off"
+                spellcheck="false">
+            </div>
+            <div id="registerEmailError" class="form-feedback-error" style="display: none;" role="alert"></div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Palate Preferences</label>
-            <select class="form-select">
-              <option>Bordeaux &amp; Burgundy Collector</option>
-              <option>Single Malt &amp; Rare Scotch Whiskies</option>
-              <option>Artisanal Agave &amp; Botanical Spirits</option>
-              <option>Comprehensive Cellar Portfolio</option>
-            </select>
+          <!-- Palate Preferences Select -->
+          <div class="auth-field-group">
+            <div class="auth-field-header">
+              <label class="auth-field-label" for="registerPalate">Palate Collector Preferences</label>
+            </div>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-wine-glass auth-input-icon"></i>
+              <select class="auth-input form-select" id="registerPalate" name="palate_preference">
+                <option value="bordeaux">Bordeaux Grand Crus &amp; Burgundy Collector</option>
+                <option value="whisky">Single Malt Scotch &amp; Rare Japanese Whiskies</option>
+                <option value="spirits">Artisanal Agave &amp; Botanical Spirits</option>
+                <option value="comprehensive" selected>Comprehensive Private Cellar Portfolio</option>
+              </select>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <div style="position: relative;">
-              <input type="password" required class="form-control" placeholder="Minimum 8 characters">
-              <span class="password-toggle" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);">
+          <!-- Password Field -->
+          <div class="auth-field-group">
+            <div class="auth-field-header">
+              <label class="auth-field-label" for="registerPassword">Password</label>
+            </div>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-lock auth-input-icon"></i>
+              <input 
+                type="password" 
+                id="registerPassword" 
+                name="password"
+                required 
+                class="auth-input auth-input-password form-control" 
+                placeholder="Minimum 8 characters"
+                autocomplete="new-password"
+                autocapitalize="none"
+                autocorrect="off"
+                spellcheck="false">
+              <button 
+                type="button" 
+                class="password-toggle" 
+                aria-label="Toggle password visibility">
                 <i class="fa-solid fa-eye"></i>
-              </span>
+              </button>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-check" style="align-items: flex-start;">
-              <input type="checkbox" id="registerAgeCheck" required class="form-check-input" style="margin-top: 3px;">
-              <span style="font-size: 0.85rem;">I declare that I am 21 years of age or older and agree to the Terms of Provenance.</span>
+          <!-- Confirm Password Field -->
+          <div class="auth-field-group">
+            <div class="auth-field-header">
+              <label class="auth-field-label" for="registerConfirmPassword">Confirm Password</label>
+            </div>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-shield-halved auth-input-icon"></i>
+              <input 
+                type="password" 
+                id="registerConfirmPassword" 
+                name="confirm_password"
+                required 
+                class="auth-input auth-input-password form-control" 
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+                autocapitalize="none"
+                autocorrect="off"
+                spellcheck="false">
+              <button 
+                type="button" 
+                class="password-toggle" 
+                aria-label="Toggle confirm password visibility">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+            <div id="registerConfirmPasswordError" class="form-feedback-error" style="display: none;" role="alert"></div>
+          </div>
+
+          <!-- Age Compliance Checkbox -->
+          <div class="remember-row">
+            <label class="remember-label">
+              <input type="checkbox" id="registerAgeCheck" required class="remember-checkbox">
+              <span>I declare that I am 21 years of age or older and agree to the <a href="contact.html" style="color: var(--accent-gold-dark); text-decoration: underline;">Terms of Provenance</a> and <a href="contact.html" style="color: var(--accent-gold-dark); text-decoration: underline;">Privacy Policy</a>.</span>
             </label>
           </div>
 
-          <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 1.5rem;">Create Connoisseur Account</button>
+          <!-- Submit CTA -->
+          <button type="submit" class="btn btn-gold btn-submit-portal" id="registerSubmitBtn">
+            <span>Create Connoisseur Account</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
 
-          <div style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
-            Already registered? <a href="login.html" style="font-weight: 600; color: var(--primary);">Sign In</a>
+          <!-- 1-Tap Quick Fill Demo Testing Pill -->
+          <div class="portal-quick-card">
+            <div class="quick-title">Quick Demo Testing (Tap to populate):</div>
+            <div class="quick-pills-row">
+              <button type="button" class="quick-pill" onclick="document.getElementById('registerFirstName').value='Arthur'; document.getElementById('registerLastName').value='Pendelton'; document.getElementById('registerEmail').value='connoisseur.vault@gmail.com'; document.getElementById('registerPassword').value='VaultPass2026!'; document.getElementById('registerConfirmPassword').value='VaultPass2026!'; document.getElementById('registerAgeCheck').checked=true; if(window.showToast) window.showToast('Loaded sample connoisseur applicant', 'gold');">
+                <i class="fa-solid fa-user-plus"></i> Autofill Application
+              </button>
+              <a href="login.html" class="quick-pill" title="Already have an account? Sign In">
+                <i class="fa-solid fa-key" style="color: var(--accent-gold);"></i> Connoisseur Sign In
+              </a>
+            </div>
           </div>
+
+          <!-- Sign In Prompt -->
+          <div class="portal-login-prompt">
+            Already possess an active allocation account? <a href="login.html">Sign In to Your Cellar</a>
+          </div>
+
         </form>
+
       </div>
-    </div>
-  </section>
 
-  
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-top">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="../assets/images/logos/logo.svg" alt="Wine & Craft" style="height: 44px; margin-bottom: 1rem;">
-          <p>Purveyors of rare vintage wines, single cask Scottish and Japanese whiskies, and small-batch artisanal spirits. Committed to authentic provenance and master sommelier curation.</p>
-                    <div class="footer-social-links">
-            <a href="https://www.instagram.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/company/wine-and-craft" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/@wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
+      <!-- Portal Footer -->
+      <footer class="portal-footer">
+        <div class="portal-footer-badges">
+          <span class="security-badge">
+            <i class="fa-solid fa-shield-halved"></i> 256-Bit SSL Encrypted
+          </span>
+          <span style="color: var(--text-light);">•</span>
+          <span>Biometric Passkey Enabled</span>
+          <span style="color: var(--text-light);">•</span>
+          <span>PCI-DSS Tier 1 Compliant</span>
         </div>
-
+        <div style="font-size: 0.72rem; color: var(--text-muted); max-width: 440px; margin: 0 auto; line-height: 1.4;">
+          Compliance Notice: Membership is strictly restricted to individuals 21 years of age or older. Valid government identification is required upon delivery of bonded allocations.
+        </div>
         <div>
-          <h4 class="footer-title">Cellar Vault</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/products.html?category=wine">Bordeaux Grand Crus</a></li>
-            <li><a href="../pages/products.html?category=wine">Burgundy Pinot Noir</a></li>
-            <li><a href="../pages/products.html?category=whisky">Single Malt Scotch</a></li>
-            <li><a href="../pages/products.html?category=whisky">Japanese Whiskies</a></li>
-            <li><a href="../pages/products.html?category=spirits">Botanical Gins &amp; Agave</a></li>
-          </ul>
+          &copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.
         </div>
+      </footer>
 
-        <div>
-          <h4 class="footer-title">Connoisseur Club</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/tasting-events.html">Masterclass Tastings</a></li>
-            <li><a href="../pages/gifting.html">Corporate Gifting</a></li>
-            <li><a href="../user/dashboard.html">Connoisseur Portal</a></li>
-            <li><a href="../user/orders.html">Order History</a></li>
-            <li><a href="../admin/dashboard.html">Cellar Administration</a></li>
-          </ul>
-        </div>
+    </main>
 
-        <div>
-          <h4 class="footer-title">Boutique Cellar</h4>
-          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: var(--accent-gold); margin-right: 6px;"></i><a href="https://www.google.com/maps/search/?api=1&query=42+Grosvenor+Square%2C+Mayfair%2C+London+W1K+2HP%2C+United+Kingdom" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" title="Open in Google Maps" class="address-map-link">42 Grosvenor Square, Mayfair, London W1K 2HP</a>
-          </p>
-          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 0.75rem;">
-            <i class="fa-regular fa-clock" style="color: var(--accent-gold); margin-right: 6px;"></i>
-            Tue - Sat: 11:00 - 22:00
-          </p>
-          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 1.25rem;">
-            <i class="fa-solid fa-envelope" style="color: var(--accent-gold); margin-right: 6px;"></i>
-            <a href="mailto:sommelier@winecraft.com" style="color: inherit; text-decoration: none;" class="footer-contact-link">sommelier@winecraft.com</a>
-          </p>
-          <span class="badge badge-gold">Cellar Tours by Appointment</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <div>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</div>
-      <div style="display: flex; gap: 1.5rem;">
-        <a href="../pages/contact.html" style="color: #7A7266;">Terms of Provenance</a>
-        <a href="../pages/contact.html" style="color: #7A7266;">Privacy &amp; Cellar Policy</a>
-        <a href="../pages/404.html" style="color: #7A7266;">Cellar Sitemap</a>
-      </div>
-    </div>
-
-    <div class="age-compliance-statement">
-      <div class="container">
-        WARNING: Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. You must be 21+ to purchase. Please drink responsibly.
-      </div>
-    </div>
-  </footer>
-
-  <!-- Slide-out Cart Drawer -->
-  <div id="cartDrawer" class="cart-drawer">
-    <div class="cart-drawer-header">
-      <h3 style="font-size: 1.2rem; margin: 0; font-family: var(--font-serif);">
-        <i class="fa-solid fa-wine-glass" style="color: var(--accent-gold); margin-right: 8px;"></i>
-        Your Cellar Cart
-      </h3>
-      <button id="cartDrawerClose" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted);">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-    <div id="cartDrawerItems" class="cart-drawer-body"></div>
-    <div class="cart-drawer-footer">
-      <div class="cart-subtotal-row">
-        <span>Cellar Subtotal:</span>
-        <span id="cartDrawerSubtotal" style="color: var(--primary);">$0.00</span>
-      </div>
-      <div style="display: flex; gap: 0.75rem;">
-        <a href="../pages/cart.html" class="btn btn-outline btn-block">Review Cart</a>
-        <a href="../pages/checkout.html" class="btn btn-gold btn-block">Checkout</a>
-      </div>
-    </div>
   </div>
-  <div id="cartDrawerBackdrop" class="modal-overlay"></div>
+
   <div class="toast-container"></div>
   <script src="../assets/js/theme.js"></script>
   <script src="../assets/js/rtl.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/cart.js"></script>
-  <script src="../assets/js/wishlist.js"></script>
   <script src="../assets/js/auth.js"></script>
+  <script>
+    // Store session on direct access link click
+    const directLinks = [
+      { id: 'appleRegisterBtn', msg: 'Direct Access via Apple ID' },
+      { id: 'googleRegisterBtn', msg: 'Direct Access via Google' },
+      { id: 'passkeyRegisterBtn', msg: 'Direct Access via Biometric Passkey' }
+    ];
+    directLinks.forEach(item => {
+      const el = document.getElementById(item.id);
+      if (el) {
+        el.addEventListener('click', () => {
+          localStorage.setItem('winecraft_user_logged_in', 'true');
+        });
+      }
+    });
+  </script>
 </body>
 </html>

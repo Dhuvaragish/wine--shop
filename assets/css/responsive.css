@@ -167,8 +167,8 @@
   }
 }
 
-/* --- 4. Tablets & Navigation Drawer Breakpoint (<= 1024px) --- */
-@media (max-width: 1024px) {
+/* --- 4. Tablets & Navigation Drawer Breakpoint (<= 1120px) --- */
+@media (max-width: 1120px) {
   .nav-menu {
     position: fixed;
     top: var(--header-height);
@@ -400,6 +400,11 @@
     padding: 0 0.75rem;
     height: 38px;
     margin-left: 0.15rem;
+  }
+
+  [dir="rtl"] .nav-login-btn {
+    margin-left: 0;
+    margin-right: 0.15rem;
   }
 
   .nav-actions {

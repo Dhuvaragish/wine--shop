@@ -11,19 +11,20 @@ Wine & Craft is an ultra-premium, responsive HTML5/CSS3/JavaScript multipurpose 
 - Interactive Wine & Spirits Catalog (live search, category filter, price slider, sorting)
 - Sommelier Flavor Profile & Tasting Notes (intensity bars, pairings, nose, palate, finish)
 - Masterclass Tasting Reservation Engine with digital ticket generation
+- Cellar Journal & Editorial Blog (curated vintage harvest analyses, category filters, live search, comments engine, article detail viewer)
 - Customer Connoisseur Portal (9 integrated user pages)
 - Cellar & Store Administration Dashboard (14 management screens with Chart.js analytics)
-- Structured JSON Datasets (products.json, categories.json, events.json, users.json)
+- Structured JSON Datasets (products.json, categories.json, events.json, users.json, blogs.json)
 
 ## Directory Structure
-- index.html: Luxury Cellar & Store Landing Page (Home 1)
+- index.html: Luxury Cellar & Store Landing Page (Home 1 with featured Cellar Journal blog section)
 - index-2.html: CellarOS WineTech SaaS & Creative Digital Agency Landing Page (Home 2)
-- pages/: Storefront (products, product-details, tasting-events, event-details, gifting, contact, cart, checkout, login, register, 404)
+- pages/: Storefront (products, product-details, tasting-events, event-details, gifting, blog, blog-details, contact, cart, checkout, login, register, 404)
 - user/: Connoisseur Portal (dashboard, profile, orders, order-details, wishlist, addresses, events, notifications, settings)
 - admin/: Store Administration (dashboard, products, add-product, edit-product, categories, orders, customers, inventory, events, gifts, coupons, reviews, enquiries, reports, settings)
-- assets/css/: Core CSS, Dark Mode, RTL, Responsive, User & Admin Dashboard styles
-- assets/js/: Theme, RTL, Cart, Wishlist, Catalog, Checkout, Events, Auth, User & Admin controllers
-- data/: Complete mock datasets for products, categories, events, and users
+- assets/css/: Core CSS, Dark Mode, RTL, Responsive, Blog, User & Admin Dashboard styles
+- assets/js/: Theme, RTL, Cart, Wishlist, Catalog, Checkout, Events, Blog, Auth, User & Admin controllers
+- data/: Complete mock datasets for products, categories, events, users, and blogs
 
 ## Getting Started
 Open index.html directly in any modern browser, or run a local static web server.

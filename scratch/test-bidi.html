@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Bidi Test</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #111;
+    color: #eee;
+    padding: 30px;
+  }
+  .test-case {
+    background: #222;
+    border: 1px solid #444;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+  }
+  h2 { color: #d4af37; margin-top: 0; }
+  p { font-size: 18px; margin: 8px 0; }
+
+  /* Current behavior */
+  .current {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Candidate 1: unicode-bidi plaintext */
+  .candidate-plaintext p,
+  .candidate-plaintext h2 {
+    unicode-bidi: plaintext;
+    text-align: right;
+  }
+
+  /* Candidate 2: unicode-bidi isolate */
+  .candidate-isolate p,
+  .candidate-isolate h2 {
+    unicode-bidi: isolate;
+    text-align: right;
+  }
+
+  /* Candidate 3: direction ltr + text-align right */
+  .candidate-ltr-right p,
+  .candidate-ltr-right h2 {
+    direction: ltr;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+  <div class="test-case current">
+    <h2>1. Current RTL (Broken Punctuation)</h2>
+    <p>Welcome to Wine & Craft!</p>
+    <p>Sign in to your cellar.</p>
+    <p>Are you 21 years of age?</p>
+    <p>Cellar Selection (Special Edition)</p>
+    <p>256-Bit SSL Encrypted &bull; Biometric Passkey Enabled</p>
+    <p>&copy; 2026 Wine & Craft Ltd. All rights reserved.</p>
+  </div>
+
+  <div class="test-case candidate-plaintext">
+    <h2>2. Candidate A: unicode-bidi: plaintext + text-align: right</h2>
+    <p>Welcome to Wine & Craft!</p>
+    <p>Sign in to your cellar.</p>
+    <p>Are you 21 years of age?</p>
+    <p>Cellar Selection (Special Edition)</p>
+    <p>256-Bit SSL Encrypted &bull; Biometric Passkey Enabled</p>
+    <p>&copy; 2026 Wine & Craft Ltd. All rights reserved.</p>
+  </div>
+
+  <div class="test-case candidate-isolate">
+    <h2>3. Candidate B: unicode-bidi: isolate + text-align: right</h2>
+    <p>Welcome to Wine & Craft!</p>
+    <p>Sign in to your cellar.</p>
+    <p>Are you 21 years of age?</p>
+    <p>Cellar Selection (Special Edition)</p>
+    <p>256-Bit SSL Encrypted &bull; Biometric Passkey Enabled</p>
+    <p>&copy; 2026 Wine & Craft Ltd. All rights reserved.</p>
+  </div>
+
+  <div class="test-case candidate-ltr-right">
+    <h2>4. Candidate C: direction: ltr + text-align: right</h2>
+    <p>Welcome to Wine & Craft!</p>
+    <p>Sign in to your cellar.</p>
+    <p>Are you 21 years of age?</p>
+    <p>Cellar Selection (Special Edition)</p>
+    <p>256-Bit SSL Encrypted &bull; Biometric Passkey Enabled</p>
+    <p>&copy; 2026 Wine & Craft Ltd. All rights reserved.</p>
+  </div>
+</body>
+</html>

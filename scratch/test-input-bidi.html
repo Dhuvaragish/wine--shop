@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { background: #111; color: white; padding: 20px; font-family: sans-serif; direction: rtl; }
+  .box { margin-bottom: 20px; }
+  input { width: 350px; padding: 8px; margin: 4px 0; background: #222; border: 1px solid #555; color: white; }
+
+  .test-plain input {
+    unicode-bidi: plaintext;
+    text-align: right;
+  }
+  .test-plain input::placeholder {
+    direction: ltr;
+    text-align: right;
+  }
+
+  .test-auto input {
+    direction: ltr;
+    text-align: right;
+  }
+  .test-auto input::placeholder {
+    direction: ltr;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h3>Current:</h3>
+    <input placeholder="e.g. sommelier@winecraft.com...">
+    <input value="VaultPass2026!">
+    <input value="+1 (555) 019-2834">
+  </div>
+
+  <div class="box test-plain">
+    <h3>With test-plain:</h3>
+    <input placeholder="e.g. sommelier@winecraft.com...">
+    <input value="VaultPass2026!">
+    <input value="+1 (555) 019-2834">
+  </div>
+
+  <div class="box test-auto">
+    <h3>With test-auto (direction: ltr; text-align: right):</h3>
+    <input placeholder="e.g. sommelier@winecraft.com...">
+    <input value="VaultPass2026!">
+    <input value="+1 (555) 019-2834">
+  </div>
+</body>
+</html>

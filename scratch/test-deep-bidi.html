@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Deep BiDi Comparison</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0f0c13;
+    color: #f0f0f0;
+    padding: 30px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .col {
+    background: #1a1622;
+    border: 1px solid #362d45;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  h2 { font-size: 1.1rem; color: #d4af37; border-bottom: 1px solid #362d45; padding-bottom: 8px; margin-top: 0; }
+  .item { margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+  .label { font-size: 0.75rem; color: #8c8299; text-transform: uppercase; margin-bottom: 4px; }
+  input { width: 100%; padding: 8px; background: #252030; border: 1px solid #473a5a; color: white; border-radius: 4px; box-sizing: border-box; }
+
+  /* 1. CURRENT: pure dir=rtl */
+  .col-current {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* 2. PLAINTEXT: unicode-bidi plaintext */
+  .col-plaintext {
+    direction: rtl;
+    text-align: right;
+  }
+  .col-plaintext p,
+  .col-plaintext h1, .col-plaintext h2, .col-plaintext h3, .col-plaintext h4,
+  .col-plaintext span, .col-plaintext a, .col-plaintext div, .col-plaintext input {
+    unicode-bidi: plaintext;
+    text-align: right;
+  }
+
+  /* 3. LTR TEXT ENGINE (LTR inline direction + RTL layout right-align) */
+  .col-ltr-engine {
+    direction: rtl;
+    text-align: right;
+  }
+  .col-ltr-engine p,
+  .col-ltr-engine h1, .col-ltr-engine h2, .col-ltr-engine h3, .col-ltr-engine h4,
+  .col-ltr-engine .text-content,
+  .col-ltr-engine .prompt-box,
+  .col-ltr-engine .breadcrumbs,
+  .col-ltr-engine .footer-badges,
+  .col-ltr-engine .quote-box {
+    direction: ltr;
+    text-align: right;
+    unicode-bidi: embed;
+  }
+  .col-ltr-engine input {
+    direction: ltr;
+    text-align: right;
+  }
+  .col-ltr-engine input::placeholder {
+    direction: ltr;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <!-- COL 1: Current RTL -->
+    <div class="col col-current">
+      <h2>1. Current RTL (Unfixed)</h2>
+      
+      <div class="item">
+        <div class="label">Sentence with period</div>
+        <p>Curated Vintages. Legendary Terroirs. Artisanal Craft.</p>
+      </div>
+
+      <div class="item">
+        <div class="label">Question with link</div>
+        <div class="prompt-box">
+          Don't possess a private allocation account? <a href="#" style="color:#d4af37">Apply for Membership</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Breadcrumbs with slashes</div>
+        <div class="breadcrumbs">
+          <a href="#" style="color:#aaa">Home</a> / <a href="#" style="color:#aaa">Cellar Vault</a> / <span style="color:#d4af37">Grand Cru</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Badges with bullets</div>
+        <div class="footer-badges">
+          <span>256-Bit SSL Encrypted</span> &bull; <span>Biometric Passkey Enabled</span> &bull; <span>PCI-DSS Tier 1 Compliant</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Input placeholder</div>
+        <input placeholder="e.g., Margaux, Islay, Mezcal...">
+      </div>
+
+      <div class="item">
+        <div class="label">Copyright &amp; Year</div>
+        <p>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</p>
+      </div>
+
+      <div class="item">
+        <div class="label">Parentheses &amp; phone</div>
+        <p>Cellar Concierge: +1 (555) 019-2834 (Toll Free)</p>
+      </div>
+    </div>
+
+    <!-- COL 2: Plaintext -->
+    <div class="col col-plaintext">
+      <h2>2. unicode-bidi: plaintext</h2>
+      
+      <div class="item">
+        <div class="label">Sentence with period</div>
+        <p>Curated Vintages. Legendary Terroirs. Artisanal Craft.</p>
+      </div>
+
+      <div class="item">
+        <div class="label">Question with link</div>
+        <div class="prompt-box">
+          Don't possess a private allocation account? <a href="#" style="color:#d4af37">Apply for Membership</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Breadcrumbs with slashes</div>
+        <div class="breadcrumbs">
+          <a href="#" style="color:#aaa">Home</a> / <a href="#" style="color:#aaa">Cellar Vault</a> / <span style="color:#d4af37">Grand Cru</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Badges with bullets</div>
+        <div class="footer-badges">
+          <span>256-Bit SSL Encrypted</span> &bull; <span>Biometric Passkey Enabled</span> &bull; <span>PCI-DSS Tier 1 Compliant</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Input placeholder</div>
+        <input placeholder="e.g., Margaux, Islay, Mezcal...">
+      </div>
+
+      <div class="item">
+        <div class="label">Copyright &amp; Year</div>
+        <p>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</p>
+      </div>
+
+      <div class="item">
+        <div class="label">Parentheses &amp; phone</div>
+        <p>Cellar Concierge: +1 (555) 019-2834 (Toll Free)</p>
+      </div>
+    </div>
+
+    <!-- COL 3: LTR Engine -->
+    <div class="col col-ltr-engine">
+      <h2>3. LTR Text Direction + Right-Align</h2>
+      
+      <div class="item">
+        <div class="label">Sentence with period</div>
+        <p>Curated Vintages. Legendary Terroirs. Artisanal Craft.</p>
+      </div>
+
+      <div class="item">
+        <div class="label">Question with link</div>
+        <div class="prompt-box">
+          Don't possess a private allocation account? <a href="#" style="color:#d4af37">Apply for Membership</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Breadcrumbs with slashes</div>
+        <div class="breadcrumbs">
+          <a href="#" style="color:#aaa">Home</a> / <a href="#" style="color:#aaa">Cellar Vault</a> / <span style="color:#d4af37">Grand Cru</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Badges with bullets</div>
+        <div class="footer-badges">
+          <span>256-Bit SSL Encrypted</span> &bull; <span>Biometric Passkey Enabled</span> &bull; <span>PCI-DSS Tier 1 Compliant</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Input placeholder</div>
+        <input placeholder="e.g., Margaux, Islay, Mezcal...">
+      </div>
+
+      <div class="item">
+        <div class="label">Copyright &amp; Year</div>
+        <p>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</p>
+      </div>
+
+      <div class="item">
+        <div class="label">Parentheses &amp; phone</div>
+        <p>Cellar Concierge: +1 (555) 019-2834 (Toll Free)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

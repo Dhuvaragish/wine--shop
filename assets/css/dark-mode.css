@@ -56,16 +56,15 @@
   color: #FBE7A1;
   background-color: rgba(212, 175, 55, 0.12);
   border-color: rgba(212, 175, 55, 0.45);
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="dark"] .nav-link.active {
   color: #FBE7A1;
   font-weight: 600;
-  background-color: rgba(212, 175, 55, 0.18);
+  background-color: rgba(212, 175, 55, 0.14);
   border-color: var(--accent-gold);
-  box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.22);
 }
 
 /* Home Dropdown - Dark Theme */
@@ -119,7 +118,6 @@
   border-color: rgba(212, 175, 55, 0.4);
   color: #FBE7A1;
   box-shadow: 0 0 14px rgba(212, 175, 55, 0.18);
-  transform: translateY(-1px);
 }
 
 [data-theme="dark"] .badge-counter {
@@ -139,7 +137,6 @@
 [data-theme="dark"] .nav-login-btn:hover {
   background: linear-gradient(135deg, #FBE7A1 0%, #D4AF37 100%);
   box-shadow: 0 0 24px rgba(212, 175, 55, 0.48);
-  transform: translateY(-1px);
 }
 
 [data-theme="dark"] .hamburger-btn {
@@ -249,3 +246,29 @@
   border-top-color: rgba(255, 255, 255, 0.05);
   color: #7E786E;
 }
+
+/* Dark Theme Form Validation States */
+[data-theme="dark"] .form-control.is-invalid {
+  border-color: #EF4444 !important;
+  background-color: rgba(239, 68, 68, 0.08) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+[data-theme="dark"] .form-control.is-valid {
+  border-color: #22C55E !important;
+  background-color: rgba(34, 197, 94, 0.08) !important;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2) !important;
+}
+
+[data-theme="dark"] .form-feedback-error {
+  color: #FCA5A5;
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+[data-theme="dark"] .form-feedback-success {
+  color: #86EFAC;
+  background-color: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+

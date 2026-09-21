@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Components Bidi Test</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0b0e;
+    color: #eee;
+    padding: 30px;
+    direction: rtl;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .box {
+    background: #1a161f;
+    border: 1px solid #332b3d;
+    padding: 24px;
+    border-radius: 12px;
+  }
+  h3 { color: #d4af37; margin-top: 0; font-size: 1.2rem; }
+  
+  .btn-sample {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #722f37;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 6px 0;
+  }
+  .badge-sample {
+    display: inline-block;
+    background: #2a2035;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 4px;
+  }
+  .input-sample {
+    width: 100%;
+    padding: 10px 14px;
+    background: #120e16;
+    border: 1px solid #443852;
+    color: white;
+    border-radius: 6px;
+    margin: 6px 0;
+    box-sizing: border-box;
+  }
+  .error-sample {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin: 6px 0;
+  }
+
+  /* --- Plaintext bidi rules --- */
+  .fixed,
+  .fixed p,
+  .fixed h1, .fixed h2, .fixed h3, .fixed h4, .fixed h5, .fixed h6,
+  .fixed span,
+  .fixed a,
+  .fixed button,
+  .fixed label,
+  .fixed li,
+  .fixed blockquote,
+  .fixed input,
+  .fixed .badge-sample,
+  .fixed .error-sample {
+    unicode-bidi: plaintext;
+    text-align: right;
+  }
+  /* Inline elements that shouldn't break flex layout */
+  .fixed .btn-sample {
+    unicode-bidi: plaintext;
+  }
+  .fixed .btn-sample i {
+    unicode-bidi: normal;
+  }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <!-- Unfixed Current -->
+    <div class="box">
+      <h3>Current RTL (Punctuation Mismatch)</h3>
+      <p>Heritage, Rare Vintages &amp; Artisanal Spirits.</p>
+      <p>Are you at least 21 years of age?</p>
+      <p>Phone: +1 (555) 019-2834 (Toll Free)</p>
+      <p>Vintage 2018 (Napa Valley, CA) &bull; 750ml</p>
+      <p>&copy; 2026 Wine &amp; Craft Ltd. All rights reserved.</p>
+      <div>
+        <span class="badge-sample">Special Edition!</span>
+        <span class="badge-sample">100% Certified</span>
+        <span class="badge-sample">$1,450.00 / bot.</span>
+      </div>
+      <div style="margin: 12px 0;">
+        <a href="#" class="btn-sample"><i class="fa-solid fa-wine-glass"></i> Explore Cellar Reserve!</a>
+        <a href="#" class="btn-sample">Sign In <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg);"></i></a>
+      </div>
+      <input class="input-sample" value="connoisseur@winecraft.com (Registered)">
+      <div class="error-sample">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Passwords do not match. Please ensure both match!</span>
+      </div>
+    </div>
+
+    <!-- Fixed With Plaintext Rules -->
+    <div class="box fixed">
+      <h3>Fixed RTL (Punctuation Perfectly Aligned)</h3>
+      <p>Heritage, Rare Vintages &amp; Artisanal Spirits.</p>
+      <p>Are you at least 21 years of age?</p>
+      <p>Phone: +1 (555) 019-2834 (Toll Free)</p>
+      <p>Vintage 2018 (Napa Valley, CA) &bull; 750ml</p>
+      <p>&copy; 2026 Wine &amp; Craft Ltd. All rights reserved.</p>
+      <div>
+        <span class="badge-sample">Special Edition!</span>
+        <span class="badge-sample">100% Certified</span>
+        <span class="badge-sample">$1,450.00 / bot.</span>
+      </div>
+      <div style="margin: 12px 0;">
+        <a href="#" class="btn-sample"><i class="fa-solid fa-wine-glass"></i> Explore Cellar Reserve!</a>
+        <a href="#" class="btn-sample">Sign In <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg);"></i></a>
+      </div>
+      <input class="input-sample" value="connoisseur@winecraft.com (Registered)">
+      <div class="error-sample">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Passwords do not match. Please ensure both match!</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

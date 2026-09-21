@@ -7,6 +7,116 @@
   text-align: right;
 }
 
+/* ==========================================================================
+   Bidirectional Typography & Natural Punctuation Engine
+   Maintains grammatical punctuation position (., !, ?, :, (), "", •, %, +, -)
+   and natural reading order for text content in RTL layout mode.
+   ========================================================================== */
+
+/* Universal Bidirectional Plaintext Isolation for Content & Typography */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] a,
+[dir="rtl"] li,
+[dir="rtl"] dt,
+[dir="rtl"] dd,
+[dir="rtl"] blockquote,
+[dir="rtl"] figcaption,
+[dir="rtl"] label,
+[dir="rtl"] button,
+[dir="rtl"] td,
+[dir="rtl"] th,
+[dir="rtl"] small,
+[dir="rtl"] strong,
+[dir="rtl"] b,
+[dir="rtl"] em,
+[dir="rtl"] .badge,
+[dir="rtl"] .pill,
+[dir="rtl"] .quick-pill,
+[dir="rtl"] .price,
+[dir="rtl"] .card-title,
+[dir="rtl"] .card-text,
+[dir="rtl"] .section-desc,
+[dir="rtl"] .hero-subtitle,
+[dir="rtl"] .showcase-quote,
+[dir="rtl"] .auth-quote,
+[dir="rtl"] .pillar-text,
+[dir="rtl"] .pillar-text p,
+[dir="rtl"] .pillar-text h4,
+[dir="rtl"] .form-label,
+[dir="rtl"] .form-feedback-error,
+[dir="rtl"] .form-feedback-success,
+[dir="rtl"] .toast-message,
+[dir="rtl"] .toast,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .dropdown-item-title,
+[dir="rtl"] .dropdown-item-desc {
+  unicode-bidi: plaintext;
+}
+
+/* Specific phrase blocks containing inline text and links */
+[dir="rtl"] .portal-login-prompt,
+[dir="rtl"] .portal-register-prompt,
+[dir="rtl"] .quick-title,
+[dir="rtl"] .portal-footer > div {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+/* Breadcrumbs: preserve hierarchical slash/caret navigation flow */
+[dir="rtl"] .breadcrumbs,
+[dir="rtl"] .breadcrumb,
+[dir="rtl"] .breadcrumb-item {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+/* Trust markers, security badges and bullet-separated footer metadata */
+[dir="rtl"] .portal-footer-badges,
+[dir="rtl"] .footer-badges,
+[dir="rtl"] .security-badge {
+  direction: ltr;
+  text-align: center;
+  unicode-bidi: embed;
+}
+
+/* Inputs, Textareas, and Dropdowns */
+[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]),
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  unicode-bidi: plaintext;
+  text-align: right;
+}
+
+/* Placeholder text: keep ellipsis (...) and examples naturally formatted */
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+/* Telephony, emails, URLs, credentials, and code blocks strictly LTR */
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="url"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] code,
+[dir="rtl"] pre,
+[dir="rtl"] .ltr-text {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
 [dir="rtl"] .home-dropdown {
   left: auto;
   right: 0;
@@ -23,12 +133,12 @@
 
 [dir="rtl"] .badge-counter {
   right: auto;
-  left: 2px;
+  left: 1px;
 }
 
 [dir="rtl"] .nav-login-btn {
   margin-left: 0;
-  margin-right: 0.35rem;
+  margin-right: 0.25rem;
 }
 
 [dir="rtl"] .nav-login-btn:hover i {
@@ -87,5 +197,88 @@
 
 [dir="rtl"] .fa-arrow-left,
 [dir="rtl"] .fa-chevron-left {
+  transform: rotate(180deg);
+}
+
+/* --- RTL Form & Auth Adjustments --- */
+[dir="rtl"] .form-label {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-card,
+[dir="rtl"] .card {
+  text-align: right;
+}
+
+[dir="rtl"] .password-toggle {
+  right: auto !important;
+  left: 12px !important;
+}
+
+[dir="rtl"] .ios-input[type="password"],
+[dir="rtl"] input[type="password"] {
+  padding-right: 1rem !important;
+  padding-left: 2.75rem !important;
+}
+
+[dir="rtl"] .form-check {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+[dir="rtl"] .form-check-input {
+  margin-left: 0.6rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .form-feedback-error,
+[dir="rtl"] .form-feedback-success {
+  text-align: right;
+  flex-direction: row;
+}
+
+[dir="rtl"] .sso-grid .btn-sso {
+  flex-direction: row;
+}
+
+/* Split-Screen Auth Portal RTL */
+[dir="rtl"] .auth-split-wrapper {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .auth-showcase-panel {
+  border-right: none;
+  border-left: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+[dir="rtl"] .showcase-quote {
+  border-left: none;
+  border-right: 3px solid var(--accent-gold);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+[dir="rtl"] .auth-input-icon {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .auth-input {
+  padding-left: 1.25rem;
+  padding-right: 2.85rem;
+  text-align: right;
+}
+
+[dir="rtl"] .auth-input-password {
+  padding-left: 3rem;
+  padding-right: 2.85rem;
+}
+
+[dir="rtl"] .auth-input.form-select {
+  background-position: 1.25rem center;
+}
+
+[dir="rtl"] .btn-return-link i,
+[dir="rtl"] .btn-submit-portal i {
   transform: rotate(180deg);
 }

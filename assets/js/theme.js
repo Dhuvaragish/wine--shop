@@ -35,19 +35,25 @@
   }
 
   function updateThemeLogos(theme) {
+    const dir = document.documentElement.getAttribute('dir') || 'ltr';
+    const isRtl = dir === 'rtl';
+    const isDark = theme === 'dark';
+
+    let targetName = 'logo.svg';
+    if (isRtl && isDark) {
+      targetName = 'logo-rtl-dark.svg';
+    } else if (isRtl) {
+      targetName = 'logo-rtl.svg';
+    } else if (isDark) {
+      targetName = 'logo-dark.svg';
+    }
+
     const logos = document.querySelectorAll('#siteLogo, .brand-logo img, .footer-brand img');
     logos.forEach(logo => {
       const currentSrc = logo.getAttribute('src');
       if (!currentSrc) return;
-      if (theme === 'dark') {
-        if (!currentSrc.includes('logo-dark.svg') && currentSrc.includes('logo.svg')) {
-          logo.setAttribute('src', currentSrc.replace('logo.svg', 'logo-dark.svg'));
-        }
-      } else {
-        if (currentSrc.includes('logo-dark.svg')) {
-          logo.setAttribute('src', currentSrc.replace('logo-dark.svg', 'logo.svg'));
-        }
-      }
+      const newSrc = currentSrc.replace(/logo(?:-rtl)?(?:-dark)?\.svg/, targetName);
+      logo.setAttribute('src', newSrc);
     });
   }
 

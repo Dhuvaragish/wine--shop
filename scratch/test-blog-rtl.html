@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl" data-theme="light">
+<head>
+  <base href="../">
+  <script>localStorage.setItem("winecraft_age_verified", "true");</script>
+  <style>
+    /* Test universal text/element plaintext bidi */
+    [dir="rtl"] body,
+    [dir="rtl"] div,
+    [dir="rtl"] p,
+    [dir="rtl"] span,
+    [dir="rtl"] a,
+    [dir="rtl"] li,
+    [dir="rtl"] ul,
+    [dir="rtl"] ol,
+    [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
+    [dir="rtl"] label,
+    [dir="rtl"] button,
+    [dir="rtl"] input,
+    [dir="rtl"] textarea,
+    [dir="rtl"] select,
+    [dir="rtl"] small,
+    [dir="rtl"] strong,
+    [dir="rtl"] em,
+    [dir="rtl"] b,
+    [dir="rtl"] td,
+    [dir="rtl"] th,
+    [dir="rtl"] footer,
+    [dir="rtl"] header,
+    [dir="rtl"] section,
+    [dir="rtl"] blockquote {
+      unicode-bidi: plaintext;
+    }
+    [dir="rtl"] input::placeholder,
+    [dir="rtl"] textarea::placeholder {
+      direction: ltr;
+      text-align: right;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cellar Journal &amp; Sommelier Chronicles | Wine &amp; Craft</title>
+  <meta name="description" content="Explore master sommelier vintage analyses, single-cask distillation essays, cellar aging guides, and food pairing masterclasses.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logos/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="brand-logo" aria-label="Wine &amp; Craft Home">
+          <img src="../assets/images/logos/logo.svg" alt="Wine &amp; Craft Logo" id="siteLogo">
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item-dropdown">
+            <a href="../index.html" class="nav-link">
+              Home <i class="fa-solid fa-chevron-down nav-chevron"></i>
+            </a>
+            <div class="home-dropdown">
+              <a href="../index.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <i class="fa-solid fa-wine-bottle"></i>
+                </div>
+                <div class="dropdown-item-info">
+                  <span class="dropdown-item-title">Home 1: Cellar &amp; Store</span>
+                  <span class="dropdown-item-desc">Luxury vintages, rare whiskies &amp; retail store</span>
+                </div>
+              </a>
+              <a href="../index-2.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <i class="fa-solid fa-cloud-bolt"></i>
+                </div>
+                <div class="dropdown-item-info">
+                  <span class="dropdown-item-title">Home 2: SaaS &amp; Agency</span>
+                  <span class="dropdown-item-desc">CellarOS platform &amp; digital growth studio</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="products.html" class="nav-link">Cellar Vault</a></li>
+          <li><a href="tasting-events.html" class="nav-link">Tastings &amp; Events</a></li>
+          <li><a href="gifting.html" class="nav-link">Bespoke Gifting</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Cellar Lounge &amp; Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="nav-action-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Direction"><i class="fa-solid fa-right-left"></i></button>
+          <button class="nav-action-btn theme-toggle-btn" title="Toggle Theme" aria-label="Theme"><i class="fa-solid fa-moon"></i></button>
+          <a href="../user/dashboard.html" class="nav-action-btn" title="Connoisseur Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
+          <a href="../user/wishlist.html" class="nav-action-btn" title="Wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-counter wishlist-badge" style="display:none;">0</span></a>
+          <button class="nav-action-btn cart-toggle-btn" title="Cellar Cart" aria-label="Cart"><i class="fa-solid fa-wine-glass"></i><span class="badge-counter cart-badge" style="display:none;">0</span></button>
+          <a href="login.html" class="nav-login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span></a>
+          <button class="hamburger-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <div class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1920&q=85');">
+    <div class="container">
+      <span class="badge badge-gold" style="margin-bottom: 1.25rem;">Dispatches from the Cellar &amp; Stills</span>
+      <h1 class="banner-title">The Cellar Journal &amp; Chronicles</h1>
+      <p class="banner-desc">
+        Curated essays on legendary terroirs, rare single-cask maturations, archival cellar techniques, and gastronomic pairings by certified sommeliers.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Featured Article Hero Card -->
+      <div class="blog-featured-card">
+        <div class="blog-featured-img-wrap">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85" alt="Bordeaux Decade Retrospective">
+          <span class="badge badge-gold" style="position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2;">Featured Dispatch</span>
+        </div>
+        <div class="blog-featured-content">
+          <div class="blog-card-meta">
+            <span><i class="fa-regular fa-calendar"></i> October 14, 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+            <span>•</span>
+            <span style="color: var(--primary); font-weight: 700;">Vintage Reports</span>
+          </div>
+          <h2 style="font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 1rem; line-height: 1.25;">
+            <a href="blog-details.html?id=blog-001" style="color: inherit;">The 2015 Bordeaux Decade Retrospective: Terroir, Evolution &amp; Provenance</a>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">
+            A decade after the historic 2015 harvest, our master sommelier panel unseals First Growths from Margaux and Pauillac to evaluate aging curves, tannins, and current optimal drinking windows.
+          </p>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div class="blog-author-mini">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Jean-Luc Moreau" class="blog-author-avatar" style="width: 44px; height: 44px;">
+              <div>
+                <span class="blog-author-name" style="font-size: 0.95rem; display: block;">Jean-Luc Moreau</span>
+                <span style="font-size: 0.75rem; color: var(--text-light);">Master Sommelier &amp; Chief Curator</span>
+              </div>
+            </div>
+            <a href="blog-details.html?id=blog-001" class="btn btn-gold">
+              Read Complete Essay <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls: Category Pills & Search -->
+      <div class="blog-controls">
+        <div class="blog-filter-pills">
+          <button class="blog-filter-pill active" data-category="all">All Chronicles</button>
+          <button class="blog-filter-pill" data-category="vintage-reports">Vintage Reports</button>
+          <button class="blog-filter-pill" data-category="spirits-masterclass">Spirits Masterclass</button>
+          <button class="blog-filter-pill" data-category="collectors-guide">Collector's Guide</button>
+          <button class="blog-filter-pill" data-category="craft-distilling">Craft Distilling</button>
+          <button class="blog-filter-pill" data-category="tasting-techniques">Tasting Techniques</button>
+          <button class="blog-filter-pill" data-category="pairing-arts">Pairing Arts</button>
+        </div>
+
+        <div class="blog-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="blogSearch" class="blog-search-input" placeholder="Search articles, vintages, spirits...">
+        </div>
+      </div>
+
+      <!-- Main Layout: Grid + Sidebar -->
+      <div class="blog-layout">
+        <!-- Blog Articles Grid -->
+        <main>
+          <div id="blogGrid" class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card" data-category="vintage-reports">
+              <div class="blog-card-img-wrap">
+                <a href="blog-details.html?id=blog-001">
+                  <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85" alt="Bordeaux Decade Retrospective" loading="lazy">
+                </a>
+                <span class="badge badge-gold blog-card-badge">Vintage Reports</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="fa-regular fa-calendar"></i> October 14, 2026</span>
+                  <span>•</span>
+                  <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="blog-details.html?id=blog-001">The 2015 Bordeaux Decade Retrospective: Terroir, Evolution &amp; Provenance</a>
+                </h3>
+                <p class="blog-card-excerpt">A decade after the historic 2015 harvest, we uncork First Growths from Margaux and Pauillac to evaluate aging curves, tannins, and current optimal drinking windows.</p>
+                <div class="blog-card-footer">
+                  <div class="blog-author-mini">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Jean-Luc Moreau" class="blog-author-avatar">
+                    <span class="blog-author-name">Jean-Luc Moreau</span>
+                  </div>
+                  <a href="blog-details.html?id=blog-001" class="blog-read-more-btn">
+                    Read Story <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-card" data-category="spirits-masterclass">
+              <div class="blog-card-img-wrap">
+                <a href="blog-details.html?id=blog-002">
+                  <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=1200&q=85" alt="Whisky Alchemy" loading="lazy">
+                </a>
+                <span class="badge badge-gold blog-card-badge">Spirits Masterclass</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="fa-regular fa-calendar"></i> October 02, 2026</span>
+                  <span>•</span>
+                  <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="blog-details.html?id=blog-002">Whisky Alchemy: The Rare Maturation Magic of Mizunara Japanese Oak</a>
+                </h3>
+                <p class="blog-card-excerpt">Quercus mongolica, or Japanese Mizunara oak, is notoriously temperamental to cooper. Yet it imparts sandalwood, temple incense, and oriental spice unmatched in world distilling.</p>
+                <div class="blog-card-footer">
+                  <div class="blog-author-mini">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80" alt="Etsuko Tanaka" class="blog-author-avatar">
+                    <span class="blog-author-name">Etsuko Tanaka</span>
+                  </div>
+                  <a href="blog-details.html?id=blog-002" class="blog-read-more-btn">
+                    Read Story <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-card" data-category="collectors-guide">
+              <div class="blog-card-img-wrap">
+                <a href="blog-details.html?id=blog-003">
+                  <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=85" alt="Cellar Architecture" loading="lazy">
+                </a>
+                <span class="badge badge-gold blog-card-badge">Collector's Guide</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="fa-regular fa-calendar"></i> September 24, 2026</span>
+                  <span>•</span>
+                  <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="blog-details.html?id=blog-003">Cellar Architecture: Designing &amp; Maintaining Archival Storage at Home</a>
+                </h3>
+                <p class="blog-card-excerpt">From vapor barrier engineering to split-system climate control and low-UV LED illumination, learn how top connoisseurs safeguard six-figure cellar investments.</p>
+                <div class="blog-card-footer">
+                  <div class="blog-author-mini">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Marcus Vance" class="blog-author-avatar">
+                    <span class="blog-author-name">Marcus Vance</span>
+                  </div>
+                  <a href="blog-details.html?id=blog-003" class="blog-read-more-btn">
+                    Read Story <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card" data-category="craft-distilling">
+              <div class="blog-card-img-wrap">
+                <a href="blog-details.html?id=blog-004">
+                  <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=85" alt="Botanical Renaissance" loading="lazy">
+                </a>
+                <span class="badge badge-gold blog-card-badge">Craft Distilling</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="fa-regular fa-calendar"></i> September 15, 2026</span>
+                  <span>•</span>
+                  <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="blog-details.html?id=blog-004">The Botanical Renaissance: Modern Micro-Batch Gin Distillation</a>
+                </h3>
+                <p class="blog-card-excerpt">Hyper-local foraging, vacuum rotary evaporation, and single-estate grain neutral spirits are elevating craft gin from casual cocktail mixer to artisanal collector elixir.</p>
+                <div class="blog-card-footer">
+                  <div class="blog-author-mini">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Fiona Campbell" class="blog-author-avatar">
+                    <span class="blog-author-name">Fiona Campbell</span>
+                  </div>
+                  <a href="blog-details.html?id=blog-004" class="blog-read-more-btn">
+                    Read Story <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-card" data-category="tasting-techniques">
+              <div class="blog-card-img-wrap">
+                <a href="blog-details.html?id=blog-005">
+                  <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=85" alt="Decanting Masterclass" loading="lazy">
+                </a>
+                <span class="badge badge-gold blog-card-badge">Tasting Techniques</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="fa-regular fa-calendar"></i> September 02, 2026</span>
+                  <span>•</span>
+                  <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="blog-details.html?id=blog-005">Sommelier Secrets: Decanting Masterclass from 1982 to 2020</a>
+                </h3>
+                <p class="blog-card-excerpt">When to aerate vigorously versus when to pour with surgical care over a candle: demystifying the decanter for young powerhouse Cabernets and fragile century-old Barolos.</p>
+                <div class="blog-card-footer">
+                  <div class="blog-author-mini">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Jean-Luc Moreau" class="blog-author-avatar">
+                    <span class="blog-author-name">Jean-Luc Moreau</span>
+                  </div>
+                  <a href="blog-details.html?id=blog-005" class="blog-read-more-btn">
+                    Read Story <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-card" data-category="pairing-arts">
+              <div class="blog-card-img-wrap">
+                <a href="blog-details.html?id=blog-006">
+                  <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=85" alt="Pairing Single Malts with Chocolate" loading="lazy">
+                </a>
+                <span class="badge badge-gold blog-card-badge">Pairing Arts</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="fa-regular fa-calendar"></i> August 20, 2026</span>
+                  <span>•</span>
+                  <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="blog-details.html?id=blog-006">The Art of Pairing: Islay Peated Single Malts with Artisan Chocolates</a>
+                </h3>
+                <p class="blog-card-excerpt">Maritime salinity, medicinal peat smoke, and intense cacao solids create a harmonic gastronomic synergy. Explore our curated flight of 5 single malts with single-origin beans.</p>
+                <div class="blog-card-footer">
+                  <div class="blog-author-mini">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Fiona Campbell" class="blog-author-avatar">
+                    <span class="blog-author-name">Fiona Campbell</span>
+                  </div>
+                  <a href="blog-details.html?id=blog-006" class="blog-read-more-btn">
+                    Read Story <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside class="blog-sidebar">
+          <!-- Sommelier Quote Widget -->
+          <div class="blog-widget blog-sommelier-quote-widget">
+            <div class="quote-icon">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="quote-text">
+              &ldquo;Wine is bottled poetry and living history, waiting silently in cool obsidian vaults to tell the story of the sun, rain, and soil that birthed it.&rdquo;
+            </p>
+            <span class="quote-author">
+              — Jean-Luc Moreau, Master Sommelier
+            </span>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="blog-widget">
+            <h4 class="blog-widget-title">Journal Categories</h4>
+            <div class="blog-category-list">
+              <a href="blog.html?category=vintage-reports" class="blog-category-item">
+                <span>Vintage Harvest Reports</span>
+                <span class="blog-category-count">14</span>
+              </a>
+              <a href="blog.html?category=spirits-masterclass" class="blog-category-item">
+                <span>Spirits &amp; Distillation</span>
+                <span class="blog-category-count">9</span>
+              </a>
+              <a href="blog.html?category=collectors-guide" class="blog-category-item">
+                <span>Collector's Cellar Guides</span>
+                <span class="blog-category-count">8</span>
+              </a>
+              <a href="blog.html?category=craft-distilling" class="blog-category-item">
+                <span>Botanical &amp; Micro Stills</span>
+                <span class="blog-category-count">6</span>
+              </a>
+              <a href="blog.html?category=tasting-techniques" class="blog-category-item">
+                <span>Sommelier Techniques</span>
+                <span class="blog-category-count">11</span>
+              </a>
+              <a href="blog.html?category=pairing-arts" class="blog-category-item">
+                <span>Gastronomic Pairings</span>
+                <span class="blog-category-count">7</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Popular Dispatches -->
+          <div class="blog-widget">
+            <h4 class="blog-widget-title">Collector Favorites</h4>
+            
+            <div class="blog-recent-post">
+              <div class="blog-recent-thumb">
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=200&q=80" alt="Bordeaux 2015">
+              </div>
+              <div class="blog-recent-info">
+                <h5><a href="blog-details.html?id=blog-001">The 2015 Bordeaux Decade Retrospective</a></h5>
+                <span class="blog-recent-date">October 14, 2026</span>
+              </div>
+            </div>
+
+            <div class="blog-recent-post">
+              <div class="blog-recent-thumb">
+                <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=200&q=80" alt="Mizunara Oak">
+              </div>
+              <div class="blog-recent-info">
+                <h5><a href="blog-details.html?id=blog-002">Whisky Alchemy: Rare Mizunara Oak Casks</a></h5>
+                <span class="blog-recent-date">October 02, 2026</span>
+              </div>
+            </div>
+
+            <div class="blog-recent-post">
+              <div class="blog-recent-thumb">
+                <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=200&q=80" alt="Cellar Care">
+              </div>
+              <div class="blog-recent-info">
+                <h5><a href="blog-details.html?id=blog-003">Cellar Architecture &amp; Archival Storage</a></h5>
+                <span class="blog-recent-date">September 24, 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Join Our Community / Newsletter Widget -->
+          <div class="blog-widget" style="text-align: center;">
+            <i class="fa-solid fa-feather-pointed" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 0.75rem;"></i>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem; font-family: var(--font-serif);">Join Our Community</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Receive sommelier essays, allocation drops, and tasting notes delivered directly to your inbox bi-weekly.
+            </p>
+            <form id="blogCommunityForm" novalidate style="display: flex; flex-direction: column; gap: 0.75rem; text-align: left;">
+              <input type="email" id="blogCommunityEmail" name="email" required class="form-control" placeholder="Your email (e.g. name@gmail.com)" style="text-align: center;" autocomplete="email">
+              <div id="blogCommunityError" class="form-feedback-error" style="display: none;" role="alert"></div>
+              <div id="blogCommunitySuccess" class="form-feedback-success" style="display: none;" role="status"></div>
+              <button type="submit" class="btn btn-gold btn-block">Join Community</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/logos/logo.svg" alt="Wine &amp; Craft" style="height: 44px; margin-bottom: 1rem;">
+          <p>Purveyors of rare vintage wines, single cask Scottish and Japanese whiskies, and small-batch artisanal spirits. Committed to authentic provenance and master sommelier curation.</p>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/wine-and-craft" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Cellar Vault</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=wine">Bordeaux Grand Crus</a></li>
+            <li><a href="products.html?category=wine">Burgundy Pinot Noir</a></li>
+            <li><a href="products.html?category=whisky">Single Malt Scotch</a></li>
+            <li><a href="products.html?category=whisky">Japanese Whiskies</a></li>
+            <li><a href="products.html?category=spirits">Botanical Gins &amp; Agave</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Connoisseur Club</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Cellar Journal (Blog)</a></li>
+            <li><a href="tasting-events.html">Masterclass Tastings</a></li>
+            <li><a href="gifting.html">Corporate Gifting</a></li>
+            <li><a href="../user/dashboard.html">Connoisseur Portal</a></li>
+            <li><a href="../user/orders.html">Order History</a></li>
+            <li><a href="../admin/dashboard.html">Cellar Administration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Boutique Cellar</h4>
+          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color: var(--accent-gold); margin-right: 6px;"></i><a href="https://www.google.com/maps/search/?api=1&query=42+Grosvenor+Square%2C+Mayfair%2C+London+W1K+2HP%2C+United+Kingdom" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" title="Open in Google Maps" class="address-map-link">42 Grosvenor Square, Mayfair, London W1K 2HP</a>
+          </p>
+          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 0.75rem;">
+            <i class="fa-regular fa-clock" style="color: var(--accent-gold); margin-right: 6px;"></i>
+            Tue - Sat: 11:00 - 22:00
+          </p>
+          <p style="font-size: 0.875rem; color: #948B7D; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-envelope" style="color: var(--accent-gold); margin-right: 6px;"></i>
+            <a href="mailto:sommelier@winecraft.com" style="color: inherit; text-decoration: none;" class="footer-contact-link">sommelier@winecraft.com</a>
+          </p>
+          <span class="badge badge-gold">Cellar Tours by Appointment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="contact.html" style="color: #7A7266;">Terms of Provenance</a>
+        <a href="contact.html" style="color: #7A7266;">Privacy &amp; Cellar Policy</a>
+        <a href="404.html" style="color: #7A7266;">Cellar Sitemap</a>
+      </div>
+    </div>
+
+    <div class="age-compliance-statement">
+      <div class="container">
+        WARNING: Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. You must be 21+ to purchase. Please drink responsibly.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.2rem; margin: 0; font-family: var(--font-serif);">
+        <i class="fa-solid fa-wine-glass" style="color: var(--accent-gold); margin-right: 8px;"></i>
+        Your Cellar Cart
+      </h3>
+      <button id="cartDrawerClose" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted);">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div id="cartDrawerItems" class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Cellar Subtotal:</span>
+        <span id="cartDrawerSubtotal" style="color: var(--primary);">$0.00</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="cart.html" class="btn btn-outline btn-block">Review Cart</a>
+        <a href="checkout.html" class="btn btn-gold btn-block">Checkout</a>
+      </div>
+    </div>
+  </div>
+  <div id="cartDrawerBackdrop" class="modal-overlay"></div>
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/js/wishlist.js"></script>
+  <script src="../assets/js/blog.js"></script>
+
+</body>
+</html>
