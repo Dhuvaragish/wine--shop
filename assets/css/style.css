@@ -631,6 +631,15 @@ ul, ol {
   border-radius: var(--radius-sm);
 }
 
+.badge-sm,
+.badge-vintage {
+  font-size: 0.625rem;
+  padding: 0.15rem 0.45rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .badge-gold {
   background-color: #FAF4E5;
   color: #8C6A21;
@@ -674,6 +683,39 @@ ul, ol {
   transform: translateY(-3px);
 }
 
+/* --- Catalog / Cellar Vault Sticky Filter Sidebar --- */
+.catalog-sidebar {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(var(--header-height) + 1.5rem);
+  max-height: calc(100vh - var(--header-height) - 2.5rem);
+  overflow-y: auto;
+  z-index: 10;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.catalog-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.catalog-sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+}
+
+/* --- Products Grid Layout --- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
 /* --- Product Cards --- */
 .product-card {
   display: flex;
@@ -695,7 +737,9 @@ ul, ol {
 
 .product-image-wrap {
   position: relative;
+  width: 100%;
   padding-top: 100%; /* 1:1 Aspect ratio */
+  aspect-ratio: 1 / 1;
   background: radial-gradient(circle at 50% 50%, #FAF8F5, #EFECE6);
   overflow: hidden;
 }
@@ -721,7 +765,35 @@ ul, ol {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  align-items: flex-start;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+
+.product-badges .badge {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.product-badges .badge-vintage,
+.product-badges .badge-wine {
+  font-size: 0.625rem;
+  padding: 0.15rem 0.45rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+[data-theme="dark"] .badge-wine,
+[data-theme="dark"] .badge-vintage,
+[data-theme="dark"] .product-badges .badge-wine,
+[data-theme="dark"] .product-badges .badge-vintage {
+  background-color: #38151B !important;
+  color: #FAD4D8 !important;
+  border: 1px solid rgba(250, 212, 216, 0.4) !important;
 }
 
 .product-wishlist-btn {
@@ -758,11 +830,12 @@ ul, ol {
 
 .product-meta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   font-size: 0.775rem;
   color: var(--text-light);
   margin-bottom: 0.5rem;
+  min-height: 2.6rem;
 }
 
 .product-region {
@@ -778,6 +851,11 @@ ul, ol {
   font-weight: 600;
   margin-bottom: 0.5rem;
   line-height: 1.35;
+  min-height: 3.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-title a {
@@ -797,6 +875,7 @@ ul, ol {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 2.5rem;
 }
 
 .product-rating {
@@ -805,6 +884,7 @@ ul, ol {
   gap: 0.4rem;
   font-size: 0.8125rem;
   margin-bottom: 1rem;
+  min-height: 1.25rem;
 }
 
 .rating-stars {
@@ -1218,6 +1298,18 @@ ul, ol {
   gap: 3rem;
 }
 
+.footer-brand-link,
+.footer-brand > a {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-brand-link:hover,
+.footer-brand > a:hover {
+  opacity: 0.85;
+}
+
 .footer-brand p {
   color: var(--text-muted);
   margin-top: 1.25rem;
@@ -1300,7 +1392,8 @@ ul, ol {
 }
 
 .footer-bottom {
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1354,6 +1447,11 @@ ul, ol {
 .page-banner .container {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .page-banner h1,
@@ -1400,7 +1498,11 @@ ul, ol {
 /* Home Hero Banner Enhancement */
 .hero-section-enhanced {
   position: relative;
-  padding: 7.5rem 0 6.5rem 0;
+  min-height: clamp(560px, 80vh, 850px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5rem 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1412,7 +1514,7 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(14, 12, 16, 0.65) 0%, rgba(14, 12, 16, 0.35) 55%, rgba(14, 12, 16, 0.18) 100%);
+  background: linear-gradient(180deg, rgba(14, 12, 16, 0.45) 0%, rgba(14, 12, 16, 0.3) 50%, rgba(14, 12, 16, 0.68) 100%), radial-gradient(circle at center, rgba(14, 12, 16, 0.35) 0%, rgba(14, 12, 16, 0.75) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1420,6 +1522,11 @@ ul, ol {
 .hero-section-enhanced .container {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-section-enhanced h1 {

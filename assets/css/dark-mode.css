@@ -162,6 +162,16 @@
   color: var(--accent-gold);
 }
 
+/* --- Dark Mode Badges & Vintage Contrast Enhancements --- */
+[data-theme="dark"] .badge-wine,
+[data-theme="dark"] .badge-vintage,
+[data-theme="dark"] .product-badges .badge-wine,
+[data-theme="dark"] .product-badges .badge-vintage {
+  background-color: #38151B !important;
+  color: #FAD4D8 !important;
+  border: 1px solid rgba(250, 212, 216, 0.4) !important;
+}
+
 [data-theme="dark"] .table tbody tr:hover {
   background-color: rgba(36, 36, 48, 0.5);
 }
@@ -270,5 +280,50 @@
   color: #86EFAC;
   background-color: rgba(34, 197, 94, 0.15);
   border-color: rgba(34, 197, 94, 0.35);
+}
+
+/* Home Page 2 (SaaS & Agency) Hero Section Dark Mode High-Contrast Redesign */
+[data-theme="dark"] .saas-hero .saas-badge {
+  background: rgba(20, 18, 25, 0.94) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.75) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.75), 0 0 16px rgba(212, 175, 55, 0.22) !important;
+}
+
+[data-theme="dark"] .saas-hero .saas-badge-tag {
+  background: linear-gradient(135deg, #ECC875 0%, #C5A059 100%) !important;
+  color: #121016 !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .saas-hero .saas-badge-text {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
+}
+
+[data-theme="dark"] .saas-hero .saas-stat-chip {
+  background: rgba(18, 16, 24, 0.94) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .saas-hero .saas-stat-icon {
+  background: rgba(212, 175, 55, 0.15) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  color: #F6E29F !important;
+}
+
+[data-theme="dark"] .saas-hero .saas-stat-number {
+  color: #F8E7B2 !important;
+  text-shadow: 0 2px 14px rgba(212, 175, 55, 0.4) !important;
+}
+
+[data-theme="dark"] .saas-hero .saas-stat-label {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
 }
 

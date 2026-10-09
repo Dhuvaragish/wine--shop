@@ -123,12 +123,13 @@
       toggleMenu(false);
     });
 
-    // Close on nav-link click on mobile
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    // Close on navigation link or dropdown item click on mobile
+    navMenu.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 1120) toggleMenu(false);
       });
     });
+
   }
 
   // --- Mobile Catalog Filter Accordion ---

@@ -59,7 +59,7 @@
         <div class="nav-actions">
           <button class="nav-action-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Direction"><i class="fa-solid fa-right-left"></i></button>
           <button class="nav-action-btn theme-toggle-btn" title="Toggle Theme" aria-label="Theme"><i class="fa-solid fa-moon"></i></button>
-          <a href="../user/dashboard.html" class="nav-action-btn" title="Connoisseur Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
+          <a href="../user/profile.html" class="nav-action-btn" title="Connoisseur Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
           <a href="../user/wishlist.html" class="nav-action-btn" title="Wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-counter wishlist-badge" style="display:none;">0</span></a>
           <button class="nav-action-btn cart-toggle-btn" title="Cellar Cart" aria-label="Cart"><i class="fa-solid fa-wine-glass"></i><span class="badge-counter cart-badge" style="display:none;">0</span></button>
           <a href="../pages/login.html" class="nav-login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span></a>
@@ -79,9 +79,16 @@
     </div>
   </div>
 
+  <!-- Section 1: Bespoke Presentation & Finishing Options -->
   <section class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2.5rem; margin-bottom: 5rem; align-items: stretch;">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Artisanal Craftsmanship</span>
+        <h2 class="section-title">Bespoke Presentation &amp; Finishing Options</h2>
+        <p class="section-desc">Every bottle from our vault can be elevated with handcrafted European cabinetry, precision gold-leaf engraving, and custom wax seals.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2.5rem; align-items: stretch;">
         
         <div class="card" style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; height: 100%;">
           <div style="width: 72px; height: 72px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem auto; flex-shrink: 0;">
@@ -126,13 +133,534 @@
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <!-- Corporate Inquiry Form -->
+  <!-- Section 2: The Cask-to-Crate Artisanal Journey -->
+  <section class="section" style="background-color: var(--bg-subtle);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">The Gifting Protocol</span>
+        <h2 class="section-title">The Cask-to-Crate Artisanal Journey</h2>
+        <p class="section-desc">From initial vault selection to refrigerated white-glove arrival, every bespoke crate follows a meticulous protocol.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; position: relative;">
+        <!-- Step 1 -->
+        <div class="card" style="padding: 2.5rem 2rem; position: relative;">
+          <span style="font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent-gold); opacity: 0.35; line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">01</span>
+          <div style="width: 56px; height: 56px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-wine-bottle"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Vault Selection &amp; Pairing</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+            Our sommeliers consult with you to select optimal vintages, rare single casks, or craft spirits tailored to recipient taste and cellar aging capacity.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card" style="padding: 2.5rem 2rem; position: relative;">
+          <span style="font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent-gold); opacity: 0.35; line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">02</span>
+          <div style="width: 56px; height: 56px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-stamp"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Wax Seal &amp; Laser Monogram</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+            Bottles undergo precision laser etching with 24k gold foil infill, hot wax neck dipping, and presentation in branded French oak or black walnut cases.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card" style="padding: 2.5rem 2rem; position: relative;">
+          <span style="font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent-gold); opacity: 0.35; line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">03</span>
+          <div style="width: 56px; height: 56px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Climate-Controlled White Glove</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+            Direct temperature-regulated courier dispatch to residences, boardrooms, or private air terminals in 120+ global cities with signature proof of delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Pre-Configured Signature Gift Suites -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Curated Collector Sets</span>
+        <h2 class="section-title">Pre-Configured Signature Gift Suites</h2>
+        <p class="section-desc">Turnkey presentation crates ready for immediate dispatch, showcasing harmonious vintage verticals, rare single casks, and museum-grade accessories.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2.5rem; align-items: stretch;">
+        
+        <!-- Suite 1 -->
+        <div class="card" style="display: flex; flex-direction: column; height: 100%;">
+          <div style="height: 250px; overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Bordeaux Premier Grand Cru Duo" style="width: 100%; height: 100%; object-fit: cover;">
+            <span class="badge badge-wine" style="position: absolute; top: 1rem; left: 1rem;">100 &amp; 99 Pts Perfect Vintages</span>
+            <span class="badge badge-gold" style="position: absolute; top: 1rem; right: 1rem;">Solid French Oak</span>
+          </div>
+          <div style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">The Bordeaux Premier Grand Cru Duo</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              A pairing of Left Bank aristocrats: Château Margaux 2015 and Château d’Yquem 2011, cradled in velvet-lined solid French oak with polished brass fittings and certified cellar provenance.
+            </p>
+            
+            <!-- Detailed Product Specifications -->
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.84rem;">
+              <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-wine-bottle" style="color: var(--primary); margin-right: 6px;"></i> Château Margaux 2015 (750ml, 13.5% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Margaux AOC • 100 Pts (Parker &amp; Suckling) • 87% Cabernet Sauvignon, 8% Merlot • 24 months in 100% new French oak. Notes of crushed violets, cassis, cedar &amp; graphite. Window: 2026–2065.</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-wine-bottle" style="color: var(--accent-gold); margin-right: 6px;"></i> Château d’Yquem 2011 (750ml, 13.5% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Sauternes AOC Premier Cru Supérieur • 99 Pts • 80% Sémillon, 20% Sauvignon Blanc • 36 months French oak. Botrytised honey, apricot, ginger flower &amp; saffron. Window: 2026–2080.</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-box-archive" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Solid Quercus petraea French oak dual casket with dovetail joints • Plush burgundy velvet velour lining • Polished solid brass cellar key &amp; wax seal breaker • Wax-sealed Master Sommelier aging ledger folio.</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: auto;">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--text-light); display: block;">Delivered in Oak Crate</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary);">$1,450.00</span>
+              </div>
+              <button class="btn btn-gold" onclick="window.showToast('Bordeaux Grand Cru Duo added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 201, title: 'Bordeaux Premier Grand Cru Duo', price: 1450, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=400&q=80', vintage: '2015/2011', region: 'Bordeaux, France'});">
+                Order Suite
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suite 2 -->
+        <div class="card" style="display: flex; flex-direction: column; height: 100%;">
+          <div style="height: 250px; overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80" alt="Japanese &amp; Islay Single Cask Trunk" style="width: 100%; height: 100%; object-fit: cover;">
+            <span class="badge badge-gold" style="position: absolute; top: 1rem; left: 1rem;">Mizunara &amp; Cask Strength</span>
+            <span class="badge badge-dark" style="position: absolute; top: 1rem; right: 1rem;">American Walnut Trunk</span>
+          </div>
+          <div style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">The Japanese &amp; Islay Single Cask Trunk</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              An East-meets-West masterwork uniting Suntory’s crowning blend with rare 25-year Islay single malt in an American black walnut trunk accompanied by Scottish lead crystal. 
+            </p>
+            
+            <!-- Detailed Product Specifications -->
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.84rem;">
+              <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-bottle-droplet" style="color: var(--accent-gold); margin-right: 6px;"></i> Hibiki 21 Year Old Suntory (700ml, 43% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Japan • World Whiskies Awards "World's Best Blended Whisky" • Matured in rare Japanese Mizunara, American white oak &amp; Spanish Oloroso sherry casks. Cooked apricot, sandalwood incense, honeycomb &amp; Mizunara spice.</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-bottle-droplet" style="color: var(--primary); margin-right: 6px;"></i> Lagavulin 25 Year Old 200th Anniv. (700ml, 51.7% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Islay, Scotland • Natural Cask Strength • 100% first-fill European oak sherry butts. Dense maritime peat smoke, dark Seville orange marmalade, roasted chestnuts &amp; salted cocoa nibs.</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-whiskey-glass" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Solid American black walnut trunk with antique bronze corner guards &amp; padlock clasp • Charcoal micro-suede lining • 2 hand-cut Scottish Glencairn lead crystal tumblers • Copper water pipette &amp; distillery allocation certificate.</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: auto;">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--text-light); display: block;">Delivered in Walnut Trunk</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary);">$1,980.00</span>
+              </div>
+              <button class="btn btn-gold" onclick="window.showToast('Japanese &amp; Islay Trunk added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 202, title: 'Japanese &amp; Islay Single Cask Trunk', price: 1980, image: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=400&q=80', vintage: '21Y / 25Y', region: 'Japan &amp; Scotland'});">
+                Order Suite
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suite 3 -->
+        <div class="card" style="display: flex; flex-direction: column; height: 100%;">
+          <div style="height: 250px; overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=800&q=80" alt="Champagne Royale &amp; Caviar Hamper" style="width: 100%; height: 100%; object-fit: cover;">
+            <span class="badge badge-wine" style="position: absolute; top: 1rem; left: 1rem;">98 Pts Decanter</span>
+            <span class="badge badge-gold" style="position: absolute; top: 1rem; right: 1rem;">Saddle Leather Hamper</span>
+          </div>
+          <div style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">The Dom Pérignon Champagne Royale Hamper</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              The pinnacle of royal celebration pairing vintage Dom Pérignon 2013 with 50g Imperial Oscietra Caviar inside a handcrafted full-grain saddle leather travel hamper.
+            </p>
+            
+            <!-- Detailed Product Specifications -->
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.84rem;">
+              <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-champagne-glasses" style="color: var(--accent-gold); margin-right: 6px;"></i> Dom Pérignon Vintage 2013 (750ml, 12.5% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Champagne AOC, Épernay • 98 Pts Decanter • Pinot Noir &amp; Chardonnay • 10 years cellar maturation on lees. Candied citrus peel, toasted brioche, eucalyptus freshness &amp; smoky mineral finish.</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-gem" style="color: var(--primary); margin-right: 6px;"></i> Imperial Royal Oscietra Caviar (50g Cold-Chain Tin)</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Acipenser gueldenstaedtii Sturgeon • Large golden amber pearls, buttery sea finish &amp; hazelnut undertones • Includes artisanal French blinis tin &amp; Cornish salted butter biscuits with thermal chill pack.</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-gift" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
+                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Full-grain hand-stitched saddle leather presentation hamper with solid brass buckle straps • 2 mouth-blown gold-rimmed crystal flutes • 2 hand-carved natural mother-of-pearl caviar spoons.</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: auto;">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--text-light); display: block;">Delivered in Leather Hamper</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary);">$890.00</span>
+              </div>
+              <button class="btn btn-gold" onclick="window.showToast('Champagne Royale Hamper added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 203, title: 'Dom Pérignon Champagne Royale Hamper', price: 890, image: 'https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=400&q=80', vintage: '2013', region: 'Champagne, France'});">
+                Order Suite
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Anatomy of a Cellar Gift Crate -->
+  <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Excellence in Every Detail</span>
+        <h2 class="section-title">Anatomy of a Cellar Gift Crate: Included Specifications</h2>
+        <p class="section-desc">Every bespoke package assembled in our London atelier is an orchestration of vintage provenance, heirloom woodwork, and certified sommelier documentation.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 2rem;">
+        
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-wine-bottle"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">1. Rare Cellar Vintages</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            Acquired directly from European domaine cellars and bonded syndicates. All bottles possess 98+ critic scores, perfect fill ullage, and temperature-verified pedigree.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">2. Heirloom Hardwoods</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            FSC-certified French oak and black walnut caskets crafted with traditional mortise &amp; tenon joinery, brass piano hinges, and plush velvet cradle linings.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">3. Mouth-Blown Crystal</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            Authentic Austrian Riedel stemware, hand-cut Scottish Glencairn lead crystal tumblers, and mother-of-pearl caviar spoons tuned to the package varietal.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-stamp"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">4. Provenance Ledger</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            An individualized, wax-sealed parchment document signed by Master Sommelier Jean-Luc Moreau detailing vineyard coordinates, decanting instructions, and aging potential.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Luxury Gift Package Tier & Inclusions Comparison Matrix Table -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Tier Specifications</span>
+        <h2 class="section-title">Gift Package Inclusions &amp; Specifications Matrix</h2>
+        <p class="section-desc">Compare the complete components, woodwork joinery, glassware, and courier privileges across our bespoke package tiers.</p>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="table-responsive">
+          <table class="table" style="margin-bottom: 0;">
+            <thead>
+              <tr>
+                <th style="min-width: 220px;">Package Tier</th>
+                <th style="min-width: 200px;">Included Vintages / Distillations</th>
+                <th style="min-width: 180px;">Hardwood Cabinetry</th>
+                <th style="min-width: 180px;">Crystal Glassware &amp; Tools</th>
+                <th style="min-width: 170px;">Engraving &amp; Wax Seals</th>
+                <th style="min-width: 160px;">Sommelier Ledger</th>
+                <th style="min-width: 130px;">Price</th>
+                <th style="min-width: 150px; text-align: center;">Selection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-main); display: block;">The Artisan Single Crate</strong>
+                  <span style="font-size: 0.8rem; color: var(--accent-gold-dark);">Collector Single Bottle</span>
+                </td>
+                <td>Choice of 1 Grand Cru Bordeaux, Barolo, or Single Malt Scotch</td>
+                <td>Handcrafted Solid French Oak single slide case</td>
+                <td>Brass wax seal breaker tool</td>
+                <td>Custom bottle monogram engraving included</td>
+                <td>Wax-stamped sommelier provenance certificate</td>
+                <td><strong style="color: var(--primary); font-family: var(--font-serif); font-size: 1.1rem;">From $320</strong></td>
+                <td style="text-align: center;">
+                  <a href="../pages/products.html" class="btn btn-gold btn-sm">Select Vintage</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-main); display: block;">The Bordeaux Grand Cru Duo</strong>
+                  <span style="font-size: 0.8rem; color: var(--accent-gold-dark);">Bespoke Twin Showcase</span>
+                </td>
+                <td>Château Margaux 2015 (100pt) &amp; Château d’Yquem 2011 (99pt)</td>
+                <td>Solid French Oak casket with mortise &amp; tenon joinery, velvet lining</td>
+                <td>Polished solid brass cellar decanting key &amp; seal breaker</td>
+                <td>Laser bottle engraving + domain hot wax neck seals</td>
+                <td>Master Sommelier signed 40-year aging ledger folio</td>
+                <td><strong style="color: var(--primary); font-family: var(--font-serif); font-size: 1.1rem;">$1,450.00</strong></td>
+                <td style="text-align: center;">
+                  <button class="btn btn-gold btn-sm" onclick="window.showToast('Bordeaux Grand Cru Duo added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 201, title: 'Bordeaux Premier Grand Cru Duo', price: 1450, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=400&q=80', vintage: '2015/2011', region: 'Bordeaux, France'});">Order Suite</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-main); display: block;">The Distiller's Reserve Trunk</strong>
+                  <span style="font-size: 0.8rem; color: var(--accent-gold-dark);">East &amp; West Rare Malts</span>
+                </td>
+                <td>Hibiki 21Y Blended (700ml) &amp; Lagavulin 25Y Cask Strength (700ml)</td>
+                <td>Solid American Black Walnut trunk with bronze corners &amp; suede lining</td>
+                <td>2 Scottish Glencairn lead crystal tumblers &amp; copper pipette</td>
+                <td>Engraved brass lid plaque + custom bottle etching</td>
+                <td>Distillery syndicate archive certificate &amp; cask details</td>
+                <td><strong style="color: var(--primary); font-family: var(--font-serif); font-size: 1.1rem;">$1,980.00</strong></td>
+                <td style="text-align: center;">
+                  <button class="btn btn-gold btn-sm" onclick="window.showToast('Japanese &amp; Islay Trunk added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 202, title: 'Japanese &amp; Islay Single Cask Trunk', price: 1980, image: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=400&q=80', vintage: '21Y / 25Y', region: 'Japan &amp; Scotland'});">Order Suite</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-main); display: block;">Dom Pérignon Royale Hamper</strong>
+                  <span style="font-size: 0.8rem; color: var(--accent-gold-dark);">Prestige Cuvée &amp; Caviar</span>
+                </td>
+                <td>Dom Pérignon 2013 (750ml) + 50g Royal Oscietra Caviar Tin</td>
+                <td>Full-grain saddle-stitched leather travel hamper with brass buckles</td>
+                <td>2 gold-rimmed crystal flutes &amp; 2 mother-of-pearl spoons</td>
+                <td>Personalized leather luggage tag monogramming</td>
+                <td>Thermal chill-pack transit ledger &amp; caviar origin passport</td>
+                <td><strong style="color: var(--primary); font-family: var(--font-serif); font-size: 1.1rem;">$890.00</strong></td>
+                <td style="text-align: center;">
+                  <button class="btn btn-gold btn-sm" onclick="window.showToast('Champagne Royale Hamper added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 203, title: 'Dom Pérignon Champagne Royale Hamper', price: 890, image: 'https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=400&q=80', vintage: '2013', region: 'Champagne, France'});">Order Suite</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-main); display: block;">The Sovereign Dynasty Cabinet</strong>
+                  <span style="font-size: 0.8rem; color: var(--accent-gold-dark);">Custom 6-Bottle Vault Armoire</span>
+                </td>
+                <td>Custom sommelier vertical of 6 First Growths or Pappy Van Winkle collection</td>
+                <td>Bespoke 6-bottle European Walnut armoire with dual locking doors</td>
+                <td>Full 6-piece Riedel Sommeliers crystal suite &amp; thermometer</td>
+                <td>Solid 24k gold leaf engraving &amp; engraved family/corporate crest</td>
+                <td>Leather-bound personal cellar archive &amp; lifetime appraisal</td>
+                <td><strong style="color: var(--primary); font-family: var(--font-serif); font-size: 1.1rem;">From $3,600</strong></td>
+                <td style="text-align: center;">
+                  <a href="#corporateInquiryForm" class="btn btn-gold btn-sm">Consult Concierge</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 4: Corporate Concierge Privileges & Volume Advantages -->
+  <section class="section" style="background-color: var(--bg-subtle);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Corporate Institutional Services</span>
+        <h2 class="section-title">Concierge Privileges for Enterprise &amp; Wealth Managers</h2>
+        <p class="section-desc">Tailored logistics, bonded warehouse tax optimization, and bespoke brass emblem fabrication for institutional clients.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 2rem;">
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Dedicated Account Sommelier</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            Direct liaison via phone and WhatsApp for tailored vintage allocations, tiered recipient gift lists, and corporate purchase orders.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Custom Solid Brass Plaques</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            Precision-milled brass or polished titanium corporate crest plaques countersunk into solid oak or walnut lids for an indelible brand mark.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Multi-Destination Split Logistics</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            Upload a single spreadsheet to dispatch 10 to 500+ individual temperature-monitored parcels worldwide with duty and customs pre-cleared.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 2.25rem 1.75rem; text-align: center; display: flex; flex-direction: column;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem auto;">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">In-Bond &amp; Tax-Exempt Billing</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            Seamless in-bond transfer options for international family offices, diplomatic delegations, and VAT-registered commercial entities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Client Acclaim & Corporate Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Distinguished Client Acclaim</span>
+        <h2 class="section-title">Trusted by Leading Family Offices &amp; Brands</h2>
+        <p class="section-desc">Hear how Wine &amp; Craft’s bespoke gifting concierge elevates high-stakes corporate relationships and milestones.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 2.5rem; align-items: stretch;">
+        <!-- Review 1 -->
+        <div class="card" style="padding: 2.25rem; display: flex; flex-direction: column; height: 100%;">
+          <div style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote style="font-style: italic; color: var(--text-main); font-size: 1.05rem; line-height: 1.65; margin-bottom: 1.5rem; flex-grow: 1;">
+            &ldquo;Wine &amp; Craft curated 85 personalized French oak crates for our annual partner retreat. Flawless execution from custom gold foil crests to international temperature-controlled delivery. Several clients noted it was the finest corporate gift they had ever received.&rdquo;
+          </blockquote>
+          <div style="border-top: 1px solid var(--border-light); padding-top: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-serif); font-size: 1.2rem;">
+              JS
+            </div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main);">Jonathan Sterling</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Senior Managing Partner, Mayfair Private Wealth</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="card" style="padding: 2.25rem; display: flex; flex-direction: column; height: 100%;">
+          <div style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote style="font-style: italic; color: var(--text-main); font-size: 1.05rem; line-height: 1.65; margin-bottom: 1.5rem; flex-grow: 1;">
+            &ldquo;Our Ultra-HNW private aviation clientele expect absolute discretion and uncompromising rarity. The Dom Pérignon and rare single cask Scotch suites have become our signature welcome gift across our European fleet.&rdquo;
+          </blockquote>
+          <div style="border-top: 1px solid var(--border-light); padding-top: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--accent-gold-subtle); color: var(--accent-gold-dark); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-serif); font-size: 1.2rem;">
+              CD
+            </div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main);">Camilla Dupont</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Head of Global Events, Aurelia Aviation Jet Charter</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="card" style="padding: 2.25rem; display: flex; flex-direction: column; height: 100%;">
+          <div style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote style="font-style: italic; color: var(--text-main); font-size: 1.05rem; line-height: 1.65; margin-bottom: 1.5rem; flex-grow: 1;">
+            &ldquo;The laser engraving precision, wax-stamped provenance certificate, and sommelier cellar aging notes set Wine &amp; Craft apart from any typical luxury merchant. The experience feels thoroughly aristocratic.&rdquo;
+          </blockquote>
+          <div style="border-top: 1px solid var(--border-light); padding-top: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--primary-subtle); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-serif); font-size: 1.2rem;">
+              AT
+            </div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main);">Alexander Thorne</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Family Office Trustee, Zurich &amp; Geneva</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Bespoke Gifting & Corporate FAQ -->
+  <section class="section" style="background-color: var(--bg-subtle);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Gifting Guidelines</span>
+        <h2 class="section-title">Bespoke Crate &amp; Corporate Gifting FAQ</h2>
+        <p class="section-desc">Common questions regarding customization lead times, volume logistics, and branding options.</p>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <details class="card" open style="padding: 1.5rem 1.75rem;">
+          <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+            <span>What is the minimum lead time for custom corporate crate engraving?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold); transition: transform 0.25s ease;"></i>
+          </summary>
+          <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.925rem; line-height: 1.65; margin-bottom: 0;">
+            For individual bespoke engraved orders (1–5 bottles), lead time is 48 to 72 hours plus courier transit. For corporate volume orders (20+ crates) requiring custom brass plaque milling or full case branding, we recommend allowing 7 to 10 business days. Expedited rush turnaround is available upon request.
+          </p>
+        </details>
+
+        <details class="card" style="padding: 1.5rem 1.75rem;">
+          <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+            <span>Can corporate clients provide their own branded collateral or inserts?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold); transition: transform 0.25s ease;"></i>
+          </summary>
+          <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.925rem; line-height: 1.65; margin-bottom: 0;">
+            Yes. Our packaging atelier seamlessly incorporates your corporate brochures, personalized executive letters on letterhead, bespoke ribbon colors, or engraved company pens inside each wooden crate alongside the sommelier documentation.
+          </p>
+        </details>
+
+        <details class="card" style="padding: 1.5rem 1.75rem;">
+          <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+            <span>How do you guarantee wine integrity during international shipping?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold); transition: transform 0.25s ease;"></i>
+          </summary>
+          <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.925rem; line-height: 1.65; margin-bottom: 0;">
+            All shipments use thermally insulated isothermal flight cases and temperature-monitoring indicators. During extreme summer heat or winter freeze, orders travel exclusively via cold-chain climate-controlled air transport to preserve bottle chemistry and label perfection.
+          </p>
+        </details>
+
+        <details class="card" style="padding: 1.5rem 1.75rem;">
+          <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+            <span>Are corporate orders eligible for VAT deduction or bonded transfer?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold); transition: transform 0.25s ease;"></i>
+          </summary>
+          <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.925rem; line-height: 1.65; margin-bottom: 0;">
+            Yes. Qualifying business entities receive VAT-compliant commercial invoices. In-bond transfers between HMRC/EU bonded warehouses can also be executed duty-suspended for corporate cellar accounts and international dispatch.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Corporate Concierge Request Form -->
+  <div id="corporateInquiryForm"></div>
+  <section class="section">
+    <div class="container">
       <div style="background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: clamp(1.5rem, 4vw, 3rem); max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-sm);">
         <div style="text-align: center; margin-bottom: 2rem;">
           <span class="section-subtitle">Private Concierge Request</span>
           <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Corporate Gifting Consultation</h2>
-          <p style="color: var(--text-muted);">For orders of 10+ crates, custom client gifting, or international multi-destination logistics.</p>
+          <p style="color: var(--text-muted);">For orders of 5+ crates, custom client gifting, or international multi-destination logistics.</p>
         </div>
         <form onsubmit="event.preventDefault(); window.showToast('Corporate inquiry received. A concierge will respond within 4 business hours.', 'gold'); this.reset();">
           <div class="form-grid-2col">
@@ -162,17 +690,16 @@
           <button type="submit" class="btn btn-gold btn-lg btn-block">Submit Concierge Inquiry</button>
         </form>
       </div>
-
     </div>
   </section>
-
-  
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-top">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="../assets/images/logos/logo.svg" alt="Wine & Craft" style="height: 44px; margin-bottom: 1rem;">
+          <a href="../index.html" class="footer-brand-link" aria-label="Wine &amp; Craft Home">
+            <img src="../assets/images/logos/logo.svg" alt="Wine & Craft" style="height: 44px; margin-bottom: 1rem;">
+          </a>
           <p>Purveyors of rare vintage wines, single cask Scottish and Japanese whiskies, and small-batch artisanal spirits. Committed to authentic provenance and master sommelier curation.</p>
                     <div class="footer-social-links">
             <a href="https://www.instagram.com/wineandcraft" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -199,7 +726,7 @@
             <li><a href="blog.html">Cellar Journal (Blog)</a></li>
             <li><a href="../pages/tasting-events.html">Masterclass Tastings</a></li>
             <li><a href="../pages/gifting.html">Corporate Gifting</a></li>
-            <li><a href="../user/dashboard.html">Connoisseur Portal</a></li>
+            <li><a href="../user/profile.html">Connoisseur Profile</a></li>
             <li><a href="../user/orders.html">Order History</a></li>
             <li><a href="../admin/dashboard.html">Cellar Administration</a></li>
           </ul>
@@ -224,7 +751,7 @@
     </div>
 
     <div class="container footer-bottom">
-      <div>&copy; 2026 Wine &amp; Craft Luxury Cellars Ltd. All Rights Reserved.</div>
+      <div>&copy; 2026 <a href="../index.html" style="color: inherit; text-decoration: none;">Wine &amp; Craft</a> Luxury Cellars Ltd. All Rights Reserved.</div>
       <div style="display: flex; gap: 1.5rem;">
         <a href="../pages/contact.html" style="color: #7A7266;">Terms of Provenance</a>
         <a href="../pages/contact.html" style="color: #7A7266;">Privacy &amp; Cellar Policy</a>

@@ -46,6 +46,29 @@
       closeBtn.addEventListener('click', () => modal.classList.remove('active'));
     }
 
+    const quickBtn = document.getElementById('btnLaunchQuickBooking');
+    if (quickBtn) {
+      quickBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectEvent = document.getElementById('quickSelectEvent');
+        const selectGuests = document.getElementById('quickSelectGuests');
+        if (!selectEvent || !modal) return;
+        
+        const selectedOpt = selectEvent.options[selectEvent.selectedIndex];
+        const price = parseFloat(selectedOpt.value) || 250;
+        const title = selectedOpt.getAttribute('data-title') || selectedOpt.text;
+        const guests = parseInt(selectGuests ? selectGuests.value : '1') || 1;
+        
+        document.getElementById('modalEventTitle').textContent = title;
+        document.getElementById('modalTicketPrice').textContent = '$' + price.toFixed(2);
+        const qtyInput = document.getElementById('ticketQty');
+        if (qtyInput) qtyInput.value = guests;
+        updateEventTotal(price);
+        
+        modal.classList.add('active');
+      });
+    }
+
     const form = document.getElementById('eventBookingForm');
     if (form) {
       form.addEventListener('submit', (e) => {

@@ -260,7 +260,7 @@
           const displayName = matchedAccount && matchedAccount.firstName ? matchedAccount.firstName : 'Connoisseur';
           if (window.showToast) window.showToast(`Welcome to your Cellar, ${displayName}`, 'gold');
           setTimeout(() => {
-            window.location.href = '../user/dashboard.html';
+            window.location.href = '../user/profile.html';
           }, 400);
         }
       });

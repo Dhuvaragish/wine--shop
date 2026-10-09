@@ -292,7 +292,7 @@
     "name": "Monkey 47 Schwarzwald Dry Botanical Gin",
     "category": "spirits",
     "subcategory": "gin",
-    "vintage": null,
+    "vintage": 2021,
     "region": "Black Forest",
     "country": "Germany",
     "abv": "47.0%",
@@ -324,7 +324,7 @@
     "name": "Clase Azul Reposado Artisanal Tequila",
     "category": "spirits",
     "subcategory": "agave",
-    "vintage": null,
+    "vintage": 2020,
     "region": "Jalisco",
     "country": "Mexico",
     "abv": "40.0%",
@@ -356,7 +356,7 @@
     "name": "Del Maguey Pechuga Ancestral Mezcal",
     "category": "spirits",
     "subcategory": "mezcal",
-    "vintage": null,
+    "vintage": 2019,
     "region": "Santa Catarina Minas, Oaxaca",
     "country": "Mexico",
     "abv": "49.0%",
@@ -388,7 +388,7 @@
     "name": "Tesseron Lot No. 29 Exception XO Cognac",
     "category": "spirits",
     "subcategory": "cognac",
-    "vintage": null,
+    "vintage": 2015,
     "region": "Grande Champagne",
     "country": "France",
     "abv": "40.0%",
@@ -420,7 +420,7 @@
     "name": "Diplomático Ambassador Selection Rum",
     "category": "spirits",
     "subcategory": "rum",
-    "vintage": null,
+    "vintage": 2014,
     "region": "Plan de Manzano",
     "country": "Venezuela",
     "abv": "47.0%",
@@ -478,5 +478,37 @@
       "finish": "Immense architectural finish that lingers for minutes."
     },
     "pairing": "Tajarin pasta with shaved white Alba truffle, braised beef in Barolo."
+  },
+  {
+    "id": "prod-016",
+    "name": "Château d'Yquem Premier Cru Supérieur",
+    "category": "wine",
+    "subcategory": "sauternes",
+    "vintage": 2015,
+    "region": "Sauternes, Bordeaux",
+    "country": "France",
+    "abv": "14.0%",
+    "bottle_size": "750ml",
+    "price": 650,
+    "sale_price": null,
+    "rating": 5,
+    "review_count": 46,
+    "in_stock": true,
+    "stock_count": 6,
+    "badge": "100 Pts Parker",
+    "image": "assets/images/products/wine/chateau-dyquem.jpg",
+    "flavor_profile": {
+      "boldness": 94,
+      "sweetness": 96,
+      "tannins": 15,
+      "acidity": 90,
+      "finish": 99
+    },
+    "tasting_notes": {
+      "nose": "Intoxicating layers of dried apricot, orange blossom, white peach, acacia honey, saffron, and candied ginger.",
+      "palate": "Astonishing opulence balanced by electrifying botrytis acidity; notes of crème brûlée, marmalade, and toasted marzipan.",
+      "finish": "Peerless aristocratic length carrying vibrant candied citrus peel and pure liquid honeycomb."
+    },
+    "pairing": "Seared Hudson Valley foie gras, artisanal Roquefort, or glazed stone fruit tart."
   }
 ]
