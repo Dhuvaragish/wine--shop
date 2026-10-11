@@ -34,7 +34,7 @@
                   <i class="fa-solid fa-wine-bottle"></i>
                 </div>
                 <div class="dropdown-item-info">
-                  <span class="dropdown-item-title">Home 1: Cellar &amp; Store</span>
+                  <span class="dropdown-item-title">Cellar &amp; Store</span>
                   <span class="dropdown-item-desc">Luxury vintages, rare whiskies &amp; retail store</span>
                 </div>
               </a>
@@ -43,7 +43,7 @@
                   <i class="fa-solid fa-cloud-bolt"></i>
                 </div>
                 <div class="dropdown-item-info">
-                  <span class="dropdown-item-title">Home 2: SaaS &amp; Agency</span>
+                  <span class="dropdown-item-title">SaaS &amp; Agency</span>
                   <span class="dropdown-item-desc">CellarOS platform &amp; digital growth studio</span>
                 </div>
               </a>
@@ -59,10 +59,9 @@
         <div class="nav-actions">
           <button class="nav-action-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Direction"><i class="fa-solid fa-right-left"></i></button>
           <button class="nav-action-btn theme-toggle-btn" title="Toggle Theme" aria-label="Theme"><i class="fa-solid fa-moon"></i></button>
-          <a href="../user/profile.html" class="nav-action-btn" title="Connoisseur Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
           <a href="../user/wishlist.html" class="nav-action-btn" title="Wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-counter wishlist-badge" style="display:none;">0</span></a>
           <button class="nav-action-btn cart-toggle-btn" title="Cellar Cart" aria-label="Cart"><i class="fa-solid fa-wine-glass"></i><span class="badge-counter cart-badge" style="display:none;">0</span></button>
-          <a href="../pages/login.html" class="nav-login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span></a>
+          <a href="tasting-events.html" class="nav-cta-btn"><i class="fa-solid fa-champagne-glasses"></i> <span>Book Tasting</span></a>
           <button class="hamburger-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
         </div>
       </nav>
@@ -192,43 +191,44 @@
         <h2 class="section-title">Pre-Configured Signature Gift Suites</h2>
         <p class="section-desc">Turnkey presentation crates ready for immediate dispatch, showcasing harmonious vintage verticals, rare single casks, and museum-grade accessories.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2.5rem; align-items: stretch;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(1.5rem, 2.5vw, 2.25rem); align-items: stretch;">
         
         <!-- Suite 1 -->
         <div class="card" style="display: flex; flex-direction: column; height: 100%;">
           <div style="height: 250px; overflow: hidden; position: relative;">
-            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Bordeaux Premier Grand Cru Duo" style="width: 100%; height: 100%; object-fit: cover;">
-            <span class="badge badge-wine" style="position: absolute; top: 1rem; left: 1rem;">100 &amp; 99 Pts Perfect Vintages</span>
-            <span class="badge badge-gold" style="position: absolute; top: 1rem; right: 1rem;">Solid French Oak</span>
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Bordeaux Premier Grand Cru Duo" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,15,18,0.45) 0%, rgba(15,15,18,0.05) 50%, rgba(15,15,18,0.4) 100%); pointer-events: none;"></div>
+            <span class="badge badge-wine" style="position: absolute; top: 0.85rem; inset-inline-start: 0.85rem; left: 0.85rem; z-index: 2; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.35); line-height: 1.35; max-width: calc(100% - 1.7rem);">100 &amp; 99 Pts Perfect Vintages</span>
+            <span class="badge badge-gold" style="position: absolute; bottom: 0.85rem; inset-inline-end: 0.85rem; right: 0.85rem; z-index: 2; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.35); line-height: 1.35; max-width: calc(100% - 1.7rem);">Solid French Oak</span>
           </div>
-          <div style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">The Bordeaux Premier Grand Cru Duo</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+          <div style="padding: clamp(1.25rem, 3vw, 1.75rem); display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: var(--font-serif); font-size: clamp(1.2rem, 1.8vw, 1.35rem); line-height: 1.35; margin-bottom: 0.65rem; color: var(--text-main); word-break: break-word; min-height: 2.7em;">The Bordeaux Premier Grand Cru Duo</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; min-height: 4.8em;">
               A pairing of Left Bank aristocrats: Château Margaux 2015 and Château d’Yquem 2011, cradled in velvet-lined solid French oak with polished brass fittings and certified cellar provenance.
             </p>
             
             <!-- Detailed Product Specifications -->
-            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.84rem;">
-              <div>
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-wine-bottle" style="color: var(--primary); margin-right: 6px;"></i> Château Margaux 2015 (750ml, 13.5% ABV)</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Margaux AOC • 100 Pts (Parker &amp; Suckling) • 87% Cabernet Sauvignon, 8% Merlot • 24 months in 100% new French oak. Notes of crushed violets, cassis, cedar &amp; graphite. Window: 2026–2065.</span>
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.25rem; display: flex; flex-direction: column; flex: 1; justify-content: space-between; gap: 0.85rem; font-size: 0.84rem;">
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-wine-bottle" style="color: var(--primary); margin-right: 6px;"></i> Château Margaux 2015 (750ml, 13.5% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Margaux AOC Premier Grand Cru • 100 Pts (Parker &amp; Suckling) • 87% Cabernet Sauvignon, 8% Merlot • 24 months in new French oak. Violets, cassis, cedar &amp; graphite. Window: 2026–2065.</span>
               </div>
-              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-wine-bottle" style="color: var(--accent-gold); margin-right: 6px;"></i> Château d’Yquem 2011 (750ml, 13.5% ABV)</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Sauternes AOC Premier Cru Supérieur • 99 Pts • 80% Sémillon, 20% Sauvignon Blanc • 36 months French oak. Botrytised honey, apricot, ginger flower &amp; saffron. Window: 2026–2080.</span>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-wine-bottle" style="color: var(--accent-gold); margin-right: 6px;"></i> Château d’Yquem 2011 (750ml, 13.5% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Sauternes AOC Premier Cru Supérieur • 99 Pts • 80% Sémillon, 20% Sauvignon Blanc • 36 months French oak. Botrytised honey, apricot, ginger flower &amp; saffron. Window: 2026–2080.</span>
               </div>
-              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-box-archive" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Solid Quercus petraea French oak dual casket with dovetail joints • Plush burgundy velvet velour lining • Polished solid brass cellar key &amp; wax seal breaker • Wax-sealed Master Sommelier aging ledger folio.</span>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-box-archive" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Solid Quercus French oak dual casket with dovetail joints • Plush burgundy velvet lining • Polished solid brass cellar key &amp; wax seal breaker • Wax-sealed cellar folio.</span>
               </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; gap: 0.75rem; flex-wrap: wrap;">
               <div>
-                <span style="font-size: 0.75rem; color: var(--text-light); display: block;">Delivered in Oak Crate</span>
-                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary);">$1,450.00</span>
+                <span style="font-size: 0.75rem; color: var(--text-light); display: block; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em;">Delivered in Oak Crate</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1.2;">$1,450.00</span>
               </div>
-              <button class="btn btn-gold" onclick="window.showToast('Bordeaux Grand Cru Duo added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 201, title: 'Bordeaux Premier Grand Cru Duo', price: 1450, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=400&q=80', vintage: '2015/2011', region: 'Bordeaux, France'});">
+              <button class="btn btn-gold" style="white-space: nowrap; flex-shrink: 0;" onclick="window.showToast('Bordeaux Grand Cru Duo added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 201, title: 'Bordeaux Premier Grand Cru Duo', price: 1450, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=400&q=80', vintage: '2015/2011', region: 'Bordeaux, France'});">
                 Order Suite
               </button>
             </div>
@@ -238,38 +238,39 @@
         <!-- Suite 2 -->
         <div class="card" style="display: flex; flex-direction: column; height: 100%;">
           <div style="height: 250px; overflow: hidden; position: relative;">
-            <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80" alt="Japanese &amp; Islay Single Cask Trunk" style="width: 100%; height: 100%; object-fit: cover;">
-            <span class="badge badge-gold" style="position: absolute; top: 1rem; left: 1rem;">Mizunara &amp; Cask Strength</span>
-            <span class="badge badge-dark" style="position: absolute; top: 1rem; right: 1rem;">American Walnut Trunk</span>
+            <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80" alt="Japanese &amp; Islay Single Cask Trunk" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,15,18,0.45) 0%, rgba(15,15,18,0.05) 50%, rgba(15,15,18,0.4) 100%); pointer-events: none;"></div>
+            <span class="badge badge-gold" style="position: absolute; top: 0.85rem; inset-inline-start: 0.85rem; left: 0.85rem; z-index: 2; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.35); line-height: 1.35; max-width: calc(100% - 1.7rem);">Mizunara &amp; Cask Strength</span>
+            <span class="badge badge-dark" style="position: absolute; bottom: 0.85rem; inset-inline-end: 0.85rem; right: 0.85rem; z-index: 2; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.35); line-height: 1.35; max-width: calc(100% - 1.7rem);">American Walnut Trunk</span>
           </div>
-          <div style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">The Japanese &amp; Islay Single Cask Trunk</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
-              An East-meets-West masterwork uniting Suntory’s crowning blend with rare 25-year Islay single malt in an American black walnut trunk accompanied by Scottish lead crystal. 
+          <div style="padding: clamp(1.25rem, 3vw, 1.75rem); display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: var(--font-serif); font-size: clamp(1.2rem, 1.8vw, 1.35rem); line-height: 1.35; margin-bottom: 0.65rem; color: var(--text-main); word-break: break-word; min-height: 2.7em;">The Japanese &amp; Islay Single Cask Trunk</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; min-height: 4.8em;">
+              An East-meets-West masterwork uniting Suntory’s crowning blend with rare 25-year Islay single malt, cradled in an American black walnut trunk with hand-cut Scottish crystal.
             </p>
             
             <!-- Detailed Product Specifications -->
-            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.84rem;">
-              <div>
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-bottle-droplet" style="color: var(--accent-gold); margin-right: 6px;"></i> Hibiki 21 Year Old Suntory (700ml, 43% ABV)</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Japan • World Whiskies Awards "World's Best Blended Whisky" • Matured in rare Japanese Mizunara, American white oak &amp; Spanish Oloroso sherry casks. Cooked apricot, sandalwood incense, honeycomb &amp; Mizunara spice.</span>
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.25rem; display: flex; flex-direction: column; flex: 1; justify-content: space-between; gap: 0.85rem; font-size: 0.84rem;">
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-bottle-droplet" style="color: var(--accent-gold); margin-right: 6px;"></i> Hibiki 21 Year Old Suntory (700ml, 43% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Japan Blended Whisky • World Whiskies Awards "World's Best" • Matured in rare Mizunara &amp; Sherry casks. Ripe apricot, sandalwood incense, honeycomb &amp; spice finish.</span>
               </div>
-              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-bottle-droplet" style="color: var(--primary); margin-right: 6px;"></i> Lagavulin 25 Year Old 200th Anniv. (700ml, 51.7% ABV)</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Islay, Scotland • Natural Cask Strength • 100% first-fill European oak sherry butts. Dense maritime peat smoke, dark Seville orange marmalade, roasted chestnuts &amp; salted cocoa nibs.</span>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-bottle-droplet" style="color: var(--primary); margin-right: 6px;"></i> Lagavulin 25 Year Old 200th Anniv. (700ml, 51.7% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Islay, Scotland Single Malt • Cask Strength • 100% first-fill European sherry butts. Maritime peat smoke, Seville orange marmalade, roasted chestnuts &amp; salted cocoa nibs.</span>
               </div>
-              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-whiskey-glass" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Solid American black walnut trunk with antique bronze corner guards &amp; padlock clasp • Charcoal micro-suede lining • 2 hand-cut Scottish Glencairn lead crystal tumblers • Copper water pipette &amp; distillery allocation certificate.</span>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-whiskey-glass" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Solid American black walnut trunk with bronze corner guards &amp; clasp • Charcoal micro-suede lining • 2 hand-cut Scottish crystal tumblers • Copper water pipette &amp; certificate.</span>
               </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; gap: 0.75rem; flex-wrap: wrap;">
               <div>
-                <span style="font-size: 0.75rem; color: var(--text-light); display: block;">Delivered in Walnut Trunk</span>
-                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary);">$1,980.00</span>
+                <span style="font-size: 0.75rem; color: var(--text-light); display: block; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em;">Delivered in Walnut Trunk</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1.2;">$1,980.00</span>
               </div>
-              <button class="btn btn-gold" onclick="window.showToast('Japanese &amp; Islay Trunk added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 202, title: 'Japanese &amp; Islay Single Cask Trunk', price: 1980, image: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=400&q=80', vintage: '21Y / 25Y', region: 'Japan &amp; Scotland'});">
+              <button class="btn btn-gold" style="white-space: nowrap; flex-shrink: 0;" onclick="window.showToast('Japanese &amp; Islay Trunk added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 202, title: 'Japanese &amp; Islay Single Cask Trunk', price: 1980, image: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=400&q=80', vintage: '21Y / 25Y', region: 'Japan &amp; Scotland'});">
                 Order Suite
               </button>
             </div>
@@ -279,38 +280,39 @@
         <!-- Suite 3 -->
         <div class="card" style="display: flex; flex-direction: column; height: 100%;">
           <div style="height: 250px; overflow: hidden; position: relative;">
-            <img src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=800&q=80" alt="Champagne Royale &amp; Caviar Hamper" style="width: 100%; height: 100%; object-fit: cover;">
-            <span class="badge badge-wine" style="position: absolute; top: 1rem; left: 1rem;">98 Pts Decanter</span>
-            <span class="badge badge-gold" style="position: absolute; top: 1rem; right: 1rem;">Saddle Leather Hamper</span>
+            <img src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=800&q=80" alt="Champagne Royale &amp; Caviar Hamper" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,15,18,0.45) 0%, rgba(15,15,18,0.05) 50%, rgba(15,15,18,0.4) 100%); pointer-events: none;"></div>
+            <span class="badge badge-wine" style="position: absolute; top: 0.85rem; inset-inline-start: 0.85rem; left: 0.85rem; z-index: 2; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.35); line-height: 1.35; max-width: calc(100% - 1.7rem);">98 Pts Decanter</span>
+            <span class="badge badge-gold" style="position: absolute; bottom: 0.85rem; inset-inline-end: 0.85rem; right: 0.85rem; z-index: 2; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.35); line-height: 1.35; max-width: calc(100% - 1.7rem);">Saddle Leather Hamper</span>
           </div>
-          <div style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">The Dom Pérignon Champagne Royale Hamper</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
-              The pinnacle of royal celebration pairing vintage Dom Pérignon 2013 with 50g Imperial Oscietra Caviar inside a handcrafted full-grain saddle leather travel hamper.
+          <div style="padding: clamp(1.25rem, 3vw, 1.75rem); display: flex; flex-direction: column; flex: 1;">
+            <h3 style="font-family: var(--font-serif); font-size: clamp(1.2rem, 1.8vw, 1.35rem); line-height: 1.35; margin-bottom: 0.65rem; color: var(--text-main); word-break: break-word; min-height: 2.7em;">The Dom Pérignon Champagne Royale Hamper</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; min-height: 4.8em;">
+              The pinnacle of royal celebration pairing vintage Dom Pérignon 2013 with Imperial Oscietra Caviar inside a handcrafted saddle leather hamper with polished brass fittings.
             </p>
             
             <!-- Detailed Product Specifications -->
-            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.84rem;">
-              <div>
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-champagne-glasses" style="color: var(--accent-gold); margin-right: 6px;"></i> Dom Pérignon Vintage 2013 (750ml, 12.5% ABV)</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Champagne AOC, Épernay • 98 Pts Decanter • Pinot Noir &amp; Chardonnay • 10 years cellar maturation on lees. Candied citrus peel, toasted brioche, eucalyptus freshness &amp; smoky mineral finish.</span>
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.25rem; display: flex; flex-direction: column; flex: 1; justify-content: space-between; gap: 0.85rem; font-size: 0.84rem;">
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-champagne-glasses" style="color: var(--accent-gold); margin-right: 6px;"></i> Dom Pérignon Vintage 2013 (750ml, 12.5% ABV)</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Champagne AOC, Épernay • 98 Pts Decanter • Pinot Noir &amp; Chardonnay blend • 10 years cellar lees aging. Candied citrus peel, toasted brioche &amp; smoky mineral finish.</span>
               </div>
-              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-gem" style="color: var(--primary); margin-right: 6px;"></i> Imperial Royal Oscietra Caviar (50g Cold-Chain Tin)</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Acipenser gueldenstaedtii Sturgeon • Large golden amber pearls, buttery sea finish &amp; hazelnut undertones • Includes artisanal French blinis tin &amp; Cornish salted butter biscuits with thermal chill pack.</span>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-gem" style="color: var(--primary); margin-right: 6px;"></i> Imperial Royal Oscietra Caviar (50g Cold-Chain Tin)</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Acipenser gueldenstaedtii Sturgeon • Golden amber pearls with buttery hazelnut finish • Artisanal French blinis tin &amp; salted butter biscuits with thermal cold-chain pack.</span>
               </div>
-              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.15rem;"><i class="fa-solid fa-gift" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
-                <span style="color: var(--text-muted); line-height: 1.45; display: block;">Full-grain hand-stitched saddle leather presentation hamper with solid brass buckle straps • 2 mouth-blown gold-rimmed crystal flutes • 2 hand-carved natural mother-of-pearl caviar spoons.</span>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem; font-size: 0.875rem; line-height: 1.4;"><i class="fa-solid fa-gift" style="color: var(--accent-gold-dark); margin-right: 6px;"></i> Cabinetry &amp; Accessories Included</strong>
+                <span style="color: var(--text-muted); line-height: 1.55; display: block; font-size: 0.825rem;">Hand-stitched full-grain saddle leather travel hamper with brass buckles • Charcoal velour lining • 2 mouth-blown gold-rimmed crystal flutes • 2 carved mother-of-pearl spoons.</span>
               </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; gap: 0.75rem; flex-wrap: wrap;">
               <div>
-                <span style="font-size: 0.75rem; color: var(--text-light); display: block;">Delivered in Leather Hamper</span>
-                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary);">$890.00</span>
+                <span style="font-size: 0.75rem; color: var(--text-light); display: block; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em;">Delivered in Leather Hamper</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1.2;">$890.00</span>
               </div>
-              <button class="btn btn-gold" onclick="window.showToast('Champagne Royale Hamper added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 203, title: 'Dom Pérignon Champagne Royale Hamper', price: 890, image: 'https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=400&q=80', vintage: '2013', region: 'Champagne, France'});">
+              <button class="btn btn-gold" style="white-space: nowrap; flex-shrink: 0;" onclick="window.showToast('Champagne Royale Hamper added to cart', 'gold'); if(window.Cart) window.Cart.addItem({id: 203, title: 'Dom Pérignon Champagne Royale Hamper', price: 890, image: 'https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=400&q=80', vintage: '2013', region: 'Champagne, France'});">
                 Order Suite
               </button>
             </div>

@@ -419,7 +419,8 @@
     align-self: center;
   }
 
-  /* Header Optimization: Hide long login and RTL from top bar on mobile */
+  /* Header Optimization: Hide long CTA and RTL from top bar on mobile */
+  .nav-cta-btn,
   .nav-login-btn {
     display: none !important;
   }

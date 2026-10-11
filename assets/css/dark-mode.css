@@ -42,6 +42,28 @@
   border-bottom-color: var(--border-color);
 }
 
+/* Dark Mode Brand Logo - High Contrast & Instant Display across all layouts */
+[data-theme="dark"] .brand-logo img,
+[data-theme="dark"] .portal-brand img,
+[data-theme="dark"] #siteLogo,
+[data-theme="dark"] .footer-brand img,
+[data-theme="dark"] .footer-brand-link img {
+  content: url("../images/logos/logo-dark.svg");
+  filter: drop-shadow(0 1px 6px rgba(212, 175, 55, 0.18));
+}
+
+/* System Dark Theme Preference Fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-logo img,
+  :root:not([data-theme="light"]) .portal-brand img,
+  :root:not([data-theme="light"]) #siteLogo,
+  :root:not([data-theme="light"]) .footer-brand img,
+  :root:not([data-theme="light"]) .footer-brand-link img {
+    content: url("../images/logos/logo-dark.svg");
+    filter: drop-shadow(0 1px 6px rgba(212, 175, 55, 0.18));
+  }
+}
+
 [data-theme="dark"] .header.scrolled {
   background-color: rgba(22, 22, 28, 0.98);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
@@ -127,6 +149,7 @@
   box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
+[data-theme="dark"] .nav-cta-btn,
 [data-theme="dark"] .nav-login-btn {
   background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
   color: #0F0F12;
@@ -134,6 +157,7 @@
   box-shadow: 0 0 16px rgba(212, 175, 55, 0.28);
 }
 
+[data-theme="dark"] .nav-cta-btn:hover,
 [data-theme="dark"] .nav-login-btn:hover {
   background: linear-gradient(135deg, #FBE7A1 0%, #D4AF37 100%);
   box-shadow: 0 0 24px rgba(212, 175, 55, 0.48);

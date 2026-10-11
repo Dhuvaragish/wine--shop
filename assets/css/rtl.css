@@ -136,11 +136,13 @@
   left: 1px;
 }
 
+[dir="rtl"] .nav-cta-btn,
 [dir="rtl"] .nav-login-btn {
   margin-left: 0;
   margin-right: 0.25rem;
 }
 
+[dir="rtl"] .nav-cta-btn:hover i,
 [dir="rtl"] .nav-login-btn:hover i {
   transform: translateX(-2px);
 }

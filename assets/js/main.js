@@ -312,6 +312,127 @@
   }
   window.validateEmailAddress = validateEmailAddress;
 
+  // --- Name Field Validation ---
+  function validateName(name, fieldLabel = 'Full Name') {
+    if (name === undefined || name === null) {
+      return { valid: false, message: `${fieldLabel} is required.` };
+    }
+    const str = String(name);
+    const trimmed = str.trim();
+    if (trimmed.length === 0) {
+      return { valid: false, message: `${fieldLabel} is required.` };
+    }
+    // Numbers-only check
+    if (/^[\d\p{N}\s]+$/u.test(trimmed)) {
+      return {
+        valid: false,
+        message: `${fieldLabel} cannot consist of numbers only. Please enter a valid name.`
+      };
+    }
+    // Reject any numeric characters
+    if (/\d|\p{N}/u.test(trimmed)) {
+      return {
+        valid: false,
+        message: `${fieldLabel} cannot contain numbers or numeric characters.`
+      };
+    }
+    // Minimum length check
+    if (trimmed.length < 2) {
+      return {
+        valid: false,
+        message: `${fieldLabel} must be at least 2 characters.`
+      };
+    }
+    // Maximum length check
+    if (trimmed.length > 70) {
+      return {
+        valid: false,
+        message: `${fieldLabel} cannot exceed 70 characters.`
+      };
+    }
+    // Allowed characters: letters (including accented Unicode letters \p{L}), spaces, hyphens, apostrophes (straight & curly), and periods
+    const validNameRegex = /^[\p{L}\s'\u2019\u2018\-\.\u2010\u2013]+$/u;
+    if (!validNameRegex.test(trimmed)) {
+      return {
+        valid: false,
+        message: `${fieldLabel} can only contain letters, spaces, hyphens, and apostrophes.`
+      };
+    }
+    // Must contain at least 2 letters
+    const letterCount = (trimmed.match(/[\p{L}]/gu) || []).length;
+    if (letterCount < 2) {
+      return {
+        valid: false,
+        message: `${fieldLabel} must contain at least 2 letters.`
+      };
+    }
+    return { valid: true, value: trimmed };
+  }
+  window.validateName = validateName;
+
+  // --- Phone Number Field Validation ---
+  function validatePhoneNumber(phone, isRequired = true) {
+    if (phone === undefined || phone === null) {
+      return isRequired
+        ? { valid: false, message: 'Telephone number is required.' }
+        : { valid: true, value: '' };
+    }
+    const trimmed = String(phone).trim();
+    if (trimmed.length === 0) {
+      return isRequired
+        ? { valid: false, message: 'Telephone number is required.' }
+        : { valid: true, value: '' };
+    }
+    // Strict check: letters are strictly forbidden
+    if (/[a-zA-Z\p{L}]/u.test(trimmed)) {
+      return {
+        valid: false,
+        message: 'Telephone number cannot contain letters.'
+      };
+    }
+    // Allowed phone characters: digits, spaces, hyphens, parentheses, dots, and plus
+    const allowedCharsRegex = /^[+\d\s\-\(\)\.]+$/;
+    if (!allowedCharsRegex.test(trimmed)) {
+      return {
+        valid: false,
+        message: 'Telephone number can only contain digits, spaces, hyphens, parentheses, and an optional leading +.'
+      };
+    }
+    // Plus sign only allowed at position 0
+    const plusIndex = trimmed.indexOf('+');
+    if (plusIndex > 0 || (trimmed.match(/\+/g) || []).length > 1) {
+      return {
+        valid: false,
+        message: 'The plus sign (+) can only be at the beginning of the telephone number.'
+      };
+    }
+    // Digit count check: 7 to 15 digits (E.164 standard)
+    const digitsOnly = trimmed.replace(/\D/g, '');
+    if (digitsOnly.length < 7) {
+      return {
+        valid: false,
+        message: 'Please enter a valid telephone number (at least 7 digits, e.g. +44 7911 123456).'
+      };
+    }
+    if (digitsOnly.length > 15) {
+      return {
+        valid: false,
+        message: 'Telephone number cannot exceed 15 digits.'
+      };
+    }
+    // Balanced parentheses check
+    const openParens = (trimmed.match(/\(/g) || []).length;
+    const closeParens = (trimmed.match(/\)/g) || []).length;
+    if (openParens !== closeParens) {
+      return {
+        valid: false,
+        message: 'Telephone number contains unbalanced parentheses.'
+      };
+    }
+    return { valid: true, value: trimmed };
+  }
+  window.validatePhoneNumber = validatePhoneNumber;
+
   // --- Community / Newsletter Form Validation ---
   function initCommunityForms() {
     const formConfigs = [
@@ -412,6 +533,276 @@
     });
   }
 
+  // --- Contact & Cellar Enquiry Form Validation ---
+  function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    function showErr(input, errEl, msg) {
+      if (!input) return;
+      input.classList.add('is-invalid');
+      input.classList.remove('is-valid');
+      input.classList.add('shake-error');
+      setTimeout(() => input.classList.remove('shake-error'), 450);
+      if (errEl) {
+        errEl.style.display = 'flex';
+        errEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> <span>${msg}</span>`;
+      }
+    }
+
+    function clearErr(input, errEl) {
+      if (!input) return;
+      input.classList.remove('is-invalid');
+      input.classList.remove('shake-error');
+      if (errEl) {
+        errEl.style.display = 'none';
+        errEl.innerHTML = '';
+      }
+    }
+
+    // Helper: Discover all name fields in the enquiry form
+    function getNameInputs() {
+      const inputs = form.querySelectorAll(
+        '#contactName, input[type="text"][name*="name" i], input[type="text"][id*="name" i], input[autocomplete*="name" i]'
+      );
+      const unique = Array.from(new Set(inputs));
+      return unique;
+    }
+
+    function getFieldLabel(input) {
+      if (input.id) {
+        const lbl = form.querySelector(`label[for="${input.id}"]`);
+        if (lbl) return lbl.textContent.replace(/[*:]/g, '').trim();
+      }
+      const parentGroup = input.closest('.form-group');
+      if (parentGroup) {
+        const lbl = parentGroup.querySelector('.form-label');
+        if (lbl) return lbl.textContent.replace(/[*:]/g, '').trim();
+      }
+      return input.placeholder || 'Full Name';
+    }
+
+    function getErrorElement(input) {
+      if (input.getAttribute('aria-describedby')) {
+        const errEl = document.getElementById(input.getAttribute('aria-describedby'));
+        if (errEl) return errEl;
+      }
+      const errorId = (input.id || 'contactName') + 'Error';
+      let errEl = document.getElementById(errorId);
+      if (errEl) return errEl;
+      const parentGroup = input.closest('.form-group');
+      if (parentGroup) {
+        errEl = parentGroup.querySelector('.form-feedback-error');
+        if (!errEl) {
+          errEl = document.createElement('div');
+          errEl.id = errorId;
+          errEl.className = 'form-feedback-error';
+          errEl.setAttribute('role', 'alert');
+          errEl.style.display = 'none';
+          input.setAttribute('aria-describedby', errorId);
+          parentGroup.appendChild(errEl);
+        }
+        return errEl;
+      }
+      return null;
+    }
+
+    function validateSingleName(input, isSubmitting = false) {
+      const label = getFieldLabel(input);
+      const errEl = getErrorElement(input);
+      const val = input.value;
+      const trimmed = val.trim();
+
+      if (!trimmed && !input.hasAttribute('required') && !isSubmitting) {
+        clearErr(input, errEl);
+        input.classList.remove('is-valid');
+        return true;
+      }
+
+      const res = validateName(val, label);
+      if (!res.valid) {
+        showErr(input, errEl, res.message);
+        return false;
+      } else {
+        clearErr(input, errEl);
+        input.classList.add('is-valid');
+        return true;
+      }
+    }
+
+    // Bind event listeners for all name fields
+    const nameInputs = getNameInputs();
+    nameInputs.forEach((input) => {
+      const label = getFieldLabel(input);
+      const errEl = getErrorElement(input);
+
+      input.addEventListener('input', () => {
+        const val = input.value;
+        // If already invalid or user entered numbers/invalid chars, validate immediately
+        if (input.classList.contains('is-invalid') || /\d|\p{N}/u.test(val)) {
+          validateSingleName(input);
+        } else if (val.trim().length >= 2) {
+          const res = validateName(val, label);
+          if (res.valid) {
+            clearErr(input, errEl);
+            input.classList.add('is-valid');
+          }
+        }
+      });
+
+      input.addEventListener('blur', () => {
+        if (input.value.trim().length > 0 || input.hasAttribute('required')) {
+          validateSingleName(input);
+        }
+      });
+    });
+
+    // Email validation
+    const emailInput = document.getElementById('contactEmail');
+    const emailError = document.getElementById('contactEmailError');
+    if (emailInput) {
+      emailInput.addEventListener('input', () => {
+        if (emailInput.classList.contains('is-invalid')) {
+          const res = validateEmailAddress(emailInput.value);
+          if (res.valid) {
+            clearErr(emailInput, emailError);
+            emailInput.classList.add('is-valid');
+          }
+        }
+      });
+      emailInput.addEventListener('blur', () => {
+        if (emailInput.value.trim().length > 0 || emailInput.hasAttribute('required')) {
+          const res = validateEmailAddress(emailInput.value);
+          if (!res.valid) {
+            showErr(emailInput, emailError, res.message);
+          } else {
+            clearErr(emailInput, emailError);
+            emailInput.classList.add('is-valid');
+          }
+        }
+      });
+    }
+
+    // Phone validation
+    const phoneInput = document.getElementById('contactPhone');
+    const phoneError = document.getElementById('contactPhoneError');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', () => {
+        if (phoneInput.classList.contains('is-invalid')) {
+          const res = validatePhoneNumber(phoneInput.value, false);
+          if (res.valid) {
+            clearErr(phoneInput, phoneError);
+            if (phoneInput.value.trim().length > 0) {
+              phoneInput.classList.add('is-valid');
+            }
+          }
+        }
+      });
+      phoneInput.addEventListener('blur', () => {
+        if (phoneInput.value.trim().length > 0) {
+          const res = validatePhoneNumber(phoneInput.value, false);
+          if (!res.valid) {
+            showErr(phoneInput, phoneError, res.message);
+          } else {
+            clearErr(phoneInput, phoneError);
+            phoneInput.classList.add('is-valid');
+          }
+        }
+      });
+    }
+
+    // Message textarea
+    const messageInput = form.querySelector('textarea[required], #contactMessage');
+    const messageError = form.querySelector('#contactMessageError');
+    if (messageInput) {
+      messageInput.addEventListener('input', () => {
+        if (messageInput.classList.contains('is-invalid') && messageInput.value.trim().length >= 5) {
+          clearErr(messageInput, messageError);
+          messageInput.classList.add('is-valid');
+        }
+      });
+    }
+
+    // Form Submission Handler
+    form.addEventListener('submit', (e) => {
+      let hasError = false;
+      let firstInvalid = null;
+
+      // 1. Validate all name fields in the enquiry form
+      const currentNameInputs = getNameInputs();
+      currentNameInputs.forEach((input) => {
+        const valid = validateSingleName(input, true);
+        if (!valid) {
+          hasError = true;
+          if (!firstInvalid) firstInvalid = input;
+        }
+      });
+
+      // 2. Validate email
+      if (emailInput) {
+        const emailRes = validateEmailAddress(emailInput.value);
+        if (!emailRes.valid) {
+          showErr(emailInput, emailError, emailRes.message);
+          hasError = true;
+          if (!firstInvalid) firstInvalid = emailInput;
+        } else {
+          clearErr(emailInput, emailError);
+          emailInput.classList.add('is-valid');
+        }
+      }
+
+      // 3. Validate telephone if provided
+      if (phoneInput && phoneInput.value.trim().length > 0) {
+        const phoneRes = validatePhoneNumber(phoneInput.value, false);
+        if (!phoneRes.valid) {
+          showErr(phoneInput, phoneError, phoneRes.message);
+          hasError = true;
+          if (!firstInvalid) firstInvalid = phoneInput;
+        } else {
+          clearErr(phoneInput, phoneError);
+          phoneInput.classList.add('is-valid');
+        }
+      }
+
+      // 4. Validate message
+      if (messageInput && messageInput.hasAttribute('required')) {
+        const msgVal = messageInput.value.trim();
+        if (msgVal.length < 5) {
+          showErr(messageInput, messageError, 'Please enter a message regarding your enquiry (at least 5 characters).');
+          hasError = true;
+          if (!firstInvalid) firstInvalid = messageInput;
+        } else {
+          clearErr(messageInput, messageError);
+          messageInput.classList.add('is-valid');
+        }
+      }
+
+      if (hasError) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (firstInvalid) firstInvalid.focus();
+        if (window.showToast) {
+          window.showToast('Please correct the highlighted form errors.', 'error');
+        }
+        return false;
+      }
+
+      // Form is fully valid
+      e.preventDefault();
+      if (window.showToast) {
+        window.showToast('Enquiry received. Our Head Sommelier will respond within 4 hours.', 'gold');
+      }
+      form.reset();
+      currentNameInputs.forEach((input) => {
+        input.classList.remove('is-valid', 'is-invalid');
+      });
+      if (emailInput) emailInput.classList.remove('is-valid', 'is-invalid');
+      if (phoneInput) phoneInput.classList.remove('is-valid', 'is-invalid');
+      if (messageInput) messageInput.classList.remove('is-valid', 'is-invalid');
+      return false;
+    });
+  }
+
   // --- Initialize All ---
   document.addEventListener('DOMContentLoaded', () => {
     initAgeGate();
@@ -420,6 +811,7 @@
     initMobileFilter();
     initCartDrawer();
     initCommunityForms();
+    initContactForm();
     if (window.updateBadges) window.updateBadges();
   });
 })();

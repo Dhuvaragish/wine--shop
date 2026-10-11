@@ -28,20 +28,13 @@
   }
 
   function updateRtlLogos(dir) {
-    const isRtl = dir === 'rtl';
     const theme = document.documentElement.getAttribute('data-theme') || 'light';
     const isDark = theme === 'dark';
 
-    let targetName = 'logo.svg';
-    if (isRtl && isDark) {
-      targetName = 'logo-rtl-dark.svg';
-    } else if (isRtl) {
-      targetName = 'logo-rtl.svg';
-    } else if (isDark) {
-      targetName = 'logo-dark.svg';
-    }
+    // Original brand logo text and identity are preserved in both LTR and RTL
+    const targetName = isDark ? 'logo-dark.svg' : 'logo.svg';
 
-    const logos = document.querySelectorAll('#siteLogo, .brand-logo img, .footer-brand img');
+    const logos = document.querySelectorAll('#siteLogo, .brand-logo img, .footer-brand img, .footer-brand-link img, .portal-brand img');
     logos.forEach(logo => {
       const currentSrc = logo.getAttribute('src');
       if (!currentSrc) return;

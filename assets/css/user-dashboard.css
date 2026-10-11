@@ -7,6 +7,15 @@
   grid-template-columns: 280px 1fr;
   gap: 2.5rem;
   align-items: start;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.user-sidebar,
+.user-main-content {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .user-sidebar {
@@ -33,6 +42,7 @@
   margin: 0 auto 1rem auto;
   box-shadow: var(--shadow-sm);
   display: block;
+  max-width: 100%;
   background-color: var(--primary-subtle);
   background-image: url('../images/users/default-avatar.svg');
   background-size: cover;
@@ -44,11 +54,13 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  word-break: break-word;
 }
 
 .user-tier-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   font-size: 0.75rem;
   font-weight: 700;
@@ -59,6 +71,9 @@
   padding: 0.25rem 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 
 .user-menu {
@@ -180,10 +195,52 @@
   height: 90px;
 }
 
+/* Cellar Orders Card & Table Responsive Styles */
+.orders-history-card {
+  padding: 2rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.orders-table-responsive {
+  width: 100%;
+  max-width: 100%;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-item-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.order-item-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
 @media (max-width: 992px) {
   .user-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
+    width: 100%;
+  }
+
+  .user-sidebar,
+  .user-main-content {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .user-sidebar {
@@ -197,6 +254,8 @@
     -webkit-overflow-scrolling: touch;
     padding-bottom: 0.5rem;
     gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .user-menu-link {
@@ -236,6 +295,139 @@
   }
 }
 
+@media (max-width: 640px) {
+  .page-title-banner {
+    padding: 1.75rem 0 !important;
+  }
+
+  .page-title-banner h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .orders-history-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .orders-history-card h3 {
+    font-size: 1.15rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Responsive Cellar Orders Table -> Mobile Cards */
+  .orders-table-responsive {
+    overflow-x: visible !important;
+    margin-bottom: 0 !important;
+  }
+
+  .orders-table-responsive > .table,
+  .orders-table {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border: none !important;
+  }
+
+  .orders-table thead {
+    display: none !important;
+  }
+
+  .orders-table tbody {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .orders-table tbody tr {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    width: 100% !important;
+    padding: 1.1rem !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-md) !important;
+    background-color: var(--bg-surface) !important;
+    box-sizing: border-box !important;
+    box-shadow: var(--shadow-xs) !important;
+    transition: border-color var(--transition-fast);
+  }
+
+  .orders-table tbody tr:hover {
+    border-color: var(--accent-gold) !important;
+  }
+
+  .orders-table tbody td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.45rem 0 !important;
+    border: none !important;
+    border-bottom: 1px dashed var(--border-light) !important;
+    font-size: 0.875rem !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .orders-table tbody td {
+    text-align: left !important;
+  }
+
+  .orders-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: 0.775rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    text-align: left;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+  }
+
+  [dir="rtl"] .orders-table tbody td::before {
+    text-align: right;
+    margin-right: 0;
+    margin-left: 0.75rem;
+  }
+
+  .orders-table tbody td.td-bottles {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    text-align: left !important;
+  }
+
+  [dir="rtl"] .orders-table tbody td.td-bottles {
+    align-items: flex-start !important;
+    text-align: right !important;
+  }
+
+  .orders-table tbody td.td-action {
+    border-bottom: none !important;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0 !important;
+    justify-content: stretch !important;
+  }
+
+  .orders-table tbody td.td-action::before {
+    display: none !important;
+  }
+
+  .orders-table tbody td.td-action a,
+  .orders-table tbody td.td-action .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+    padding: 0.6rem 1rem !important;
+    box-sizing: border-box !important;
+    font-size: 0.875rem !important;
+  }
+}
+
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
@@ -243,11 +435,51 @@
   }
 
   .user-avatar {
-    width: 72px;
-    height: 72px;
+    width: 72px !important;
+    height: 72px !important;
   }
 
   .user-sidebar {
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 0.875rem !important;
+  }
+
+  .orders-history-card {
+    padding: 1rem 0.75rem !important;
+  }
+
+  .orders-table tbody tr {
+    padding: 0.875rem 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .orders-table tbody td {
+    font-size: 0.825rem !important;
+    padding: 0.35rem 0 !important;
+  }
+
+  .orders-table tbody td::before {
+    font-size: 0.725rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .user-sidebar {
+    padding: 1rem 0.75rem !important;
+  }
+
+  .orders-history-card {
+    padding: 0.875rem 0.65rem !important;
+  }
+
+  .orders-table tbody tr {
+    padding: 0.75rem 0.65rem !important;
+  }
+
+  .orders-table tbody td {
+    font-size: 0.8rem !important;
+  }
+
+  .page-title-banner h1 {
+    font-size: 1.55rem !important;
   }
 }
