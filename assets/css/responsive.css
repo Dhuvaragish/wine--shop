@@ -383,8 +383,25 @@
   }
 
   .hero-section-enhanced {
-    padding: 4.5rem 0 3.5rem 0;
-    min-height: auto;
+    min-height: calc(100svh - var(--header-height, 80px));
+    min-height: calc(100vh - var(--header-height, 80px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.75rem, 4vh, 2.75rem) 0;
+  }
+
+  .hero-section-enhanced .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.75rem;
+  }
+
+  .hero-section-enhanced .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .form-grid-3col {
@@ -555,4 +572,37 @@
     max-width: calc(100% - 1rem);
     padding: 1.25rem;
   }
+
+  .hero-section-enhanced {
+    padding: clamp(0.85rem, 2vh, 1.35rem) 0;
+  }
+
+  .hero-section-enhanced .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.65rem;
+    margin-bottom: 0.65rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-section-enhanced .hero-title {
+    font-size: clamp(1.45rem, 6.5vw, 1.85rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-section-enhanced .hero-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-section-enhanced .hero-actions {
+    gap: 0.6rem;
+  }
+
+  .hero-section-enhanced .hero-actions .btn {
+    padding: 0.65rem 1.15rem;
+    font-size: 0.9rem;
+  }
 }
+

@@ -284,3 +284,20 @@
 [dir="rtl"] .btn-submit-portal i {
   transform: rotate(180deg);
 }
+
+/* Hero Sections RTL Alignment */
+[dir="rtl"] .hero-section-enhanced .hero-badge i,
+[dir="rtl"] .saas-badge i {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+[dir="rtl"] .hero-section-enhanced .hero-actions .btn,
+[dir="rtl"] .saas-hero-actions .btn {
+  flex-direction: row;
+}
+
+[dir="rtl"] .saas-badge {
+  flex-direction: row;
+}
+
