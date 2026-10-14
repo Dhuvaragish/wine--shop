@@ -1,0 +1,182 @@
+{
+  "results": [
+    {
+      "name": "Home1_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "hero-section-enhanced",
+        "backgroundImage": "url(\"http://localhost:52811/assets/images/home1-hero.jpg\")",
+        "backgroundSize": "cover",
+        "backgroundPosition": "50% 50%",
+        "backgroundRepeat": "no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": "url(\"assets/images/home1-hero.jpg\")"
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home1_Desktop.png"
+    },
+    {
+      "name": "Home1_Dark_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "hero-section-enhanced",
+        "backgroundImage": "url(\"http://localhost:52811/assets/images/home1-hero.jpg\")",
+        "backgroundSize": "cover",
+        "backgroundPosition": "50% 50%",
+        "backgroundRepeat": "no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": "url(\"assets/images/home1-hero.jpg\")"
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home1_Dark_Desktop.png"
+    },
+    {
+      "name": "Home1_RTL_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "hero-section-enhanced",
+        "backgroundImage": "url(\"http://localhost:52811/assets/images/home1-hero.jpg\")",
+        "backgroundSize": "cover",
+        "backgroundPosition": "50% 50%",
+        "backgroundRepeat": "no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": "url(\"assets/images/home1-hero.jpg\")"
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home1_RTL_Desktop.png"
+    },
+    {
+      "name": "Home1_Tablet",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "hero-section-enhanced",
+        "backgroundImage": "url(\"http://localhost:52811/assets/images/home1-hero.jpg\")",
+        "backgroundSize": "cover",
+        "backgroundPosition": "50% 50%",
+        "backgroundRepeat": "no-repeat",
+        "offsetWidth": 753,
+        "offsetHeight": 944,
+        "inlineStyleBg": "url(\"assets/images/home1-hero.jpg\")"
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home1_Tablet.png"
+    },
+    {
+      "name": "Home1_Mobile",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "hero-section-enhanced",
+        "backgroundImage": "url(\"http://localhost:52811/assets/images/home1-hero.jpg\")",
+        "backgroundSize": "cover",
+        "backgroundPosition": "50% 50%",
+        "backgroundRepeat": "no-repeat",
+        "offsetWidth": 390,
+        "offsetHeight": 764,
+        "inlineStyleBg": "url(\"assets/images/home1-hero.jpg\")"
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home1_Mobile.png"
+    },
+    {
+      "name": "Home2_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "saas-hero",
+        "backgroundImage": "linear-gradient(rgba(14, 12, 17, 0.55) 0%, rgba(18, 15, 23, 0.45) 45%, rgba(14, 12, 17, 0.85) 100%), radial-gradient(circle at 50% 25%, rgba(114, 47, 55, 0.25) 0%, rgba(14, 12, 17, 0.45) 65%), url(\"http://localhost:52811/assets/images/home2-hero.jpg\")",
+        "backgroundSize": "cover, cover, cover",
+        "backgroundPosition": "50% 50%, 50% 50%, 50% 50%",
+        "backgroundRepeat": "no-repeat, no-repeat, no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": ""
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home2_Desktop.png"
+    },
+    {
+      "name": "Home2_Dark_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "saas-hero",
+        "backgroundImage": "linear-gradient(rgba(14, 12, 17, 0.55) 0%, rgba(18, 15, 23, 0.45) 45%, rgba(14, 12, 17, 0.85) 100%), radial-gradient(circle at 50% 25%, rgba(114, 47, 55, 0.25) 0%, rgba(14, 12, 17, 0.45) 65%), url(\"http://localhost:52811/assets/images/home2-hero.jpg\")",
+        "backgroundSize": "cover, cover, cover",
+        "backgroundPosition": "50% 50%, 50% 50%, 50% 50%",
+        "backgroundRepeat": "no-repeat, no-repeat, no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": ""
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home2_Dark_Desktop.png"
+    },
+    {
+      "name": "Home2_RTL_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "saas-hero",
+        "backgroundImage": "linear-gradient(rgba(14, 12, 17, 0.55) 0%, rgba(18, 15, 23, 0.45) 45%, rgba(14, 12, 17, 0.85) 100%), radial-gradient(circle at 50% 25%, rgba(114, 47, 55, 0.25) 0%, rgba(14, 12, 17, 0.45) 65%), url(\"http://localhost:52811/assets/images/home2-hero.jpg\")",
+        "backgroundSize": "cover, cover, cover",
+        "backgroundPosition": "50% 50%, 50% 50%, 50% 50%",
+        "backgroundRepeat": "no-repeat, no-repeat, no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": ""
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home2_RTL_Desktop.png"
+    },
+    {
+      "name": "Home2_Tablet",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "saas-hero",
+        "backgroundImage": "linear-gradient(rgba(14, 12, 17, 0.55) 0%, rgba(18, 15, 23, 0.45) 45%, rgba(14, 12, 17, 0.85) 100%), radial-gradient(circle at 50% 25%, rgba(114, 47, 55, 0.25) 0%, rgba(14, 12, 17, 0.45) 65%), url(\"http://localhost:52811/assets/images/home2-hero.jpg\")",
+        "backgroundSize": "cover, cover, cover",
+        "backgroundPosition": "50% 50%, 50% 50%, 50% 50%",
+        "backgroundRepeat": "no-repeat, no-repeat, no-repeat",
+        "offsetWidth": 753,
+        "offsetHeight": 944,
+        "inlineStyleBg": ""
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home2_Tablet.png"
+    },
+    {
+      "name": "Home2_Mobile",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "saas-hero",
+        "backgroundImage": "linear-gradient(rgba(14, 12, 17, 0.55) 0%, rgba(18, 15, 23, 0.45) 45%, rgba(14, 12, 17, 0.85) 100%), radial-gradient(circle at 50% 25%, rgba(114, 47, 55, 0.25) 0%, rgba(14, 12, 17, 0.45) 65%), url(\"http://localhost:52811/assets/images/home2-hero.jpg\")",
+        "backgroundSize": "cover, cover, cover",
+        "backgroundPosition": "50% 50%, 50% 50%, 50% 50%",
+        "backgroundRepeat": "no-repeat, no-repeat, no-repeat",
+        "offsetWidth": 390,
+        "offsetHeight": 764,
+        "inlineStyleBg": ""
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home2_Mobile.png"
+    },
+    {
+      "name": "Home2_index2_Desktop",
+      "info": {
+        "found": true,
+        "tagName": "SECTION",
+        "className": "saas-hero",
+        "backgroundImage": "linear-gradient(rgba(14, 12, 17, 0.55) 0%, rgba(18, 15, 23, 0.45) 45%, rgba(14, 12, 17, 0.85) 100%), radial-gradient(circle at 50% 25%, rgba(114, 47, 55, 0.25) 0%, rgba(14, 12, 17, 0.45) 65%), url(\"http://localhost:52811/assets/images/home2-hero.jpg\")",
+        "backgroundSize": "cover, cover, cover",
+        "backgroundPosition": "50% 50%, 50% 50%, 50% 50%",
+        "backgroundRepeat": "no-repeat, no-repeat, no-repeat",
+        "offsetWidth": 1265,
+        "offsetHeight": 720,
+        "inlineStyleBg": ""
+      },
+      "screenshot": "C:\\Users\\Dhuvaragish\\Desktop\\Wine & craft\\scratch\\verify_Home2_index2_Desktop.png"
+    }
+  ],
+  "failedRequests": [],
+  "consoleErrors": []
+}

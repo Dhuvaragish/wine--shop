@@ -1509,6 +1509,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   padding: clamp(2rem, 5.5vh, 4.5rem) 0;
+  background-image: url('../images/home1-hero.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
